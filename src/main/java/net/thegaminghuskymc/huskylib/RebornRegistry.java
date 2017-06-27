@@ -84,6 +84,8 @@ public class RebornRegistry {
 	@SideOnly(Side.CLIENT)
 	public static void registerItemModel(Item i, int meta, String variant) {
 		ResourceLocation loc = i.getRegistryName();
+		if(!(i instanceof ItemBlock))
+			loc = new ResourceLocation(loc.getResourceDomain(), "item/" + loc.getResourcePath());
 		ModelLoader.setCustomModelResourceLocation(i, meta, new ModelResourceLocation(loc, "type=" + variant));
 	}
 }

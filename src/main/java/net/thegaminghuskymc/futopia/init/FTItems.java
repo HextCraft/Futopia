@@ -114,7 +114,7 @@ public class FTItems {
 	
 	public static void registerRenderSpecial(Item item) {
 		for(EnumMaterialType types : EnumMaterialType.values()){
-			RebornRegistry.registerItemModel(item, types.getMeta(), types.test());
+			RebornRegistry.registerItemModel(item, types.getMeta(), types.getName());
 		}
 	}
 
