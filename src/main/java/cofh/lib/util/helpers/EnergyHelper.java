@@ -1,9 +1,13 @@
 package cofh.lib.util.helpers;
 
-import cofh.api.energy.IEnergyConnection;
-import cofh.api.energy.IEnergyContainerItem;
-import cofh.api.energy.IEnergyProvider;
-import cofh.api.energy.IEnergyReceiver;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import cofh.redstoneflux.api.IEnergyConnection;
+import cofh.redstoneflux.api.IEnergyContainerItem;
+import cofh.redstoneflux.api.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,9 +16,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.energy.IEnergyStorage;
-
-import javax.annotation.Nullable;
-import java.util.List;
 
 /**
  * This class contains helper functions related to Redstone Flux, the basis of the CoFH Energy System.

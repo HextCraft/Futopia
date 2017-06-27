@@ -1,8 +1,7 @@
 package net.thegaminghuskymc.futopia.tiles;
 
-import cofh.api.energy.EnergyConfig;
-import cofh.api.energy.EnergyStorage;
-import cofh.api.energy.IEnergyProvider;
+import cofh.redstoneflux.api.IEnergyProvider;
+import cofh.redstoneflux.impl.EnergyStorage;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -22,7 +21,6 @@ public class TileEntityGeneratorBase extends TileEntityMachineBase implements IT
 	
 	byte facing = 1;
 	protected EnergyStorage energyStorage = new EnergyStorage(0);
-	protected EnergyConfig config;
 	
 	public TileEntityGeneratorBase() {
 		handler = new ItemStackHandler(1);
@@ -117,7 +115,7 @@ public class TileEntityGeneratorBase extends TileEntityMachineBase implements IT
 
 	@Override
 	public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate) {
-		return from.ordinal() != facing ? 0 : energyStorage.extractEnergy(Math.min(config.maxPower * 2, maxExtract), simulate);
+		return from.ordinal() != facing ? 0 : energyStorage.extractEnergy(Math.min(energyStorage.getMaxEnergyStored() * 2, maxExtract), simulate);
 	}
 
 }

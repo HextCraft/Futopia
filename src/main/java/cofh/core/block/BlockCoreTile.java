@@ -1,9 +1,15 @@
 package cofh.core.block;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.annotation.Nullable;
+
+import com.mojang.authlib.GameProfile;
+
 import cofh.api.block.IBlockInfo;
 import cofh.api.block.IDismantleable;
 import cofh.api.core.ISecurable;
-import cofh.api.energy.IEnergyReceiver;
 import cofh.api.tileentity.IReconfigurableFacing;
 import cofh.api.tileentity.ITileInfo;
 import cofh.core.util.CoreUtils;
@@ -15,7 +21,7 @@ import cofh.core.util.tileentity.IRedstoneControl;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.lib.util.helpers.ServerHelper;
 import cofh.lib.util.helpers.StringHelper;
-import com.mojang.authlib.GameProfile;
+import cofh.redstoneflux.api.IEnergyReceiver;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
@@ -37,10 +43,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-
-import javax.annotation.Nullable;
-import java.util.ArrayList;
-import java.util.List;
 
 public abstract class BlockCoreTile extends BlockCore implements ITileEntityProvider, IBlockInfo, IDismantleable, IInitializer {
 

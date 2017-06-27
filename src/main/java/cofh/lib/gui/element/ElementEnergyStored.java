@@ -1,14 +1,14 @@
 package cofh.lib.gui.element;
 
-import cofh.api.energy.IEnergyStorage;
+import java.util.List;
+
 import cofh.lib.gui.GuiBase;
 import cofh.lib.gui.GuiProps;
 import cofh.lib.util.helpers.MathHelper;
 import cofh.lib.util.helpers.RenderHelper;
 import cofh.lib.util.helpers.StringHelper;
+import cofh.redstoneflux.api.IEnergyStorage;
 import net.minecraft.util.ResourceLocation;
-
-import java.util.List;
 
 public class ElementEnergyStored extends ElementBase {
 
