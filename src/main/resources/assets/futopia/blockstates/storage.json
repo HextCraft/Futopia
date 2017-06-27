@@ -1,0 +1,51 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"meta": {
+			"0": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_red"
+				}
+			},
+			"1": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_blue"
+				}
+			},
+			"2": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_purple"
+				}
+			},
+			"3": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_green"
+				}
+			},
+			"4": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_zinc"
+				}
+			},
+			"5": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_tungsten"
+				}
+			},
+			"6": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_brass"
+				}
+			},
+			"7": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/storage/storage_tesselite"
+				}
+			}
+		}
+	}
+}

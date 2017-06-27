@@ -1,0 +1,51 @@
+{
+	"forge_marker": 2,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"meta": {
+			"0": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_red"
+				}
+			},
+			"1": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_blue"
+				}
+			},
+			"2": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_purple"
+				}
+			},
+			"3": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_green"
+				}
+			},
+			"4": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_zinc"
+				}
+			},
+			"5": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_tungsten"
+				}
+			},
+			"6": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_brass"
+				}
+			},
+			"7": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/ore/ore_tesselite"
+				}
+			}
+		}
+	}
+}

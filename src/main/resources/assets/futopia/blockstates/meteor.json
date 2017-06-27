@@ -1,0 +1,32 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"normal": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/meteor/meteor_normal"
+				}
+			},
+			"pillar": {
+				"textures": {
+					"north": "futopia:blocks/worldgen/meteor/meteor_pillar",
+					"south": "futopia:blocks/worldgen/meteor/meteor_pillar",
+					"east": "futopia:blocks/worldgen/meteor/meteor_pillar",
+					"west": "futopia:blocks/worldgen/meteor/meteor_pillar",
+					"up": "futopia:blocks/worldgen/meteor/meteor_normal",
+					"down": "futopia:blocks/worldgen/meteor/meteor_normal",
+					"particle": "futopia:blocks/worldgen/meteor/meteor_pillar"
+				}
+			},
+			"bricks": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/meteor/meteor_brick"
+				}
+			}
+		}
+	}
+}
