@@ -1,0 +1,234 @@
+# Basalt
+tile.basalt.raw.name=Basalt
+tile.basalt.brick.name=Basalt Brick
+tile.basalt.brick_cracked.name=Cracked Basalt Brick
+tile.basalt.brick_small.name=Small Basalt Bricks
+tile.basalt.fancy.name=Chiseled Basalt Brick
+tile.basalt.tile.name=Basalt Tile
+tile.basalt.paver.name=Basalt Paver
+tile.basalt.cracked_lava.name=Cracked Basalt
+tile.basalt.cobble.name=Basalt Cobble
+
+# Meteor
+tile.meteor.normal.name=Meteor
+tile.meteor.pillar.name=Meteor Pillar
+tile.meteor.bricks.name=Meteor Bricks
+
+# Marble
+tile.marble.raw.name=Marble
+tile.marble.brick.name=Marble Brick
+tile.marble.brick_small.name=Small Marble Bricks
+tile.marble.fancy.name=Chiseled Marble Brick
+tile.marble.tile.name=Marble Tile
+tile.marble.pillar.name=Marble Pillar
+tile.marble.paver.name=Marble Paver
+
+# Limestone
+tile.limestone.raw.name=Limestone
+tile.limestone.brick.name=Limestone Brick
+tile.limestone.brick_small.name=Small Limestone Bricks
+tile.limestone.fancy.name=Chiseled Limestone Brick
+tile.limestone.dirty.name=Dirty Limestone
+tile.limestone.pillar.name=Limestone Pillar
+tile.limestone.paver.name=Limestone Paver
+
+# Concrete
+tile.futopia.concrete.normal.name=Concrete
+tile.futopia.concrete.arranged_brick.name=Concrete Arraged Bricks
+tile.futopia.concrete.brick.name=Concrete Bricks
+tile.futopia.concrete.brick_dark.name=Concrete Bricks Dark
+tile.futopia.concrete.fancy_brick.name=Concrete Fancy Bricks
+tile.futopia.concrete.old_squares.name=Concrete Old Squares
+tile.futopia.concrete.rocks.name=Concrete Rocks
+tile.futopia.concrete.small_bricks.name=Concrete Small Bricks
+
+# Asphalt
+tile.futopia.asphalt.name=Asphalt
+
+# Ores and ore blocks
+tile.futopia.ore.red.name=Red Ore
+tile.futopia.ore.blue.name=Blue Ore
+tile.futopia.ore.green.name=Green Ore
+tile.futopia.ore.purple.name=Purple Ore
+tile.futopia.ore.zinc.name=Zinc Ore
+tile.futopia.ore.tesselite.name=Tesselite Ore
+tile.futopia.ore.tungsten.name=Tungsten Ore
+tile.futopia.ore.brass.name=Brass Ore
+
+tile.futopia.storage.red.name=Red Storage Block
+tile.futopia.storage.blue.name=Blue Storage Block
+tile.futopia.storage.green.name=Green Storage Block
+tile.futopia.storage.purple.name=Purple Storage Block
+tile.futopia.storage.tesselite.name=Tesselite Block
+tile.futopia.storage.zinc.name=Zinc Block
+tile.futopia.storage.tungsten.name=Tungsten Block
+tile.futopia.storage.brass.name=Brass Block
+
+# Computer
+tile.futopia.cpu.name=CPU
+tile.futopia.monitor.name=Monitor
+tile.futopia.disk_drive.name=Disk Drive
+tile.futopia.io_expander.name=IO Expander
+
+# Machines
+tile.futopia.alloy_furnace.name=Alloy Furnace
+tile.futopia.electrical_furnace.name=Electrical Furnace
+tile.futopia.particle_block.name=Particle Emitter
+tile.futopia.project_table.name=Project Table
+
+# Gems, dusts, ingots and nuggets
+item.futopia.alloy.tesselite.name=Tesselite Ingot
+item.futopia.alloy.zinc.name=Zinc Ingot
+item.futopia.alloy.red.name=Red Alloy Ingot
+item.futopia.alloy.blue.name=Blue Alloy Ingot
+item.futopia.alloy.purple.name=Purple Alloy Ingot
+item.futopia.alloy.brass.name=Brass Ingot
+item.futopia.alloy.tungsten.name=Tungsten Ingot
+
+item.futopia.nugget.tungsten.name=Tungsten Nugget
+item.futopia.nugget.red.name=Red Nugget
+item.futopia.nugget.green.name=Green Nugget
+item.futopia.nugget.blue.name=Blue Nugget
+item.futopia.nugget.purple.name=Purple Nugget
+item.futopia.nugget.brass.name=Brass Nugget
+item.futopia.nugget.zinc.name=Zinc Nugget
+item.futopia.nugget.tesselite.name= Tesselite Nugget
+
+item.futopia.plate.tungsten.name=Tungsten Plate
+item.futopia.plate.red.name=Red Plate
+item.futopia.plate.green.name=Green Plate
+item.futopia.plate.blue.name=Blue Plate
+item.futopia.plate.purple.name=Purple Plate
+item.futopia.plate.brass.name=Brass Plate
+item.futopia.plate.zinc.name=Zinc Plate
+item.futopia.plate.tesselite.name= Tesselite Plate
+
+item.futopia.gear.tungsten.name=Tungsten Gear
+item.futopia.gear.red.name=Red Gear
+item.futopia.gear.green.name=Green Gear
+item.futopia.gear.blue.name=Blue Gear
+item.futopia.gear.purple.name=Purple Gear
+item.futopia.gear.brass.name=Brass Gear
+item.futopia.gear.zinc.name=Zinc Gear
+item.futopia.gear.tesselite.name= Tesselite Gear
+
+item.futopia.dust.tungsten.name=Tungsten Dust
+item.futopia.dust.red.name=Red Dust
+item.futopia.dust.green.name=Green Dust
+item.futopia.dust.blue.name=Blue Dust
+item.futopia.dust.purple.name=Purple Dust
+item.futopia.dust.brass.name=Brass Dust
+item.futopia.dust.zinc.name=Zinc Dust
+item.futopia.dust.tesselite.name= Tesselite Dust
+
+item.futopia.shard.tungsten.name=Tungsten Shard
+item.futopia.shard.red.name=Red Shard
+item.futopia.shard.green.name=Green Shard
+item.futopia.shard.blue.name=Blue Shard
+item.futopia.shard.purple.name=Purple Shard
+item.futopia.shard.brass.name=Brass Shard
+item.futopia.shard.zinc.name=Zinc Shard
+item.futopia.shard.tesselite.name= Tesselite Shard
+
+item.futopia.iron_stick.name=Iron Stick
+
+# Swords
+item.futopia.sword_blue.name=Blue Sword
+item.futopia.sword_red.name=Red Sword
+item.futopia.sword_green.name=Green Sword
+item.futopia.sword_purple.name=Purple Sword
+item.futopia.sword_zinc.name=Zinc Sword
+item.futopia.sword_tungsten.name=Tungsten Sword
+
+# Pickaxes
+item.futopia.pickaxe_blue.name=Blue Pickaxe
+item.futopia.pickaxe_red.name=Red Pickaxe
+item.futopia.pickaxe_green.name=Green Pickaxe
+item.futopia.pickaxe_purple.name=Purple Pickaxe
+item.futopia.pickaxe_zinc.name=Zinc Pickaxe
+item.futopia.pickaxe_tungsten.name=Tungsten Pickaxe
+
+# Hoes
+item.futopia.hoe_blue.name=Blue Hoe
+item.futopia.hoe_red.name=Red Hoe
+item.futopia.hoe_green.name=Green Hoe
+item.futopia.hoe_purple.name=Purple Hoe
+item.futopia.hoe_zinc.name=Zinc Hoe
+item.futopia.hoe_tungsten.name=Tungsten Hoe
+
+# Shovels
+item.futopia.shovel_blue.name=Blue Shovel
+item.futopia.shovel_red.name=Red Shovel
+item.futopia.shovel_green.name=Green Shovel
+item.futopia.shovel_purple.name=Purple Shovel
+item.futopia.shovel_zinc.name=Zinc Shovel
+item.futopia.shovel_tungsten.name=Tungsten Shovel
+
+# Axes
+item.futopia.axe_blue.name=Blue Axe
+item.futopia.axe_red.name=Red Axe
+item.futopia.axe_green.name=Green Axe
+item.futopia.axe_purple.name=Purple Axe
+item.futopia.axe_zinc.name=Zinc Axe
+item.futopia.axe_tungsten.name=Tungsten Axe
+
+# Saws
+item.futopia.saw.blue.name=Blue Saw
+item.futopia.saw.red.name=Red Saw
+item.futopia.saw.green.name=Green Saw
+item.futopia.saw.purple.name=Purple Saw
+item.futopia.saw.zinc.name=Zinc Saw
+item.futopia.saw.tungsten.name=Tungsten Saw
+item.futopia.saw.brass.name=Brass Saw
+item.futopia.saw.tesselite.name=Tesselite Saw
+
+# Hammers
+item.futopia.hammer.blue.name=Blue Hammer
+item.futopia.hammer.red.name=Red Hammer
+item.futopia.hammer.green.name=Green Hammer
+item.futopia.hammer.purple.name=Purple Hammer
+item.futopia.hammer.zinc.name=Zinc Hammer
+item.futopia.hammer.tungsten.name=Tungsten Hammer
+item.futopia.hammer.brass.name=Brass Hammer
+item.futopia.hammer.tesselite.name=Tesselite Hammer
+
+# Helmets
+item.futopia.helmet_blue.name=Blue Helmet
+item.futopia.helmet_red.name=Red Helmet
+item.futopia.helmet_green.name=Green Helmet
+item.futopia.helmet_purple.name=Purple Helmet
+item.futopia.helmet_zinc.name=Zinc Helmet
+item.futopia.helmet_tungsten.name=Tungsten Helmet
+
+# Chestplates
+item.futopia.chestplate_blue.name=Blue Chestplate
+item.futopia.chestplate_red.name=Red Chestplate
+item.futopia.chestplate_green.name=Green Chestplate
+item.futopia.chestplate_purple.name=Purple Chestplate
+item.futopia.chestplate_zinc.name=Zinc Chestplate
+item.futopia.chestplate_tungsten.name=Tungsten Chestplate
+
+# Leggings
+item.futopia.leggings_blue.name=Blue Leggings
+item.futopia.leggings_red.name=Red Leggings
+item.futopia.leggings_green.name=Green Leggings
+item.futopia.leggings_purple.name=Purple Leggings
+item.futopia.leggings_zinc.name=Zinc Leggings
+item.futopia.leggings_tungsten.name=Tungsten Leggings
+
+# Boots
+item.futopia.boots_blue.name=Blue Boots
+item.futopia.boots_red.name=Red Boots
+item.futopia.boots_green.name=Green Boots
+item.futopia.boots_purple.name=Purple Boots
+item.futopia.boots_zinc.name=Zinc Boots
+item.futopia.boots_tungsten.name=Tungsten Boots
+
+# Creative Tabs
+itemGroup.blocks_ft=Futopia Blocks
+itemGroup.worldgen_ft=Futopia Worldgen
+itemGroup.decoration_ft=Futopia Decoration
+itemGroup.machines_ft=Futopia Machines
+itemGroup.tools_ft=Futopia Tools
+itemGroup.armor_ft=Futopia Armor
+itemGroup.items_ft=Futopia Items

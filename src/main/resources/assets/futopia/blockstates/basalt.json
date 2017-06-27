@@ -1,0 +1,64 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"raw": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_raw"
+				}
+			},
+			"cobble": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_cobble"
+				}
+			},
+			"paver": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_pavor"
+				}
+			},
+			"brick": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick"
+				}
+			},
+			"fancy": {
+				"textures": {
+					/*"down": "futopia:blocks/worldgen/basalt/new/basalt_fancy_top",
+					"up": "futopia:blocks/worldgen/basalt/new/basalt_fancy_top",
+					"north": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side",
+					"south": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side",
+					"west": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side",
+					"east": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side",
+					"particle": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side"*/
+
+					"all": "futopia:blocks/worldgen/basalt/basalt_fancy"
+				}
+			},
+			"cracked_lava": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_cracked_lava"
+				}
+			},
+			"brick_cracked": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick_cracked"
+				}
+			},
+			"brick_small": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_brick_small"
+				}
+			},
+			"tile": {
+				"textures": {
+					"all": "futopia:blocks/worldgen/basalt/basalt_tiles"
+				}
+			}
+		}
+	}
+}

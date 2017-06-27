@@ -1,0 +1,10 @@
+{
+	"parent": "builtin/generated",
+    "variants": {
+        "normal": {
+            "textures": {
+                "layer0": "futopia:items/material/alloy_red"
+            }
+        }
+    }
+}

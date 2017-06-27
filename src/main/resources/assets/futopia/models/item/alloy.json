@@ -1,0 +1,47 @@
+{
+    "parent": "builtin/generated",
+    "variants": {
+        "type": {
+            "red": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "layer0": "futopia:items/material/alloy_tesselite"
+                }
+            }
+        }
+    }
+}

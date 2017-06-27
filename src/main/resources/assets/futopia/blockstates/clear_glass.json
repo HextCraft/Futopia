@@ -1,0 +1,91 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"normal": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_normal"
+				}
+			},
+			"black": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_black"
+				}
+			},
+			"blue": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_blue"
+				}
+			},
+			"brown": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_brown"
+				}
+			},
+			"cyan": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_cyan"
+				}
+			},
+			"gray": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_gray"
+				}
+			},
+			"green": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_green"
+				}
+			},
+			"light_blue": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_light_blue"
+				}
+			},
+			"lime": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_lime"
+				}
+			},
+			"magenta": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_magenta"
+				}
+			},
+			"orange": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_orange"
+				}
+			},
+			"pink": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_pink"
+				}
+			},
+			"purple": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_purple"
+				}
+			},
+			"red": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_red"
+				}
+			},
+			"silver": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_silver"
+				}
+			},
+			"yellow": {
+				"textures": {
+					"all": "futopia:blocks/clear_glass/clear_glass_yellow"
+				}
+			}
+		}
+	}
+}

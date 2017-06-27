@@ -1,0 +1,66 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"type": {
+			"normal": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_normal"
+				}
+			},
+			"arranged_brick": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_arranged_brick"
+				}
+			},
+			"brick": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_brick"
+				}
+			},
+			"brick_dark": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_brick_dark"
+				}
+			},
+			"fanzy_brick": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_fancy_brick"
+				}
+			},
+			"old_squares": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_old_squares"
+				}
+			},
+			"rocks": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_rocks"
+				}
+			},
+			"small_bricks": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_small_bricks"
+				}
+			},
+			"small_textured_squares": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_small_textured_squares"
+				}
+			},
+			"squares": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_squares"
+				}
+			},
+			"textured_block": {
+				"textures": {
+					"all": "futopia:blocks/decoration/concrete/concrete_textured_block"
+				}
+			}
+		}
+	}
+}

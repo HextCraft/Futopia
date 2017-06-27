@@ -1,0 +1,227 @@
+# Basalt
+tile.basalt.raw.name=Basalt
+tile.basalt.brick.name=Basaltmursten
+tile.basalt.brick_cracked.name=Sprucken Basaltmursten
+tile.basalt.brick_small.name=Liten Balsaltmursten
+tile.basalt.fancy.name=Mejslad Basaltmursten
+tile.basalt.tile.name=Basaltplattor
+tile.basalt.paver.name=Basaltgång
+tile.basalt.cracked_lava.name=Sprucken Basalt
+tile.basalt.cobble.name=Basaltkullersten
+
+# Meteor
+tile.meteor.normal.name=Meteor
+tile.meteor.pillar.name=Meteorpelare
+tile.meteor.bricks.name=Meteormursten
+
+# Marmor
+tile.marble.raw.name=Marmor
+tile.marble.brick.name=Marmormursten
+tile.marble.brick_small.name=Liten Marmormursten
+tile.marble.fancy.name=Mejslad Marmormursten
+tile.marble.tile.name=Marmorplattor
+tile.marble.pillar.name=Marblepelare
+tile.marble.paver.name=Marmorgång
+
+# Kalksten
+tile.limestone.raw.name=Kalksten
+tile.limestone.brick.name=Kalkmursten
+tile.limestone.brick_small.name=Liten Kalkmursten
+tile.limestone.fancy.name=Mejslad Kalkmursten
+tile.limestone.dirty.name=Smutsig Kalksten
+tile.limestone.pillar.name=Kalkstenspelare
+tile.limestone.paver.name=Kalkstensgång
+
+# Betong
+tile.futopia.concrete.normal.name=Betong
+tile.futopia.concrete.arranged_brick.name=Arrangerad Betongmursten
+tile.futopia.concrete.brick.name=Betongmursten
+tile.futopia.concrete.brick_dark.name=Mörk Betongmursten
+tile.futopia.concrete.fancy_brick.name=Snygg Betongmursten
+tile.futopia.concrete.old_squares.name=Åldrade Betongplattor
+tile.futopia.concrete.rocks.name=Härdad Betong
+tile.futopia.concrete.small_bricks.name=Liten Betongmursten
+
+# Asfalt
+tile.futopia.asphalt.name=Asfalt
+
+# Malm och Malmblock
+tile.futopia.ore.red.name=Röd Malm
+tile.futopia.ore.blue.name=Blå Malm
+tile.futopia.ore.green.name=Grön Malm
+tile.futopia.ore.purple.name=Lila Malm
+tile.futopia.ore.zinc.name=Zinkmalm
+tile.futopia.ore.tesselite.name=Tesselitmalm
+tile.futopia.ore.tungsten.name=Volframsmalm
+tile.futopia.ore.brass.name=Mässingsmalm
+
+tile.futopia.storage.red.name=Rött Förvaringsblock
+tile.futopia.storage.blue.name=Blått Förvaringsblock
+tile.futopia.storage.green.name=Grönt Förvaringsblock
+tile.futopia.storage.purple.name=Lila Förvaringsblock
+tile.futopia.storage.tesselite.name=Tesselitblock
+tile.futopia.storage.zinc.name=Zinkblock
+tile.futopia.storage.tungsten.name=Volframblock
+tile.futopia.storage.brass.name=Mässingsblock
+
+# Dator
+tile.futopia.cpu.name=CPU (Central Processorenhet)
+tile.futopia.monitor.name=Monitor
+tile.futopia.disk_drive.name=Diskenhet
+tile.futopia.io_expander.name=IO-Expanderare
+
+# Maskiner
+tile.futopia.alloy_furnace.name=Legeringsugn
+tile.futopia.electrical_furnace.name=Elektrisk Ugn
+tile.futopia.particle_block.name=Partikelutstrålare
+tile.futopia.project_table.name=Projektbord
+
+# Skärvor, pulver, tackor och klimpar
+item.futopia.alloy.tesselite.name=Tesselittacka
+item.futopia.alloy.zinc.name=Zinktacka
+item.futopia.alloy.red.name=Röd Legeringstacka
+item.futopia.alloy.blue.name=Blå Legeringstacka
+item.futopia.alloy.purple.name=Lila Legeringstacka
+item.futopia.alloy.brass.name=Mässingstacka
+item.futopia.alloy.tungsten.name=Volframstacka
+
+item.futopia.nugget.tungsten.name=Volframsklimp
+item.futopia.nugget.red.name=Röd Klimp
+item.futopia.nugget.green.name=Grön Klimp
+item.futopia.nugget.blue.name=Blå Klimp
+item.futopia.nugget.purple.name=Lila Klimp
+item.futopia.nugget.brass.name=Mässingsklimp
+item.futopia.nugget.zinc.name=Zinkklimp
+item.futopia.nugget.tesselite.name=Tesselitklimp
+
+item.futopia.plate.tungsten.name=Volframsplåt
+item.futopia.plate.red.name=Röd Plåt
+item.futopia.plate.green.name=Grön Plåt
+item.futopia.plate.blue.name=Blå Plåt
+item.futopia.plate.purple.name=Lila Plåt
+item.futopia.plate.brass.name=Mässingsplåt
+item.futopia.plate.zinc.name=Zinkplåt
+item.futopia.plate.tesselite.name=Tesselitplåt
+
+item.futopia.gear.tungsten.name=Volframsdrev
+item.futopia.gear.red.name=Röd Drev
+item.futopia.gear.green.name=Grön Drev
+item.futopia.gear.blue.name=Blå Drev
+item.futopia.gear.purple.name=Lila Drev
+item.futopia.gear.brass.name=Mässingsdrev
+item.futopia.gear.zinc.name=Zinkdrev
+item.futopia.gear.tesselite.name=Tesselitdrev
+
+item.futopia.dust.tungsten.name=Volframspulver
+item.futopia.dust.red.name=Rött Pulver
+item.futopia.dust.green.name=Grönt Pulver
+item.futopia.dust.blue.name=Blått Pulver
+item.futopia.dust.purple.name=Lila Pulver
+item.futopia.dust.brass.name=Mässingspulver
+item.futopia.dust.zinc.name=Zinkpulver
+item.futopia.dust.tesselite.name=Tesselitpulver
+
+item.futopia.shard.tungsten.name=Volframsskärva
+item.futopia.shard.red.name=Röd Skärva
+item.futopia.shard.green.name=Grön Skärva
+item.futopia.shard.blue.name=Blå Skärva
+item.futopia.shard.purple.name=Lila Skärva
+item.futopia.shard.brass.name=Mässingsskärva
+item.futopia.shard.zinc.name=Zinkskärva
+item.futopia.shard.tesselite.name=Tesselitskärva
+
+item.futopia.iron_stick.name=Järnpinne
+
+# Svärd
+item.futopia.sword_blue.name=Blått Svärd
+item.futopia.sword_red.name=Rött Svärd
+item.futopia.sword_green.name=Grönt Svärd
+item.futopia.sword_purple.name=Lila Svärd
+item.futopia.sword_zinc.name=Zinksvärd
+item.futopia.sword_tungsten.name=Volframssvärd
+
+# Hackor
+item.futopia.pickaxe_blue.name=Blå Hacka
+item.futopia.pickaxe_red.name=Röd Hacka
+item.futopia.pickaxe_green.name=Grön Hacka
+item.futopia.pickaxe_purple.name=Lila Hacka
+item.futopia.pickaxe_zinc.name=Zinkhacka
+item.futopia.pickaxe_tungsten.name=Volframshacka
+
+# Flohackor
+item.futopia.hoe_blue.name=Blå Flohacka
+item.futopia.hoe_red.name=Röd Flohacka
+item.futopia.hoe_green.name=Grön Flohacka
+item.futopia.hoe_purple.name=Lila Flohacka
+item.futopia.hoe_zinc.name=Zinkflohacka
+item.futopia.hoe_tungsten.name=Volframsflohacka
+
+# Spadar
+item.futopia.shovel_blue.name=Blå Spade
+item.futopia.shovel_red.name=Röd Spade
+item.futopia.shovel_green.name=Grön Spade
+item.futopia.shovel_purple.name=Lila Spade
+item.futopia.shovel_zinc.name=Zinkspade
+item.futopia.shovel_tungsten.name=Volframsspade 
+
+# Yxor
+item.futopia.axe_blue.name=Blå Yxa
+item.futopia.axe_red.name=Röd Yxa
+item.futopia.axe_green.name=Grön Yxa
+item.futopia.axe_purple.name=Lila Yxa
+item.futopia.axe_zinc.name=Zinkyxa
+item.futopia.axe_tungsten.name=Volframsyxa
+
+# Sågar
+item.futopia.saw.blue.name=Blå Såg
+item.futopia.saw.red.name=Röd Såg
+item.futopia.saw.green.name=Grön Såg
+item.futopia.saw.purple.name=Lila Såg
+item.futopia.saw.zinc.name=Zinksåg
+item.futopia.saw.tungsten.name=Volframssåg
+item.futopia.saw.brass.name=Mässingssåg
+item.futopia.saw.tesselite.name=Tesselitsåg
+
+# Hammare
+item.futopia.hammer.blue.name=Blå Hammare
+item.futopia.hammer.red.name=Röd Hammare
+item.futopia.hammer.green.name=Grön Hammare
+item.futopia.hammer.purple.name=Lila Hammare
+item.futopia.hammer.zinc.name=Zinkhammare
+item.futopia.hammer.tungsten.name=Volframshammare
+item.futopia.hammer.brass.name=Mässingshammare
+item.futopia.hammer.tesselite.name=Tesselithammare
+
+# Hjälmar
+item.futopia.helmet_blue.name=Blå Hjälm
+item.futopia.helmet_red.name=Röd Hjälm
+item.futopia.helmet_green.name=Grön Hjälm
+item.futopia.helmet_purple.name=Lila Hjälm
+item.futopia.helmet_zinc.name=Zinkhjälm
+item.futopia.helmet_tungsten.name=Volframshjälm
+
+# Harneskar
+item.futopia.chestplate_blue.name=Blå Harnesk
+item.futopia.chestplate_red.name=Röd Harnesk
+item.futopia.chestplate_green.name=Grön Harnesk
+item.futopia.chestplate_purple.name=Lila Harnesk
+item.futopia.chestplate_zinc.name=Zinkharnesk
+item.futopia.chestplate_tungsten.name=Volframsharnesk
+
+# Byxor
+item.futopia.leggings_blue.name=Blåa Byxor
+item.futopia.leggings_red.name=Röda Byxor
+item.futopia.leggings_green.name=Gröna Byxor
+item.futopia.leggings_purple.name=Lila Byxor
+item.futopia.leggings_zinc.name=Zinkbyxor
+item.futopia.leggings_tungsten.name=Volframsbyxor
+
+# Stövlar
+item.futopia.boots_blue.name=Blåa Stövlar
+item.futopia.boots_red.name=Röda Stövlar
+item.futopia.boots_green.name=Gröna Stövlar
+item.futopia.boots_purple.name=Lila Stövlar
+item.futopia.boots_zinc.name=Zinkstövlar
+item.futopia.boots_tungsten.name=Volframsstövlar
+
+# Creative Tabs

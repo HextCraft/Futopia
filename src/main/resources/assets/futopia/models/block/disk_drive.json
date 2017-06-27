@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"up": "futopia:blocks/machines/disk_drive/disk_drive_top",
+		"down": "futopia:blocks/machines/disk_drive/disk_drive_bottom",
+		"north": "futopia:blocks/machines/disk_drive/disk_drive_front",
+		"south": "futopia:blocks/machines/disk_drive/disk_drive_back",
+		"east": "futopia:blocks/machines/disk_drive/disk_drive_side",
+		"west": "futopia:blocks/machines/disk_drive/disk_drive_side",
+		"particle": "futopia:blocks/machines/disk_drive/disk_drive_side"
+	}
+}

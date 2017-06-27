@@ -1,0 +1,254 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "builtin/generated",
+		"textures": {
+			"layer0": "blocks/dirt"
+		},
+		"transform": "forge:default-item"
+	},
+	"variants": {
+		"type": {
+			"ingotRed": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_red"
+				}
+			},
+			"ingotBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_blue"
+				}
+			},
+			"ingotPurple": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_purple"
+				}
+			},
+			"ingotGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_green"
+				}
+			},
+			"ingotZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_zinc"
+				}
+			},
+			"ingotTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_tungsten"
+				}
+			},
+			"ingotBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_brass"
+				}
+			},
+			"ingotTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/alloy_tesselite"
+				}
+			},
+			"nuggetRed": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_red"
+				}
+			},
+			"nuggetBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_blue"
+				}
+			},
+			"nuggetPurple": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_purple"
+				}
+			},
+			"nuggetGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_green"
+				}
+			},
+			"nuggetZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_zinc"
+				}
+			},
+			"nuggetTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_tungsten"
+				}
+			},
+			"nuggetBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_brass"
+				}
+			},
+			"nuggetTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/nugget_tesselite"
+				}
+			},
+			"gearRed": {
+				"textures": {
+					"layer0": "futopia:items/material/gear_red"
+				}
+			},
+			"gearBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/gearBlue"
+				}
+			},
+			"gearPurple": {
+				"textures": {
+					"layer0": "futopia:items/material/gearPurple"
+				}
+			},
+			"gearGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/gearGreen"
+				}
+			},
+			"gearZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/gearZinc"
+				}
+			},
+			"gearTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/gearTungsten"
+				}
+			},
+			"gearBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/gearBrass"
+				}
+			},
+			"gearTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/gearTesselite"
+				}
+			},
+			"dustRed": {
+				"textures": {
+					"layer0": "futopia:items/material/dustRed"
+				}
+			},
+			"dustBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/dustBlue"
+				}
+			},
+			"dustPurple": {
+				"textures": {
+					"layer0": "futopia:items/material/dustPurple"
+				}
+			},
+			"dustGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/dustGreen"
+				}
+			},
+			"dustZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/dustZinc"
+				}
+			},
+			"dustTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/dustTungsten"
+				}
+			},
+			"dustBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/dustBrass"
+				}
+			},
+			"dustTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/dustTesselite"
+				}
+			},
+			"plateRed": {
+				"textures": {
+					"layer0": "futopia:items/material/plateRed"
+				}
+			},
+			"plateBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/plateBlue"
+				}
+			},
+			"platePurple": {
+				"textures": {
+					"layer0": "futopia:items/material/platePurple"
+				}
+			},
+			"plateGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/plateGreen"
+				}
+			},
+			"plateZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/plateZinc"
+				}
+			},
+			"plateTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/plateTungsten"
+				}
+			},
+			"plateBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/plateBrass"
+				}
+			},
+			"plateTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/plateTesselite"
+				}
+			},
+			"shardRed": {
+				"textures": {
+					"layer0": "futopia:items/material/shardRed"
+				}
+			},
+			"shardBlue": {
+				"textures": {
+					"layer0": "futopia:items/material/shardBlue"
+				}
+			},
+			"shardPurple": {
+				"textures": {
+					"layer0": "futopia:items/material/shardPurple"
+				}
+			},
+			"shardGreen": {
+				"textures": {
+					"layer0": "futopia:items/material/shardGreen"
+				}
+			},
+			"shardZinc": {
+				"textures": {
+					"layer0": "futopia:items/material/shardZinc"
+				}
+			},
+			"shardTungsten": {
+				"textures": {
+					"layer0": "futopia:items/material/shardTungsten"
+				}
+			},
+			"shardBrass": {
+				"textures": {
+					"layer0": "futopia:items/material/shardBrass"
+				}
+			},
+			"shardTesselite": {
+				"textures": {
+					"layer0": "futopia:items/material/shardTesselite"
+				}
+			}
+		}
+	}
+}
