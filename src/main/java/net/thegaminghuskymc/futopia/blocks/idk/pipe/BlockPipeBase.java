@@ -17,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.thegaminghuskymc.futopia.blocks.BlockBase;
+import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 /**
  * Base class for pipe blocks that connect to adjacent pipes and blocks.
@@ -45,7 +45,7 @@ public class BlockPipeBase extends BlockBase {
     );
     
     public BlockPipeBase(String blockName) {
-        super(blockName);
+        super(blockName, FTCreativeTabs.main);
     }
 
     private static float getMinBound(int dir) {

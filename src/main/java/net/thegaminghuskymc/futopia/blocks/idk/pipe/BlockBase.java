@@ -1,4 +1,4 @@
-package net.thegaminghuskymc.huskylib.blocks;
+package net.thegaminghuskymc.futopia.blocks.idk.pipe;
 
 import java.util.Random;
 
@@ -15,14 +15,14 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBase extends Block {
 
-	public BlockBase(String name, CreativeTabs creativetab) {
+	public BlockBase(String name, CreativeTabs tabs) {
 		super(Material.ROCK);
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setHardness(5.0F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(creativetab);
+		setCreativeTab(tabs);
 	}
 	
 	@Override

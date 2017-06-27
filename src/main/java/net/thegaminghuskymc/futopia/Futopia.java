@@ -36,9 +36,9 @@ public class Futopia {
     	
     	PROXY.preInit(event);
         
-        FTBlocks.init();
+//        FTBlocks.init();
         FTItems.init();
-        FTBlocks.register();
+//        FTBlocks.register();
         FTItems.register();
        
         PROXY.registerRenders();

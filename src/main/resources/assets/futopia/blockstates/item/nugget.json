@@ -1,0 +1,54 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "builtin/generated",
+        "textures": {
+            "layer0": "blocks/dirt"
+        },
+        "transform": "forge:default-item"
+    },
+    "variants": {
+        "type": {
+            "red": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "layer0": "futopia:items/material/nugget_tesselite"
+                }
+            }
+        }
+    }
+}

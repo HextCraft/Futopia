@@ -1,6 +1,7 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
-import net.thegaminghuskymc.futopia.blocks.BlockBase;
+import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
+import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 /**
  * Created by TheGamingHuskyMC on 18.05.2017.
@@ -8,7 +9,7 @@ import net.thegaminghuskymc.futopia.blocks.BlockBase;
 public class BlockConveyer extends BlockBase {
 
     public BlockConveyer() {
-        super("conveyer_belt");
+        super("conveyer_belt", FTCreativeTabs.main);
     }
 
 }

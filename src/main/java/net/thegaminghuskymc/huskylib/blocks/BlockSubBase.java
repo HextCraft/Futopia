@@ -7,14 +7,17 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.Refs;
@@ -125,6 +128,17 @@ public class BlockSubBase extends Block {
             return SoundType.STONE;
         }
     }
+	
+	@SideOnly(Side.CLIENT)
+	public void registerItemModels(Item item)
+	{
+		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(this.getRegistryName(), "inventory"));
+	}
+
+	public Item createItemBlock()
+	{
+		return new ItemBlock(this).setRegistryName(this.getRegistryName());
+	}
 	
 	public String getBlockName(){
         return this.blockName;

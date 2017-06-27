@@ -1,8 +1,7 @@
 package net.thegaminghuskymc.futopia.tiles;
 
-/**
- * @author fabricator77
- */
-public class TileIOExpander extends TileBase implements IRedBusWindow {
-    //TODO: half height block
+import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
+
+public class TileIOExpander extends TileEntityBase{
+	
 }

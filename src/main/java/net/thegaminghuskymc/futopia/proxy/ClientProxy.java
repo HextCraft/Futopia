@@ -20,7 +20,7 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
     
     @Override
 	public void registerRenders() {
-		FTBlocks.registerRenders();
+//		FTBlocks.registerRenders();
 		FTItems.registerRenders();
 	}
 
@@ -30,7 +30,7 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
             register.registerModels();
         }
 
-    	FTBlocks.init();
+//    	FTBlocks.init();
     	FTItems.init();
     }
 

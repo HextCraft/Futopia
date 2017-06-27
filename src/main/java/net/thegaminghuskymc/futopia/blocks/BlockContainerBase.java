@@ -11,25 +11,23 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.tiles.TileBase;
+import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
-public class BlockContainerBase extends Block implements ITileEntityProvider {
+public class BlockContainerBase extends BlockBase implements ITileEntityProvider {
 
     @SideOnly(Side.CLIENT)
     private Class<? extends TileBase> tileEntityClass;
     private boolean isRedstoneEmitter;
     
-    public BlockContainerBase(Material material, Class<? extends TileBase> tileEntityClass) {
-        super(material);
+    public BlockContainerBase(Material material, Class<? extends TileBase> tileEntityClass, String name) {
+        super(name, FTCreativeTabs.main);
         isBlockContainer = true;
         setTileEntityClass(tileEntityClass);
-        setCreativeTab(FTCreativeTabs.main);
     }
     
     public BlockContainerBase(Material material, String name, boolean addToCreativeTab) {
-        this(material, TileBase.class);
+        this(material, TileBase.class, name);
         isBlockContainer = true;
-        setUnlocalizedName(name);
-        setRegistryName(name);
         setTileEntityClass(TileBase.class);
         if(addToCreativeTab == true){
         	setCreativeTab(FTCreativeTabs.main);
@@ -37,10 +35,8 @@ public class BlockContainerBase extends Block implements ITileEntityProvider {
     }
     
     public BlockContainerBase(Material material, String name) {
-        this(material, TileBase.class);
+        this(material, TileBase.class, name);
         isBlockContainer = true;
-        setUnlocalizedName(name);
-        setRegistryName(name);
         setTileEntityClass(TileBase.class);
         setCreativeTab(FTCreativeTabs.main);
     }

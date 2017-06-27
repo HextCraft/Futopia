@@ -6,12 +6,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.blocks.BlockBase;
+import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
+import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockWaterCooler extends BlockBase {
 
     public BlockWaterCooler() {
-        super("water_cooler");
+        super("water_cooler", FTCreativeTabs.main);
     }
 
     @Override

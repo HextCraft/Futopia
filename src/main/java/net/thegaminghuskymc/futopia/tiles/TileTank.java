@@ -6,6 +6,7 @@ import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.FluidTank;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidTankProperties;
+import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
 
 public class TileTank extends TileEntityBase implements IFluidHandler, ITickable {
 

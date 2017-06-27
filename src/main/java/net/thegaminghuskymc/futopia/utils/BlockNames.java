@@ -8,6 +8,9 @@ public class BlockNames {
     public static final String engine = "engine";
     public static final String tank = "tank";
     public static final String pipe = "pipe";
+    
+    public static final String ORE = "ores";
+    public static final String STORAGE = "storages";
 
     public static final String ALLOYFURNACE_NAME = "alloy_furnace";
     public static final String ELECTRICALFURNACE_NAME = "electrical_furnace";

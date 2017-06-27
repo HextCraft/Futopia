@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
 
 public class TileCompressor extends TileEntityBase {
 

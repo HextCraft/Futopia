@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Random;
 
 import cofh.lib.util.helpers.StringHelper;
-import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
@@ -13,22 +12,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
-import net.thegaminghuskymc.futopia.tiles.TileEntityMachineBase;
 import net.thegaminghuskymc.futopia.utils.Names;
+import net.thegaminghuskymc.huskylib.blocks.BlockBase;
+import net.thegaminghuskymc.huskylib.tiles.IAutoRegisterTileEntity;
+import net.thegaminghuskymc.huskylib.tiles.TileEntityMachineBase;
 
-public class BlockMachineBase extends Block {
+public class BlockMachineBase extends BlockBase implements ITileEntityProvider, IAutoRegisterTileEntity{
 	
 	private static World world;
 	private static IBlockState state;
 	
 	public BlockMachineBase(String name, TileEntity tileEntity) {
-		super(Material.ROCK);
-		setUnlocalizedName(name);
-		setRegistryName(name);
+		super(name, FTCreativeTabs.machines);
 		setHardness(5.0F);
 		setResistance(5.0F);
 		setHarvestLevel("pickaxe", 1);
-		setCreativeTab(FTCreativeTabs.machines);
 		createTileEntity(tileEntity, world, state);
 	}
 	
@@ -54,5 +52,23 @@ public class BlockMachineBase extends Block {
         	tooltip.add(Names.CraftingToolTips.MACHINE);
         }
     }
+	
+	@Override
+	public TileEntity createNewTileEntity(World worldIn, int meta)
+	{
+		return new TileEntityMachineBase();
+	}
+
+	@Override
+	public Class<? extends TileEntity> getTileEntityClass()
+	{
+		return TileEntityMachineBase.class;
+	}
+
+	@Override
+	public String getTileEntityRegistryName()
+	{
+		return this.getRegistryName().toString();
+	}
 
 }

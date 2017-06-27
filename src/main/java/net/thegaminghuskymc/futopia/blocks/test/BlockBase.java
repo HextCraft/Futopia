@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.test;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -22,9 +19,7 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.Refs;
-import net.thegaminghuskymc.futopia.tiles.TileEntityBase;
 import net.thegaminghuskymc.futopia.utils.test.Platform;
-import net.thegaminghuskymc.futopia.utils.test.helpers.TileHelper;
 import net.thegaminghuskymc.futopia.utils.test.interfaces.IBlockRenderer;
 import net.thegaminghuskymc.futopia.utils.test.interfaces.IOrientable;
 import net.thegaminghuskymc.futopia.utils.test.interfaces.IOrientableBlock;
@@ -108,7 +103,7 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
         worldIn.setBlockToAir(pos);
     }
 
-    @Override
+    /*@Override
     public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
         TileEntityBase tileEntity = TileHelper.getTileEntity(world, pos, TileEntityBase.class);
         if (tileEntity != null && tileEntity.hasCustomName()) {
@@ -121,7 +116,7 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
             return drops;
         }
         return super.getDrops(world, pos, state, fortune);
-    }
+    }*/
 
     @Override
     public boolean rotateBlock(World world, BlockPos pos, EnumFacing axis) {

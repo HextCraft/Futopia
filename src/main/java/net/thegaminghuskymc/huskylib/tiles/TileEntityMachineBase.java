@@ -1,9 +1,8 @@
 package net.thegaminghuskymc.huskylib.tiles;
 
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.tileentity.TileEntity;
 
-public class TileEntityMachineBase extends TileEntity {
+public class TileEntityMachineBase extends TileEntityBase {
 	
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {

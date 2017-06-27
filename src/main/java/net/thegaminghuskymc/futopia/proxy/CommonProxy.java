@@ -20,7 +20,7 @@ public class CommonProxy implements IFutopiaProxy {
 
 	@Override
 	public void registerTileEntities() {
-		FTBlocks.registerTE();
+//		FTBlocks.registerTE();
 	}
 
     @Override
