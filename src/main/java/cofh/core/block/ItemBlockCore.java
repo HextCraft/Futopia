@@ -5,7 +5,6 @@ import cofh.core.util.helpers.SecurityHelper;
 import cofh.lib.util.helpers.StringHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemBlock;
@@ -17,7 +16,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemBlockCore extends ItemBlock {
 
 	public ItemBlockCore(Block block) {
-
 		super(block);
 		setHasSubtypes(true);
 		setMaxDamage(0);
@@ -31,19 +29,12 @@ public class ItemBlockCore extends ItemBlock {
 
 	@Override
 	public int getMetadata(int i) {
-
 		return i;
 	}
 
 	@Override
 	public boolean hasCustomEntity(ItemStack stack) {
-
 		return SecurityHelper.isSecure(stack);
-	}
-	
-	@Override
-	protected boolean isInCreativeTab(CreativeTabs targetTab) {
-		return true;
 	}
 
 	@Override

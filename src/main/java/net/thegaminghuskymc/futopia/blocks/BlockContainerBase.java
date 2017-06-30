@@ -36,9 +36,6 @@ public class BlockContainerBase extends BlockBase implements ITileEntityProvider
     
     public BlockContainerBase(Material material, String name) {
         this(material, TileBase.class, name);
-        isBlockContainer = true;
-        setTileEntityClass(TileBase.class);
-        setCreativeTab(FTCreativeTabs.main);
     }
 
 

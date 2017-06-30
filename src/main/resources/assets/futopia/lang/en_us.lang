@@ -65,72 +65,72 @@ tile.futopia.storage.tungsten.name=Tungsten Block
 tile.futopia.storage.brass.name=Brass Block
 
 # Computer
-tile.futopia.cpu.name=CPU
-tile.futopia.monitor.name=Monitor
-tile.futopia.disk_drive.name=Disk Drive
-tile.futopia.io_expander.name=IO Expander
+tile.cpu.name=CPU
+tile.monitor.name=Monitor
+tile.disk_drive.name=Disk Drive
+tile.io_expander.name=IO Expander
 
 # Machines
-tile.futopia.alloy_furnace.name=Alloy Furnace
-tile.futopia.electrical_furnace.name=Electrical Furnace
-tile.futopia.particle_block.name=Particle Emitter
-tile.futopia.project_table.name=Project Table
+tile.alloy_furnace.name=Alloy Furnace
+tile.electrical_furnace.name=Electrical Furnace
+tile.particle_summoner.name=Particle Summoner
+tile.project_table.name=Project Table
 
 # Gems, dusts, ingots and nuggets
-item.futopia.alloy.tesselite.name=Tesselite Ingot
-item.futopia.alloy.zinc.name=Zinc Ingot
-item.futopia.alloy.red.name=Red Alloy Ingot
-item.futopia.alloy.blue.name=Blue Alloy Ingot
-item.futopia.alloy.purple.name=Purple Alloy Ingot
-item.futopia.alloy.brass.name=Brass Ingot
-item.futopia.alloy.tungsten.name=Tungsten Ingot
+item.alloy.tesselite.name=Tesselite Ingot
+item.alloy.zinc.name=Zinc Ingot
+item.alloy.red.name=Red Alloy Ingot
+item.alloy.blue.name=Blue Alloy Ingot
+item.alloy.purple.name=Purple Alloy Ingot
+item.alloy.brass.name=Brass Ingot
+item.alloy.tungsten.name=Tungsten Ingot
 
-item.futopia.nugget.tungsten.name=Tungsten Nugget
-item.futopia.nugget.red.name=Red Nugget
-item.futopia.nugget.green.name=Green Nugget
-item.futopia.nugget.blue.name=Blue Nugget
-item.futopia.nugget.purple.name=Purple Nugget
-item.futopia.nugget.brass.name=Brass Nugget
-item.futopia.nugget.zinc.name=Zinc Nugget
-item.futopia.nugget.tesselite.name= Tesselite Nugget
+item.nugget.tungsten.name=Tungsten Nugget
+item.nugget.red.name=Red Nugget
+item.nugget.green.name=Green Nugget
+item.nugget.blue.name=Blue Nugget
+item.nugget.purple.name=Purple Nugget
+item.nugget.brass.name=Brass Nugget
+item.nugget.zinc.name=Zinc Nugget
+item.nugget.tesselite.name= Tesselite Nugget
 
-item.futopia.plate.tungsten.name=Tungsten Plate
-item.futopia.plate.red.name=Red Plate
-item.futopia.plate.green.name=Green Plate
-item.futopia.plate.blue.name=Blue Plate
-item.futopia.plate.purple.name=Purple Plate
-item.futopia.plate.brass.name=Brass Plate
-item.futopia.plate.zinc.name=Zinc Plate
-item.futopia.plate.tesselite.name= Tesselite Plate
+item.plate.tungsten.name=Tungsten Plate
+item.plate.red.name=Red Plate
+item.plate.green.name=Green Plate
+item.plate.blue.name=Blue Plate
+item.plate.purple.name=Purple Plate
+item.plate.brass.name=Brass Plate
+item.plate.zinc.name=Zinc Plate
+item.plate.tesselite.name= Tesselite Plate
 
-item.futopia.gear.tungsten.name=Tungsten Gear
-item.futopia.gear.red.name=Red Gear
-item.futopia.gear.green.name=Green Gear
-item.futopia.gear.blue.name=Blue Gear
-item.futopia.gear.purple.name=Purple Gear
-item.futopia.gear.brass.name=Brass Gear
-item.futopia.gear.zinc.name=Zinc Gear
-item.futopia.gear.tesselite.name= Tesselite Gear
+item.gear.tungsten.name=Tungsten Gear
+item.gear.red.name=Red Gear
+item.gear.green.name=Green Gear
+item.gear.blue.name=Blue Gear
+item.gear.purple.name=Purple Gear
+item.gear.brass.name=Brass Gear
+item.gear.zinc.name=Zinc Gear
+item.gear.tesselite.name= Tesselite Gear
 
-item.futopia.dust.tungsten.name=Tungsten Dust
-item.futopia.dust.red.name=Red Dust
-item.futopia.dust.green.name=Green Dust
-item.futopia.dust.blue.name=Blue Dust
-item.futopia.dust.purple.name=Purple Dust
-item.futopia.dust.brass.name=Brass Dust
-item.futopia.dust.zinc.name=Zinc Dust
-item.futopia.dust.tesselite.name= Tesselite Dust
+item.dust.tungsten.name=Tungsten Dust
+item.dust.red.name=Red Dust
+item.dust.green.name=Green Dust
+item.dust.blue.name=Blue Dust
+item.dust.purple.name=Purple Dust
+item.dust.brass.name=Brass Dust
+item.dust.zinc.name=Zinc Dust
+item.dust.tesselite.name= Tesselite Dust
 
-item.futopia.shard.tungsten.name=Tungsten Shard
-item.futopia.shard.red.name=Red Shard
-item.futopia.shard.green.name=Green Shard
-item.futopia.shard.blue.name=Blue Shard
-item.futopia.shard.purple.name=Purple Shard
-item.futopia.shard.brass.name=Brass Shard
-item.futopia.shard.zinc.name=Zinc Shard
-item.futopia.shard.tesselite.name= Tesselite Shard
+item.shard.tungsten.name=Tungsten Shard
+item.shard.red.name=Red Shard
+item.shard.green.name=Green Shard
+item.shard.blue.name=Blue Shard
+item.shard.purple.name=Purple Shard
+item.shard.brass.name=Brass Shard
+item.shard.zinc.name=Zinc Shard
+item.shard.tesselite.name= Tesselite Shard
 
-item.futopia.iron_stick.name=Iron Stick
+item.iron_stick.name=Iron Stick
 
 # Swords
 item.futopia.sword_blue.name=Blue Sword
@@ -173,24 +173,24 @@ item.futopia.axe_zinc.name=Zinc Axe
 item.futopia.axe_tungsten.name=Tungsten Axe
 
 # Saws
-item.futopia.saw.blue.name=Blue Saw
-item.futopia.saw.red.name=Red Saw
-item.futopia.saw.green.name=Green Saw
-item.futopia.saw.purple.name=Purple Saw
-item.futopia.saw.zinc.name=Zinc Saw
-item.futopia.saw.tungsten.name=Tungsten Saw
-item.futopia.saw.brass.name=Brass Saw
-item.futopia.saw.tesselite.name=Tesselite Saw
+item.saw.blue.name=Blue Saw
+item.saw.red.name=Red Saw
+item.saw.green.name=Green Saw
+item.saw.purple.name=Purple Saw
+item.saw.zinc.name=Zinc Saw
+item.saw.tungsten.name=Tungsten Saw
+item.saw.brass.name=Brass Saw
+item.saw.tesselite.name=Tesselite Saw
 
 # Hammers
-item.futopia.hammer.blue.name=Blue Hammer
-item.futopia.hammer.red.name=Red Hammer
-item.futopia.hammer.green.name=Green Hammer
-item.futopia.hammer.purple.name=Purple Hammer
-item.futopia.hammer.zinc.name=Zinc Hammer
-item.futopia.hammer.tungsten.name=Tungsten Hammer
-item.futopia.hammer.brass.name=Brass Hammer
-item.futopia.hammer.tesselite.name=Tesselite Hammer
+item.hammer.blue.name=Blue Hammer
+item.hammer.red.name=Red Hammer
+item.hammer.green.name=Green Hammer
+item.hammer.purple.name=Purple Hammer
+item.hammer.zinc.name=Zinc Hammer
+item.hammer.tungsten.name=Tungsten Hammer
+item.hammer.brass.name=Brass Hammer
+item.hammer.tesselite.name=Tesselite Hammer
 
 # Helmets
 item.futopia.helmet_blue.name=Blue Helmet
@@ -225,10 +225,10 @@ item.futopia.boots_zinc.name=Zinc Boots
 item.futopia.boots_tungsten.name=Tungsten Boots
 
 # Creative Tabs
-itemGroup.blocks_ft=Futopia Blocks
+itemGroup.main_ft=Futopia Blocks
 itemGroup.worldgen_ft=Futopia Worldgen
 itemGroup.decoration_ft=Futopia Decoration
 itemGroup.machines_ft=Futopia Machines
 itemGroup.tools_ft=Futopia Tools
 itemGroup.armor_ft=Futopia Armor
-itemGroup.items_ft=Futopia Items
+itemGroup.materials_ft=Futopia Items

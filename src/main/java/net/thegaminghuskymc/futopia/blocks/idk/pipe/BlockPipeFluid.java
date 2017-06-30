@@ -24,7 +24,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockPipeFluid extends BlockPipeBasic {
 	
     public BlockPipeFluid() {
-        super("fluid_pipe");
+        super("fluid");
     }
 
     @Override

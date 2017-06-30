@@ -9,9 +9,9 @@ import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.blocks.BlockMachineBase;
 import net.thegaminghuskymc.futopia.utils.BlockNames;
 
-public class BlockParticleBlock extends BlockMachineBase {
+public class BlockParticleSummoner extends BlockMachineBase {
 
-    public BlockParticleBlock() {
+    public BlockParticleSummoner() {
         super(BlockNames.PARTICLE_BLOCKNAME);
     }
 

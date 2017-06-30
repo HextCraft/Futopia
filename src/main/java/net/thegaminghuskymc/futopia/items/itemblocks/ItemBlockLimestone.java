@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
+import cofh.core.block.ItemBlockCore;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone;

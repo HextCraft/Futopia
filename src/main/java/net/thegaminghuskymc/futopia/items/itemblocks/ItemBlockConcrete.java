@@ -1,5 +1,6 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
+import cofh.core.block.ItemBlockCore;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.blocks.decorativeBlocks.concrete.BlockConcrete;
@@ -17,7 +18,7 @@ public class ItemBlockConcrete extends ItemBlockCore {
     @Override
     public String getUnlocalizedName(ItemStack stack) {
 
-        return "tile.concrete_test." + BlockConcrete.Type.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
+        return "tile.concrete." + BlockConcrete.Type.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
     }
 
 }

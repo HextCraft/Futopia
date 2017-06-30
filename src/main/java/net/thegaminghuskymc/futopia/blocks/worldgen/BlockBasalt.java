@@ -61,6 +61,7 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
             list.add(new ItemStack(this, 1, i));
         }
+        
     }
 
     /* TYPE METHODS */

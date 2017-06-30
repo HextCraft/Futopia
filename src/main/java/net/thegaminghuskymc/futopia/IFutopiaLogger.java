@@ -5,12 +5,12 @@ package net.thegaminghuskymc.futopia;
  */
 public interface IFutopiaLogger {
 
-    void logDebug(Object message);
+	void logDebug(Object message);
 
-    void logInfo(Object message);
+	void logInfo(Object message);
 
-    void logWarn(Object message);
+	void logWarn(Object message);
 
-    void logError(Object message);
+	void logError(Object message);
 
 }

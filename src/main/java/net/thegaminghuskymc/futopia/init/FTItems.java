@@ -100,8 +100,8 @@ public class FTItems {
     	
     	registerRender(stele, 0);
     	
-    	registerRender(saw, 0);
-    	registerRender(hammer, 0);
+    	registerRenderSpecial(saw);
+    	registerRenderSpecial(hammer);
     }
     
     public static void registerItem(Item item) {

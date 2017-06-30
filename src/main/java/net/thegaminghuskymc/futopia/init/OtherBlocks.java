@@ -6,9 +6,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
-import net.thegaminghuskymc.futopia.blocks.normal.BlockClearGlass;
-import net.thegaminghuskymc.futopia.blocks.normal.BlockCrackedGlass;
-import net.thegaminghuskymc.futopia.blocks.normal.BlockDirtyGlass;
+import net.thegaminghuskymc.futopia.blocks.decorativeBlocks.concrete.BlockConcrete;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockAsphalt2;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBasalt;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone;
@@ -22,10 +20,8 @@ public class OtherBlocks {
     public static BlockMarble marble;
     public static BlockBasalt basalt;
     public static BlockMeteor meteor;
+    public static BlockConcrete concrete;
     public static BlockLimestone limestone;
-    public static BlockClearGlass clearGlass;
-    public static BlockDirtyGlass dirtyGlass;
-    public static BlockCrackedGlass crackedGlass;
     public static BlockAsphalt2 asphalt;
     private static ArrayList<IInitializer> initList = new ArrayList<>();
 
@@ -35,18 +31,21 @@ public class OtherBlocks {
         basalt = new BlockBasalt();
         meteor = new BlockMeteor();
         marble = new BlockMarble();
+//        concrete = new BlockConcrete();
 //        asphalt = new BlockAsphalt2();
 
         initList.add(limestone);
         initList.add(basalt);
         initList.add(meteor);
         initList.add(marble);
+//        initList.add(concrete);
 //        initList.add(asphalt);
 
         Futopia.PROXY.addIModelRegister(limestone);
         Futopia.PROXY.addIModelRegister(marble);
         Futopia.PROXY.addIModelRegister(basalt);
         Futopia.PROXY.addIModelRegister(meteor);
+//        Futopia.PROXY.addIModelRegister(concrete);
 //        Futopia.PROXY.addIModelRegister(asphalt);
 
         for (IInitializer init : initList) {

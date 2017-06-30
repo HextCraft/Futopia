@@ -127,8 +127,6 @@ public class Recipies {
     }
 
     private static void addBlockRecipes() {
-    	
-    	addBlockRecipe(Blocks.BARRIER, Items.BED);
         /*CraftingManager.getInstance().addRecipe(new ShapedOreRecipe(new ItemStack(FTBlocks.particle_block), "RBG", "GRB", "BGR", 'B', "ingotBlue",
                 'R', "ingotRed", 'G', "ingotGreen"));
 

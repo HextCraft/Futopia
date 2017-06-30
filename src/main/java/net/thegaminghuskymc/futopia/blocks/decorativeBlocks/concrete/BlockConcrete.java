@@ -130,7 +130,7 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 
     @Override
     public boolean preInit() {
-        this.setRegistryName("concrete_test");
+        this.setRegistryName("concrete");
         RebornRegistry.registerBlock(this);
 
         ItemBlockConcrete itemBlock = new ItemBlockConcrete(this);

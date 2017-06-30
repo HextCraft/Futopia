@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"up": "futopia:blocks/machines/particle_summoner/particle_summoner_top",
+		"down": "futopia:blocks/machines/particle_summoner/particle_summoner_bottom",
+		"north": "futopia:blocks/machines/particle_summoner/particle_summoner_side",
+		"south": "futopia:blocks/machines/particle_summoner/particle_summoner_side",
+		"east": "futopia:blocks/machines/particle_summoner/particle_summoner_side",
+		"west": "futopia:blocks/machines/particle_summoner/particle_summoner_side",
+		"particle": "futopia:blocks/machines/particle_summoner/particle_summoner_bottom"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"up": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side",
+		"down": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side",
+		"north": "futopia:blocks/machines/electrical_furnace/electrical_furnace_on",
+		"south": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side",
+		"east": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side",
+		"west": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side",
+		"particle": "futopia:blocks/machines/electrical_furnace/electrical_furnace_side"
+	}
+}

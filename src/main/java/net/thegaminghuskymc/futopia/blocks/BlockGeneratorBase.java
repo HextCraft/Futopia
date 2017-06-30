@@ -29,17 +29,5 @@ public class BlockGeneratorBase extends BlockMachineBase{
         	tooltip.add(Names.CraftingToolTips.GENERATOR);
         }
     }
-	
-	/*@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
-			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-		
-		if(!playerIn.isSneaking()){
-			playerIn.openGui(Futopia.INSTANCE, MTGuiHandler.COAL_GENERATOR, worldIn, pos.getX(), pos.getY(), pos.getZ());
-			return true;
-		}
-		else
-			return false;
-	}*/
 
 }

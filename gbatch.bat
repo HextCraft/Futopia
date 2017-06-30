@@ -20,7 +20,8 @@ ECHO 2 Refresh dependencies.
 ECHO 3 Run the client.
 ECHO 4 Run the server.
 ECHO 5 Clean the workspace.
-ECHO 6 Exit GBatch.
+ECHO 6 Build the mod.
+ECHO 7 Exit GBatch.
 ECHO.
 SET /P INPUT="Enter your option:"
 IF %INPUT%==1 (
@@ -39,9 +40,11 @@ IF %INPUT%==1 (
 					GOTO:CLEANPROMPT
 				) ELSE (
 					IF %INPUT%==6 (
-						EXIT
+						GOTO:BUILD
 					) ELSE (
-						GOTO:INPUTERROR
+						IF %INPUT%==7 (
+							EXIT
+						)
 					)
 				)
 			)
@@ -141,6 +144,15 @@ ECHO Please wait while Gradle is cleaning
 ECHO your workspace...
 ECHO.
 START gradlew clean
+ECHO.
+ECHO Task successfull !
+PAUSE
+CLS
+GOTO:INIT
+
+:BUILD
+ECHO Please wait while the project is building
+START gradlew build
 ECHO.
 ECHO Task successfull !
 PAUSE

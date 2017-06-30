@@ -27,6 +27,7 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 public class BlockPipeBase extends BlockBase {
     public static final float PIPE_MIN_POS = 0.25f;
     public static final float PIPE_MAX_POS = 0.75f;
+    
     public static final ImmutableList<IProperty<Boolean>> CONNECTED_PROPERTIES = ImmutableList.copyOf(
             Stream.of(EnumFacing.VALUES)
                     .map(facing -> PropertyBool.create(facing.getName()))

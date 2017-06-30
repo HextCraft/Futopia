@@ -1,12 +1,13 @@
 package net.thegaminghuskymc.futopia.items;
 
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
-import net.thegaminghuskymc.huskylib.items.ItemBase;
+import net.thegaminghuskymc.futopia.network.EnumMaterialType;
+import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
-public class ItemSaw extends ItemBase {
+public class ItemSaw extends ItemSubBase {
 
     public ItemSaw() {
-        super("saw", FTCreativeTabs.materials);
+        super("saw", FTCreativeTabs.materials, EnumMaterialType.toStringArray());
     }
 
 }

@@ -12,7 +12,7 @@ import net.minecraft.block.state.IBlockState;
 public class BlockPipeBasic extends BlockPipeBase {
 	
     public BlockPipeBasic(String blockName) {
-        super(blockName);
+        super(blockName + "_conduit");
     }
 
     @Override

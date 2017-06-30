@@ -1,0 +1,12 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"up": "futopia:blocks/machines/filter/filter_top",
+		"down": "futopia:blocks/machines/filter/filter_bottom",
+		"north": "futopia:blocks/machines/filter/filter_front",
+		"south": "futopia:blocks/machines/filter/filter_back",
+		"east": "futopia:blocks/machines/filter/filter_side_ew",
+		"west": "futopia:blocks/machines/filter/filter_side_ew",
+		"particle": "futopia:blocks/machines/filter/filter_bottom"
+	}
+}
