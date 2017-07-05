@@ -1,16 +1,10 @@
 package net.thegaminghuskymc.huskylib.items;
 
-import java.util.List;
-
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.huskylib.utils.Names;
-import net.thegaminghuskymc.huskylib.utils.StringHelper;
 
 public class ItemSubBase extends ItemBase{
 	
@@ -65,14 +59,5 @@ public class ItemSubBase extends ItemBase{
             return super.getUnlocalizedName(stack);
         }
     }
-	
-	@Override
-	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if(!StringHelper.isShiftKeyDown()){
-			tooltip.add(Names.HelpToolTips.SHIFT_FOR_INFO);
-		}
-		else
-			tooltip.add(Names.HelpToolTips.WIP_ITEM);
-	}
 
 }

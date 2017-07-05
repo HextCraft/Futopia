@@ -4,8 +4,8 @@ import net.minecraft.creativetab.CreativeTabs;
 
 public class BlockTankBase extends BlockBase{
 
-	public BlockTankBase(String name, CreativeTabs creativetab) {
-		super(name, creativetab);
+	public BlockTankBase(String modid, String name, CreativeTabs creativetab) {
+		super(modid, name, creativetab);
 	}
 
 }

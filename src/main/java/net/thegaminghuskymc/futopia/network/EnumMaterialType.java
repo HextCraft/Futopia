@@ -1,6 +1,7 @@
 package net.thegaminghuskymc.futopia.network;
 
 import net.minecraft.util.IStringSerializable;
+import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone;
 
 public enum EnumMaterialType implements IStringSerializable{
 
@@ -23,6 +24,14 @@ public enum EnumMaterialType implements IStringSerializable{
             BRASS,
             TESSELITE
     };
+    
+    private static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];
+
+    static {
+        for (EnumMaterialType type : values()) {
+            METADATA_LOOKUP[type.getMeta()] = type;
+        }
+    }
 
     private int index;
     private String name;
@@ -30,6 +39,14 @@ public enum EnumMaterialType implements IStringSerializable{
     EnumMaterialType(String name, int index){
         this.index = index;
         this.name = name;
+    }
+    
+    public static EnumMaterialType byMetadata(int metadata) {
+
+        if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+            metadata = 0;
+        }
+        return METADATA_LOOKUP[metadata];
     }
 
     public int getMeta(){
@@ -48,10 +65,6 @@ public enum EnumMaterialType implements IStringSerializable{
         }
 
         return array;
-    }
-    
-    public String test(){
-		return toStringArray().toString();
     }
 
 }

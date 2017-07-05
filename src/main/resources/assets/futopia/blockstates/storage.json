@@ -1,51 +1,93 @@
 {
-	"forge_marker": 1,
-	"defaults": {
-		"model": "cube_all",
-		"transform": "forge:default-block"
-	},
-	"variants": {
-		"meta": {
-			"0": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_red"
-				}
-			},
-			"1": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_blue"
-				}
-			},
-			"2": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_purple"
-				}
-			},
-			"3": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_green"
-				}
-			},
-			"4": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_zinc"
-				}
-			},
-			"5": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_tungsten"
-				}
-			},
-			"6": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_brass"
-				}
-			},
-			"7": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/storage/storage_tesselite"
-				}
-			}
-		}
-	}
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all",
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "type": {
+            "red": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/storage_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/storage_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_tesselite"
+                }
+            }
+        },
+        "meta": {
+            "red": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/storage_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/storage_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/storage/old/storage_tesselite"
+                }
+            }
+        }
+    }
 }

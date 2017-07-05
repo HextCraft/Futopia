@@ -48,6 +48,7 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 
     @Override
     public void registerItemRenderer(Item item, int meta, String id) {
+    	
     }
 
     @Override

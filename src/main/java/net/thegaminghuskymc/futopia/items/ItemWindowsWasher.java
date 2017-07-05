@@ -12,7 +12,7 @@ import net.thegaminghuskymc.huskylib.items.ItemBase;
 public class ItemWindowsWasher extends ItemBase {
 
     public ItemWindowsWasher() {
-        super("windows_washer", FTCreativeTabs.materials);
+        super("windows_washer", FTCreativeTabs.items);
     }
 
     @Override

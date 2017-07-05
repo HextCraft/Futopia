@@ -2,24 +2,20 @@ package net.thegaminghuskymc.futopia.blocks.machine;
 
 import java.util.List;
 
-import cofh.lib.util.helpers.StringHelper;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
+import cofh.core.util.helpers.StringHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.blocks.BlockMachineBase;
+import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.utils.BlockNames;
 import net.thegaminghuskymc.futopia.utils.Names;
+import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 
 public class BlockFoodFactory extends BlockMachineBase {
 
-    @SideOnly(Side.CLIENT)
-    private TextureAtlasSprite[] texture;
-
     public BlockFoodFactory() {
-        super(BlockNames.FOOD_FACTORY);
+        super(Refs.MODID, BlockNames.FOOD_FACTORY, FTCreativeTabs.machines);
     }
 
     @Override

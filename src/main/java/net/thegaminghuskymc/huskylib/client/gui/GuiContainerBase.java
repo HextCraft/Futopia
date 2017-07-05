@@ -1,10 +1,13 @@
 package net.thegaminghuskymc.huskylib.client.gui;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.common.collect.Lists;
 
+import codechicken.lib.colour.Colour;
+import codechicken.lib.colour.ColourRGBA;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
@@ -23,8 +26,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.huskylib.client.RenderUtil;
 import net.thegaminghuskymc.huskylib.utils.Refs;
 import net.thegaminghuskymc.huskylib.utils.TranslationUtils;
-import net.thegaminghuskymc.huskylib.utils.color.Color;
-import net.thegaminghuskymc.huskylib.utils.color.ColorRGBA;
 import net.thegaminghuskymc.huskylib.utils.math.IPositionProvider;
 import net.thegaminghuskymc.huskylib.utils.math.Point2i;
 
@@ -191,12 +192,18 @@ public abstract class GuiContainerBase extends GuiContainer {
 		}
 	}
     
-    public void drawProgressBar(GuiScreen gui, double progress, int x, int y) {
+    public void drawProgressBar(GuiScreen gui, double progress, int x, int y, int mouseX, int mouseY) {
 		gui.mc.getTextureManager().bindTexture(textureSheet);
 		gui.drawTexturedModalRect(x, y, 84, 151, 16, 10);
 		int j = (int) (progress);
+		List<String> list = new ArrayList<String>();
 		if (j > 0) {
 			gui.drawTexturedModalRect(x, y, 100, 151, j - 1, 10);
+			if (isInRect(x, y, 14, height, x, y)) {
+				list.add(j + "%");
+				GuiUtils.drawHoveringText(list, x, y, gui.width, gui.height, -1, gui.mc.fontRenderer);
+				GlStateManager.disableLighting();
+			}
 		}
 	}
 
@@ -215,14 +222,18 @@ public abstract class GuiContainerBase extends GuiContainer {
 	}
 
 	//TODO fix
-	public void drawBurnBar(GuiScreen gui, double progress, int x, int y) {
+	public void drawBurnBar(GuiScreen gui, double progress, int x, int y, int mouseX, int mouseY) {
 		gui.mc.getTextureManager().bindTexture(textureSheet);
 		gui.drawTexturedModalRect(x, y, 171, 84, 13, 13);
 		int j = (int) (progress);
 		List<String> list = new ArrayList<String>();
 		if (j > 0) {
 			gui.drawTexturedModalRect(x, y, 171, 70, 13, j + 1);
-			list.add(j + "%");
+			if (isInRect(x, y, 14, height, x, y)) {
+				list.add(j + "%");
+				GuiUtils.drawHoveringText(list, x, y, gui.width, gui.height, -1, gui.mc.fontRenderer);
+				GlStateManager.disableLighting();
+			}
 		}
 	}
 
@@ -279,7 +290,7 @@ public abstract class GuiContainerBase extends GuiContainer {
     	final int width = 18;
         final int height = 74;
         int powerOffset = (power * (height + 1)) / capacity;
-        Color color = null;
+        Colour color = null;
         this.mc.getTextureManager().bindTexture(this.texturePowerBars);
 
         switch(backgroundType){
@@ -301,24 +312,24 @@ public abstract class GuiContainerBase extends GuiContainer {
 
         switch(powerType){
             case POWER_TESLA:
-                color = new ColorRGBA(0, 194, 220, 255);
+                color = new ColourRGBA(0, 194, 220, 255);
                 break;
             case POWER_RF:
-                color = new ColorRGBA(255, 42, 0, 255);
+                color = new ColourRGBA(255, 42, 0, 255);
                 break;
             case POWER_FORGE:
-                color = new ColorRGBA(40, 90, 220, 255);
+                color = new ColourRGBA(40, 90, 220, 255);
                 break;
             case POWER_EU:
-                color = new ColorRGBA(50, 50, 240, 255);
+                color = new ColourRGBA(50, 50, 240, 255);
                 break;
             case POWER_MT:
-                color = new ColorRGBA(0, 224, 224, 255 / 2);
+                color = new ColourRGBA(0, 224, 224, 255 / 2);
                 break;
         }
 
         GlStateManager.pushMatrix();
-        color.glColor();
+        color.glColour();
         drawTexturedModalRect(pos.getX() + 1, (pos.getY() + height - powerOffset), 18, ((height + 1) - powerOffset), width, (powerOffset + 2));
         GlStateManager.color(1F, 1F, 1F, 1F);
         GlStateManager.popMatrix();
@@ -365,15 +376,15 @@ public abstract class GuiContainerBase extends GuiContainer {
         int endY = pos.getY() + size.getY();
         GlStateManager.pushMatrix();
         GlStateManager.color(1F, 1F, 1F, 1F);
-        GuiUtils.drawGradientRect(0, startX, startY, endX, endY, colorStart.argb(), colorEnd.argb());
+        GuiUtils.drawGradientRect(0, startX, startY, endX, endY, colorStart.getRGB(), colorEnd.getRGB());
         GlStateManager.color(1F, 1F, 1F, 1F);
         GlStateManager.popMatrix();
         GlStateManager.pushMatrix();
         GlStateManager.color(1F, 1F, 1F, 1F);
-        this.drawHorizontalLine(startX, endX - 1, startY, colorBorder.argb());
-        this.drawHorizontalLine(startX, endX - 1, endY - 1, colorBorder.argb());
-        this.drawVerticalLine(startX, startY, endY, colorBorder.argb());
-        this.drawVerticalLine(endX - 1, startY, endY, colorBorder.argb());
+        this.drawHorizontalLine(startX, endX - 1, startY, colorBorder.getRGB());
+        this.drawHorizontalLine(startX, endX - 1, endY - 1, colorBorder.getRGB());
+        this.drawVerticalLine(startX, startY, endY, colorBorder.getRGB());
+        this.drawVerticalLine(endX - 1, startY, endY, colorBorder.getRGB());
         GlStateManager.color(1F, 1F, 1F, 1F);
         GlStateManager.popMatrix();
     }
@@ -389,16 +400,16 @@ public abstract class GuiContainerBase extends GuiContainer {
         int endY = pos.getY() + size.getY();
         GlStateManager.pushMatrix();
         GlStateManager.color(1F, 1F, 1F, 1F);
-        GuiUtils.drawGradientRect(0, startX, startY, endX, endY, colorStart.argb(), colorEnd.argb());
+        GuiUtils.drawGradientRect(0, startX, startY, endX, endY, colorStart.getRGB(), colorEnd.getRGB());
         GlStateManager.color(1F, 1F, 1F, 1F);
         GlStateManager.popMatrix();
     }
 
     protected void drawBackground(Point2i pos, Point2i size, int alignment){
-        this.drawBackground(pos, size, alignment, new ColorRGBA(255, 255, 255, 255));
+        this.drawBackground(pos, size, alignment, new ColourRGBA(255, 255, 255, 255));
     }
 
-    protected void drawBackground(Point2i pos, Point2i size, int alignment, Color color){
+    protected void drawBackground(Point2i pos, Point2i size, int alignment, Colour color){
         GlStateManager.pushMatrix();
         Point2i posCornerTL = new Point2i(pos.getX(), pos.getY());
         Point2i minUVCornerTL = new Point2i(0, 0);
@@ -603,9 +614,9 @@ public abstract class GuiContainerBase extends GuiContainer {
         GlStateManager.popMatrix();
     }
 
-    private void drawBackground(Point2i pos, Point2i minUV, Point2i maxUV, Color color) {
+    private void drawBackground(Point2i pos, Point2i minUV, Point2i maxUV, Colour color) {
         this.mc.getTextureManager().bindTexture(this.textureBackground);
-        color.glColor();
+        color.glColour();
         this.drawTexturedModalRect(pos.getX(), pos.getY(), minUV.getX(), minUV.getY(), maxUV.getX(), maxUV.getY());
     }
 

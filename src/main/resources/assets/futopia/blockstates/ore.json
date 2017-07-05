@@ -1,51 +1,93 @@
 {
-	"forge_marker": 2,
-	"defaults": {
-		"model": "cube_all",
-		"transform": "forge:default-block"
-	},
-	"variants": {
-		"meta": {
-			"0": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_red"
-				}
-			},
-			"1": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_blue"
-				}
-			},
-			"2": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_purple"
-				}
-			},
-			"3": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_green"
-				}
-			},
-			"4": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_zinc"
-				}
-			},
-			"5": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_tungsten"
-				}
-			},
-			"6": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_brass"
-				}
-			},
-			"7": {
-				"textures": {
-					"all": "futopia:blocks/worldgen/ore/ore_tesselite"
-				}
-			}
-		}
-	}
+    "forge_marker": 1,
+    "defaults": {
+        "model": "cube_all",
+        "transform": "forge:default-block"
+    },
+    "variants": {
+        "type": {
+            "red": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_tesselite"
+                }
+            }
+        },
+        "meta": {
+            "red": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_tesselite"
+                }
+            }
+        }
+    }
 }

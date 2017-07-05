@@ -1,0 +1,37 @@
+{
+	"credit": "Made with Blockbench, a free, modern block model editor made by JannisX11",
+	"textures": {
+		"0": "#front",
+		"1": "futopia:blocks/computer/monitor/monitor_side"
+	},
+	"elements": [
+		{
+			"name": "main_monitor",
+			"from": [2, 2, 7],
+			"to": [14, 14, 8],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 1, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 1, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#1"},
+				"down": {"uv": [0, 15, 16, 17], "texture": "#1"}
+			}
+		},
+		{
+			"name": "Cube",
+			"from": [3, 3, 8],
+			"to": [13, 13, 9],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 1, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 1, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#1"},
+				"down": {"uv": [0, 16, 16, 15], "texture": "#1"}
+			}
+		}
+	]
+}

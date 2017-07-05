@@ -1,6 +1,6 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.lib.util.helpers.ItemHelper.registerWithHandlers;
+import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
 
 import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;

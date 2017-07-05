@@ -7,7 +7,7 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 public class ItemSaw extends ItemSubBase {
 
     public ItemSaw() {
-        super("saw", FTCreativeTabs.materials, EnumMaterialType.toStringArray());
+        super("saw", FTCreativeTabs.items, EnumMaterialType.toStringArray());
     }
 
 }

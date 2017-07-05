@@ -1,15 +1,22 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
-/**
- * Created by TheGamingHuskyMC on 18.05.2017.
- */
 public class BlockConveyer extends BlockBase {
-
+	
     public BlockConveyer() {
-        super("conveyer_belt", FTCreativeTabs.main);
+        super(Refs.MODID, "conveyer_belt", FTCreativeTabs.main);
+    }
+    
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+    	return new AxisAlignedBB(0f, 0f, 0f, 1f, 2f/16f, 1f);
     }
 
 }

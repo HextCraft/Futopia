@@ -7,7 +7,7 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 public class ItemHammer extends ItemSubBase {
 
     public ItemHammer() {
-        super("hammer", FTCreativeTabs.materials, EnumMaterialType.toStringArray());
+        super("hammer", FTCreativeTabs.items, EnumMaterialType.toStringArray());
     }
 
 }

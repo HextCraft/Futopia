@@ -1,0 +1,54 @@
+{
+    "forge_marker": 1,
+    "defaults": {
+        "model": "builtin/generated",
+        "textures": {
+            "layer0": "blocks/dirt"
+        },
+        "transform": "forge:default-item"
+    },
+    "variants": {
+        "type": {
+            "red": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_red"
+                }
+            },
+            "blue": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_blue"
+                }
+            },
+            "purple": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_purple"
+                }
+            },
+            "green": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_green"
+                }
+            },
+            "zinc": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_zinc"
+                }
+            },
+            "tungsten": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_tungsten"
+                }
+            },
+            "brass": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_brass"
+                }
+            },
+            "tesselite": {
+                "textures": {
+                    "layer0": "futopia:items/tool/axe_tesselite"
+                }
+            }
+        }
+    }
+}

@@ -22,14 +22,9 @@ import net.thegaminghuskymc.huskylib.items.ItemBase;
 
 public class FTItems {
 	
-	private static CreativeTabs tabs = FTCreativeTabs.materials;
+	private static CreativeTabs tabs = FTCreativeTabs.items;
 	
-	public static ToolMaterial toolMaterialBlue = EnumHelper.addToolMaterial("blue", 2, 700, 6.1F, 2.1F, 15);
-	public static ToolMaterial toolMaterialGreen = EnumHelper.addToolMaterial("green", 2, 700, 6.1F, 2.1F, 15);
-	public static ToolMaterial toolMaterialRed = EnumHelper.addToolMaterial("red", 2, 700, 6.1F, 2.1F, 15);
-	public static ToolMaterial toolMaterialPurple = EnumHelper.addToolMaterial("purple", 2, 700, 6.1F, 2.1F, 15);
-	public static ToolMaterial toolMaterialTungsten = EnumHelper.addToolMaterial("tungsten", 2, 700, 6.1F, 2.1F, 15);
-	public static ToolMaterial toolMaterialZinc = EnumHelper.addToolMaterial("zinc", 2, 700, 6.1F, 2.1F, 15);
+	public static ToolMaterial toolMaterialFT = EnumHelper.addToolMaterial("ft", 2, 700, 6.1F, 2.1F, 15);
 	
 	public static ItemSaw saw;
     public static ItemHammer hammer;

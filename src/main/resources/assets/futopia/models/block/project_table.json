@@ -1,12 +1,118 @@
 {
-	"parent": "block/cube_all",
+	"credit": "Made with Blockbench, a free, modern block model editor made by JannisX11",
 	"textures": {
-		"up": "futopia:blocks/machines/project_table/project_table_top",
-		"down": "futopia:blocks/machines/project_table/project_table_bottom",
-		"north": "futopia:blocks/machines/project_table/project_table_side",
-		"south": "futopia:blocks/machines/project_table/project_table_side",
-		"east": "futopia:blocks/machines/project_table/project_table_side_2",
-		"west": "futopia:blocks/machines/project_table/project_table_side_2",
-		"particle": "futopia:blocks/machines/project_table/project_table_bottom"
+		"0": "futopia:blocks/machines/machine_side",
+		"1": "#top",
+		"2": "futopia:blocks/machines/project_table/project_table_bottom"
+	},
+	"elements": [
+		{
+			"name": "north_east_foot",
+			"from": [0, 0, 0],
+			"to": [2, 14, 2],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [14, 2, 16, 16], "texture": "#0"},
+				"east": {"uv": [1, 2, 1, 16], "texture": "#0"},
+				"south": {"uv": [1, 2, 1, 16], "texture": "#0"},
+				"west": {"uv": [0, 2, 2, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "north_west_foot",
+			"from": [14, 0, 0],
+			"to": [16, 14, 2],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [0, 2, 2, 16], "texture": "#0"},
+				"east": {"uv": [14, 2, 16, 16], "texture": "#0"},
+				"south": {"uv": [1, 2, 1, 16], "texture": "#0"},
+				"west": {"uv": [1, 2, 1, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "south_west_foot",
+			"from": [14, 0, 14],
+			"to": [16, 14, 16],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [14, 2, 15, 16], "texture": "#0"},
+				"east": {"uv": [0, 2, 2, 16], "texture": "#0"},
+				"south": {"uv": [14, 2, 16, 16], "texture": "#0"},
+				"west": {"uv": [1, 2, 1, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "south_east_foot",
+			"from": [0, 0, 14],
+			"to": [2, 14, 16],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [1, 2, 2, 16], "texture": "#0"},
+				"east": {"uv": [1, 2, 2, 16], "texture": "#0"},
+				"south": {"uv": [0, 2, 2, 16], "texture": "#0"},
+				"west": {"uv": [14, 2, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 2, 2], "texture": "#0"},
+				"down": {"uv": [0, 0, 2, 2], "texture": "#0"}
+			}
+		},
+		{
+			"name": "main_table",
+			"from": [0, 14, 0],
+			"to": [16, 16, 16],
+			"shade": true,
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 2], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 2], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 2], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [1, 1, 15, 15], "texture": "#2"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [75, 45, 0],
+			"translation": [0, 2.5, 0],
+			"scale": [0.375, 0.375, 0.375]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 45, 0],
+			"translation": [0, 0, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 225, 0],
+			"translation": [0, 0, 0],
+			"scale": [0.4, 0.4, 0.4]
+		},
+		"head": {},
+		"ground": {
+			"rotation": [0, 0, 0],
+			"translation": [0, -1.5, 0],
+			"scale": [0.25, 0.25, 0.25]
+		},
+		"fixed": {
+			"rotation": [0, 0, 0],
+			"translation": [0, 0, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [30, 225, 0],
+			"translation": [0, 0, 0],
+			"scale": [0.625, 0.625, 0.625]
+		}
 	}
 }

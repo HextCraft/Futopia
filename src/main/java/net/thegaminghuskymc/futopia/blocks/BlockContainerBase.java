@@ -9,6 +9,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.tiles.TileBase;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
@@ -16,11 +17,11 @@ import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 public class BlockContainerBase extends BlockBase implements ITileEntityProvider {
 
     @SideOnly(Side.CLIENT)
-    private Class<? extends TileBase> tileEntityClass;
+    private Class<? extends TileEntity> tileEntityClass;
     private boolean isRedstoneEmitter;
     
-    public BlockContainerBase(Material material, Class<? extends TileBase> tileEntityClass, String name) {
-        super(name, FTCreativeTabs.main);
+    public BlockContainerBase(Material material, Class<? extends TileEntity> tileEntityClass, String name) {
+        super(Refs.MODID, name, FTCreativeTabs.main);
         isBlockContainer = true;
         setTileEntityClass(tileEntityClass);
     }
@@ -39,7 +40,7 @@ public class BlockContainerBase extends BlockBase implements ITileEntityProvider
     }
 
 
-    public BlockContainerBase setTileEntityClass(Class<? extends TileBase> tileEntityClass) {
+    public BlockContainerBase setTileEntityClass(Class<? extends TileEntity> tileEntityClass) {
 
         this.tileEntityClass = tileEntityClass;
         return this;

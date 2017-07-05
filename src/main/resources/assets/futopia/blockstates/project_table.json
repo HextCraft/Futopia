@@ -5,9 +5,38 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"normal": {
-			"model": "futopia:project_table"
+		"online":{
+			"true":{
+				"textures": {
+					"top": "futopia:blocks/machines/project_table/project_table_top_on",
+					"glow": "futopia:blocks/machines/project_table/project_table_top_glow"
+				}
+			},
+			"false":{
+				"textures": {
+					"top": "futopia:blocks/machines/project_table/project_table_top_off"
+				}
+			}
 		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:project_table"
+			},
+			"south": {
+				"model": "futopia:project_table",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:project_table",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:project_table",
+				"y": 270
+			}
+		},
+
 		"inventory": [{}]
 	}
 }

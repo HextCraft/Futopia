@@ -21,7 +21,7 @@ public class ItemOreIngot extends ItemBase implements IProvideRecipe, IProvideSm
     public ItemOreIngot() {
         super("ores/ingot");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.materials);
+        this.setCreativeTab(FTCreativeTabs.items);
         this.setInternalName("ore_ingot");
     }
 

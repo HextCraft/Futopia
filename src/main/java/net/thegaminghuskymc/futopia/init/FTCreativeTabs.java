@@ -2,6 +2,7 @@ package net.thegaminghuskymc.futopia.init;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.Refs;
@@ -12,9 +13,10 @@ public class FTCreativeTabs {
     public static CreativeTabs main;
     public static CreativeTabs machines;
     public static CreativeTabs world_gen;
+    public static CreativeTabs computer_parts;
 //    public static CreativeTabs armor;
-    public static CreativeTabs materials;
-//    public static CreativeTabs tools;
+    public static CreativeTabs items;
+    public static CreativeTabs tools;
 
     static {
         main = new CreativeTabs("main_ft") {
@@ -27,9 +29,16 @@ public class FTCreativeTabs {
         machines = new CreativeTabs("machines_ft") {
         	@Override
             public ItemStack getTabIconItem() {
-                return new ItemStack(FTBlocks.projectTable);
+                return new ItemStack(FTBlocks.particleSummoner);
             }
         };
+        
+        computer_parts = new CreativeTabs("computer_parts_ft") {
+			@Override
+			public ItemStack getTabIconItem() {
+				return new ItemStack(FTBlocks.monitor);
+			}
+		};
 
         world_gen = new CreativeTabs("worldgen_ft") {
         	@Override
@@ -38,26 +47,19 @@ public class FTCreativeTabs {
         	}
         };
 
-        /*armor = new CreativeTabs("armor_ft") {
-            @Override
-            public ItemStack getTabIconItem() {
-                return new ItemStack(Items.DIAMOND_HELMET);
-            }
-        };*/
-
-        materials = new CreativeTabs("materials_ft") {
+        items = new CreativeTabs("items_ft") {
         	@Override
         	public ItemStack getTabIconItem() {
-        		return new ItemStack(Blocks.BLACK_GLAZED_TERRACOTTA);
+        		return new ItemStack(FTItems.gears);
         	}
         };
 
-        /*tools = new CreativeTabs("tools_ft") {
+        tools = new CreativeTabs("tools_ft") {
             @Override
             public ItemStack getTabIconItem() {
                 return new ItemStack(Items.IRON_AXE);
             }
-        };*/
+        };
     }
 
 }

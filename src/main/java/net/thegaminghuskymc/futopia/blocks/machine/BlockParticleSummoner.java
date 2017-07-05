@@ -2,17 +2,19 @@ package net.thegaminghuskymc.futopia.blocks.machine;
 
 import java.util.List;
 
-import cofh.lib.util.helpers.StringHelper;
+import cofh.core.util.helpers.StringHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import net.thegaminghuskymc.futopia.blocks.BlockMachineBase;
+import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.utils.BlockNames;
+import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 
 public class BlockParticleSummoner extends BlockMachineBase {
 
     public BlockParticleSummoner() {
-        super(BlockNames.PARTICLE_BLOCKNAME);
+        super(Refs.MODID, BlockNames.PARTICLE_BLOCKNAME, FTCreativeTabs.machines);
     }
 
     @Override

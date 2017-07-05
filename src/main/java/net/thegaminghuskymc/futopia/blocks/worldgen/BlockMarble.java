@@ -1,29 +1,22 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.lib.util.helpers.ItemHelper.registerWithHandlers;
-
-import java.util.List;
+import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
 
 import javax.annotation.Nonnull;
 
-import com.mojang.realmsclient.gui.ChatFormatting;
-
 import cofh.core.block.BlockCore;
-import cofh.lib.util.helpers.StringHelper;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
-import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -33,7 +26,6 @@ import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockMarble;
-import net.thegaminghuskymc.futopia.utils.Names;
 
 public class BlockMarble extends BlockCore implements IInitializer, IModelRegister {
 
@@ -98,17 +90,6 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
     @Override
     public BlockRenderLayer getBlockLayer() {
         return BlockRenderLayer.SOLID;
-    }
-
-    @Override
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-        if (!StringHelper.isShiftKeyDown()) {
-            tooltip.add("Hold " + ChatFormatting.YELLOW + "Shift" + ChatFormatting.GRAY + " for Crafting.");
-        } else {
-//            tooltip.add(Names.CraftingToolTips.CRAFT_WITH);
-//            tooltip.add(Names.CraftingToolTips.STONE_BLOCKS);
-        	tooltip.add(Names.HelpToolTips.WIP_BLOCK);
-        }
     }
 
     @Override

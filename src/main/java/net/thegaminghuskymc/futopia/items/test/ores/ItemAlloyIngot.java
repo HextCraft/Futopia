@@ -21,7 +21,7 @@ public class ItemAlloyIngot extends ItemBase implements IProvideRecipe, IProvide
     public ItemAlloyIngot() {
         super("ores/ingot");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.materials);
+        this.setCreativeTab(FTCreativeTabs.items);
         this.setInternalName("alloy_ingot");
     }
 

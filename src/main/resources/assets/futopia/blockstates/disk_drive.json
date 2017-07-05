@@ -5,9 +5,45 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"normal": {
-			"model": "futopia:disk_drive"
+		"online":{
+			"true":{
+				"textures": {
+					"top": "futopia:blocks/computer/disk_drive/disk_drive_top_on",
+					"bottom": "futopia:blocks/computer/disk_drive/disk_drive_bottom_on",
+					"front": "futopia:blocks/computer/disk_drive/disk_drive_front_on",
+					"back": "futopia:blocks/computer/disk_drive/disk_drive_back_on",
+					"side": "futopia:blocks/computer/disk_drive/disk_drive_side_on"
+				}
+			},
+			"false":{
+				"textures": {
+					"top": "futopia:blocks/computer/disk_drive/disk_drive_top_off",
+					"bottom": "futopia:blocks/computer/disk_drive/disk_drive_bottom_off",
+					"front": "futopia:blocks/computer/disk_drive/disk_drive_front_off",
+					"back": "futopia:blocks/computer/disk_drive/disk_drive_back_off",
+					"side": "futopia:blocks/computer/disk_drive/disk_drive_side_off"
+				}
+			}
 		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:disk_drive"
+			},
+			"south": {
+				"model": "futopia:disk_drive",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:disk_drive",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:disk_drive",
+				"y": 270
+			}
+		},
+
 		"inventory": [{}]
 	}
 }

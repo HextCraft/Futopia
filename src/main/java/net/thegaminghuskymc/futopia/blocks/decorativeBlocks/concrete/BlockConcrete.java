@@ -1,6 +1,6 @@
 package net.thegaminghuskymc.futopia.blocks.decorativeBlocks.concrete;
 
-import static cofh.lib.util.helpers.ItemHelper.registerWithHandlers;
+import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
 
 import java.util.List;
 
@@ -27,6 +27,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.registries.GameData;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
@@ -34,7 +35,6 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockConcrete;
 import net.thegaminghuskymc.futopia.utils.Names;
 import net.thegaminghuskymc.futopia.utils.RandomThings;
-import net.thegaminghuskymc.huskylib.RebornRegistry;
 
 public class BlockConcrete extends BlockCore implements IInitializer, IModelRegister {
 
@@ -54,7 +54,6 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 
         setUnlocalizedName("concrete");
         setCreativeTab(FTCreativeTabs.main);
-
         setHardness(5.0F);
         setResistance(10.0F);
         setSoundType(SoundType.STONE);
@@ -131,17 +130,17 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
     @Override
     public boolean preInit() {
         this.setRegistryName("concrete");
-        RebornRegistry.registerBlock(this);
+        GameData.register_impl(this);
 
         ItemBlockConcrete itemBlock = new ItemBlockConcrete(this);
         itemBlock.setRegistryName(this.getRegistryName());
-        RebornRegistry.registerItem(itemBlock);
+        GameData.register_impl(itemBlock);
 
         concrete = new ItemStack(this, 1, Type.NORMAL.getMetadata());
         concreteArrangedBricks = new ItemStack(this, 1, Type.ARRANGED_BRICK.getMetadata());
         concreteBricks = new ItemStack(this, 1, Type.BRICK.getMetadata());
         concreteBricksDark = new ItemStack(this, 1, Type.BRICK_DARK.getMetadata());
-        concreteFanzyBricks = new ItemStack(this, 1, Type.FANZY_BRICK.getMetadata());
+        concreteFanzyBricks = new ItemStack(this, 1, Type.FANCY_BRICK.getMetadata());
         concreteOldSquares = new ItemStack(this, 1, Type.OLD_SQUARES.getMetadata());
         concreteRocks = new ItemStack(this, 1, Type.ROCKS.getMetadata());
         concreteSmallBricks = new ItemStack(this, 1, Type.SMALL_BRICKS.getMetadata());
@@ -176,7 +175,7 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
         ARRANGED_BRICK(1, "arranged_brick"),
         BRICK(2, "brick"),
         BRICK_DARK(3, "brick_dark"),
-        FANZY_BRICK(4, "fanzy_brick"),
+        FANCY_BRICK(4, "fancy_brick"),
         OLD_SQUARES(5, "old_squares"),
         ROCKS(6, "rocks"),
         SMALL_BRICKS(7, "small_bricks");

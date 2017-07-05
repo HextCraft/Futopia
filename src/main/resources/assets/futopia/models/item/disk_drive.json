@@ -1,3 +1,12 @@
 {
-  "parent": "futopia:block/disk_drive"
+  "parent": "futopia:block/disk_drive",
+  "textures": {
+	"up": "futopia:blocks/computer/disk_drive/disk_drive_top_off",
+	"down": "futopia:blocks/computer/disk_drive/disk_drive_bottom_off",
+	"north": "futopia:blocks/computer/disk_drive/disk_drive_front_off",
+	"south": "futopia:blocks/computer/disk_drive/disk_drive_back_off",
+	"east": "futopia:blocks/computer/disk_drive/disk_drive_side_off",
+	"west": "futopia:blocks/computer/disk_drive/disk_drive_side_off",
+	"particle": "futopia:blocks/computer/disk_drive/disk_drive_side_off"
+  }
 }

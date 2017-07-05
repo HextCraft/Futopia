@@ -2,7 +2,7 @@ package net.thegaminghuskymc.futopia.items;
 
 import java.util.List;
 
-import cofh.lib.util.helpers.StringHelper;
+import cofh.core.util.helpers.StringHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -12,7 +12,7 @@ import net.thegaminghuskymc.huskylib.items.ItemBase;
 public class ItemMeteorChunk extends ItemBase {
 
     public ItemMeteorChunk() {
-        super("meteor_chunk", FTCreativeTabs.materials);
+        super("meteor_chunk", FTCreativeTabs.items);
     }
 
     @Override

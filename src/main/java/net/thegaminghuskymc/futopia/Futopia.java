@@ -28,34 +28,33 @@ public class Futopia {
 	public static Logger LOGGER = Logger.getLogger(Refs.NAME);
 
 	@SidedProxy(clientSide = CSIDE, serverSide = SSIDE)
-	public static IFutopiaProxy PROXY;
+	public static IFutopiaProxy proxy;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-
 		OtherBlocks.preInit();
-
-		PROXY.preInit(event);
+		
+		proxy.preInit(event);
 
 		FTBlocks.init();
 		FTItems.init();
 		FTBlocks.register();
 		FTItems.register();
 
-		PROXY.registerRenders();
-		PROXY.registerTileEntities();
+		proxy.registerRenders();
+		proxy.registerTileEntities();
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
 		OtherBlocks.initialize();
 		FutopiaOreDictionary.init();
-		PROXY.init(event);
+		proxy.init(event);
 	}
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
 		OtherBlocks.postInit();
-		PROXY.postInit(event);
+		proxy.postInit(event);
 	}
 }

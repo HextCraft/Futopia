@@ -1,3 +1,12 @@
 {
-  "parent": "futopia:block/alloy_furnace"
+  "parent": "futopia:block/alloy_furnace",
+  	"textures": {
+		"up": "futopia:blocks/machines/alloy_furnace/alloy_furnace_side",
+		"down": "futopia:blocks/machines/alloy_furnace/alloy_furnace_side",
+		"north": "futopia:blocks/machines/alloy_furnace/alloy_furnace_front_off",
+		"south": "futopia:blocks/machines/alloy_furnace/alloy_furnace_back",
+		"east": "futopia:blocks/machines/alloy_furnace/alloy_furnace_side",
+		"west": "futopia:blocks/machines/alloy_furnace/alloy_furnace_side",
+		"particle": "futopia:blocks/machines/alloy_furnace/alloy_furnace_side"
+	}
 }

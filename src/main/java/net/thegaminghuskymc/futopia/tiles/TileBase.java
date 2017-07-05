@@ -4,18 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 
-public class TileBase extends TileEntity implements IRotatable {
+public class TileBase extends TileEntity {
 
     private boolean isRedstonePowered;
     private int outputtingRedstone;
     private int ticker = 0;
-    private EnumFacing rotation = EnumFacing.UP;
 
-    @Override
+    /*@Override
     public void readFromNBT(NBTTagCompound tCompound) {
 
         super.readFromNBT(tCompound);
@@ -23,11 +20,11 @@ public class TileBase extends TileEntity implements IRotatable {
 //        readFromPacketNBT(tCompound);
     }
 
-    /**
+    *//**
      * This function gets called whenever the world/chunk is saved
      *
      * @return
-     */
+     *//*
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound tCompound) {
 
@@ -39,16 +36,16 @@ public class TileBase extends TileEntity implements IRotatable {
         return tCompound;
     }
 
-    /**
+    *//**
      * Tags written in here are synced upon markBlockForUpdate.
      *
      * @param tCompound
-     */
+     *//*
     protected void writeToPacketNBT(NBTTagCompound tCompound) {
 
         tCompound.setByte("rotation", (byte) rotation.ordinal());
         tCompound.setByte("outputtingRedstone", (byte) outputtingRedstone);
-    }
+    }*/
 
 //    protected void readFromPacketNBT(NBTTagCompound tCompound) {
 //
@@ -198,28 +195,9 @@ public class TileBase extends TileEntity implements IRotatable {
         return new ArrayList<ItemStack>();
     }
 
-    @Override
-    public EnumFacing getFacing() {
-
-        return rotation;
-    }
-
-    @Override
-    public void setFacing(EnumFacing dir) {
-
-        rotation = dir;
-        if (world != null) {
-
-        }
-    }
-
     public boolean canConnectRedstone() {
 
         return false;
     }
-
-    @Override
-    public boolean canRotateVertically() {
-        return false;
-    }
+    
 }

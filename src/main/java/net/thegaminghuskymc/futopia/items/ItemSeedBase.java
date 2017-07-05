@@ -11,7 +11,7 @@ public class ItemSeedBase extends ItemSeeds{
 		super(crop, Blocks.FARMLAND);
 		setUnlocalizedName(name + "_seed");
 		setRegistryName(name + "_seed");
-		setCreativeTab(FTCreativeTabs.materials);
+		setCreativeTab(FTCreativeTabs.items);
 	}
 
 }

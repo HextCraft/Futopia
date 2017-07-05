@@ -5,9 +5,37 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"normal": {
-			"model": "futopia:alloy_furnace"
+		"active":{
+			"true":{
+				"textures": {
+					"north": "futopia:blocks/machines/alloy_furnace/alloy_furnace_front_on"
+				}
+			},
+			"false":{
+				"textures": {
+					"north": "futopia:blocks/machines/alloy_furnace/alloy_furnace_front_off"
+				}
+			}
 		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:alloy_furnace"
+			},
+			"south": {
+				"model": "futopia:alloy_furnace",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:alloy_furnace",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:alloy_furnace",
+				"y": 270
+			}
+		},
+
 		"inventory": [{}]
 	}
 }

@@ -33,14 +33,14 @@ tile.limestone.pillar.name=Limestone Pillar
 tile.limestone.paver.name=Limestone Paver
 
 # Concrete
-tile.futopia.concrete.normal.name=Concrete
-tile.futopia.concrete.arranged_brick.name=Concrete Arraged Bricks
-tile.futopia.concrete.brick.name=Concrete Bricks
-tile.futopia.concrete.brick_dark.name=Concrete Bricks Dark
-tile.futopia.concrete.fancy_brick.name=Concrete Fancy Bricks
-tile.futopia.concrete.old_squares.name=Concrete Old Squares
-tile.futopia.concrete.rocks.name=Concrete Rocks
-tile.futopia.concrete.small_bricks.name=Concrete Small Bricks
+tile.concrete.normal.name=Concrete
+tile.concrete.arranged_brick.name=Concrete Arraged Bricks
+tile.concrete.brick.name=Concrete Bricks
+tile.concrete.brick_dark.name=Concrete Bricks Dark
+tile.concrete.fancy_brick.name=Concrete Fancy Bricks
+tile.concrete.old_squares.name=Concrete Old Squares
+tile.concrete.rocks.name=Concrete Rocks
+tile.concrete.small_bricks.name=Concrete Small Bricks
 
 # Asphalt
 tile.futopia.asphalt.name=Asphalt
@@ -69,12 +69,20 @@ tile.cpu.name=CPU
 tile.monitor.name=Monitor
 tile.disk_drive.name=Disk Drive
 tile.io_expander.name=IO Expander
+tile.controller.name=Controller
 
 # Machines
 tile.alloy_furnace.name=Alloy Furnace
 tile.electrical_furnace.name=Electrical Furnace
 tile.particle_summoner.name=Particle Summoner
 tile.project_table.name=Project Table
+tile.filter.name=Filter
+
+# Other Blocks
+tile.fluid_conduit.name=Fluid Conduit
+tile.power_conduit.name=Power Conduit
+tile.item_conduit.name=Item Conduit
+tile.conveyer_belt.name=Conveyer Belt
 
 # Gems, dusts, ingots and nuggets
 item.alloy.tesselite.name=Tesselite Ingot
@@ -131,6 +139,8 @@ item.shard.zinc.name=Zinc Shard
 item.shard.tesselite.name= Tesselite Shard
 
 item.iron_stick.name=Iron Stick
+item.windows_washer.name=Windows Washer
+item.meteor_spawner.name=Meteor Spawner
 
 # Swords
 item.futopia.sword_blue.name=Blue Sword
@@ -226,9 +236,10 @@ item.futopia.boots_tungsten.name=Tungsten Boots
 
 # Creative Tabs
 itemGroup.main_ft=Futopia Blocks
+itemGroup.computer_parts_ft=Futopia Computer Parts
 itemGroup.worldgen_ft=Futopia Worldgen
 itemGroup.decoration_ft=Futopia Decoration
 itemGroup.machines_ft=Futopia Machines
 itemGroup.tools_ft=Futopia Tools
 itemGroup.armor_ft=Futopia Armor
-itemGroup.materials_ft=Futopia Items
+itemGroup.items_ft=Futopia Items

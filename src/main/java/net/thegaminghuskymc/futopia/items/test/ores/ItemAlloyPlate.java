@@ -16,7 +16,7 @@ public class ItemAlloyPlate extends ItemBase {
     public ItemAlloyPlate() {
         super("ores/plate");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.materials);
+        this.setCreativeTab(FTCreativeTabs.items);
         this.setInternalName("alloy_plate");
     }
 

@@ -1,0 +1,11 @@
+{
+	"parent": "item/generated",
+    "variants": {
+        "normal": {
+            "textures": {
+                "layer0": "futopia:items/iron_stick"
+            }
+        },
+        "inventory": {}
+    }
+}

@@ -6,19 +6,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockWaterCooler extends BlockBase {
 
     public BlockWaterCooler() {
-        super("water_cooler", FTCreativeTabs.main);
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
-        return 15728880;
+        super(Refs.MODID, "water_cooler", FTCreativeTabs.main);
     }
 
     @Override
@@ -29,12 +24,6 @@ public class BlockWaterCooler extends BlockBase {
     @Override
     public boolean isFullBlock(IBlockState state) {
         return false;
-    }
-
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-        return layer == BlockRenderLayer.SOLID || layer == BlockRenderLayer.TRANSLUCENT;
     }
 
 }

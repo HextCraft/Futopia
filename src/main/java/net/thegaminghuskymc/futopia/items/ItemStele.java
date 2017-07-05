@@ -9,7 +9,7 @@ import net.thegaminghuskymc.huskylib.items.ItemBase;
 public class ItemStele extends ItemBase{
 
     public ItemStele(){
-        super("stele", FTCreativeTabs.materials);
+        super("stele", FTCreativeTabs.items);
     }
     
 }

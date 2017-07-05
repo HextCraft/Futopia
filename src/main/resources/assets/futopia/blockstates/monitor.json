@@ -1,0 +1,41 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"online":{
+			"true":{
+				"textures": {
+					"front": "futopia:blocks/computer/monitor/monitor_front_online"
+				}
+			},
+			"false":{
+				"textures": {
+					"front": "futopia:blocks/computer/monitor/monitor_front_offline"
+				}
+			}
+		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:monitor"
+			},
+			"south": {
+				"model": "futopia:monitor",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:monitor",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:monitor",
+				"y": 270
+			}
+		},
+
+		"inventory": [{}]
+	}
+}

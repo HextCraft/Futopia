@@ -16,7 +16,7 @@ public class ItemOreDust extends ItemBase {
     public ItemOreDust() {
         super("ores/dust");
         this.setHasSubtypes(true);
-        this.setCreativeTab(FTCreativeTabs.materials);
+        this.setCreativeTab(FTCreativeTabs.items);
         this.setInternalName("ore_dust");
     }
 

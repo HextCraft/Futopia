@@ -73,7 +73,7 @@ public class ItemMaterial extends ItemMulti implements IInitializer {
         super(Refs.MODID);
 
         setUnlocalizedName("material");
-        setCreativeTab(FTCreativeTabs.materials);
+        setCreativeTab(FTCreativeTabs.items);
     }
 
     /* IInitializer */
