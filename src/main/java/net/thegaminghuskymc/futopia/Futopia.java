@@ -17,6 +17,7 @@ import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.FTItems;
 import net.thegaminghuskymc.futopia.init.FutopiaOreDictionary;
 import net.thegaminghuskymc.futopia.init.OtherBlocks;
+import net.thegaminghuskymc.futopia.integration.FutopiaIntegrations;
 import net.thegaminghuskymc.futopia.proxy.IFutopiaProxy;
 
 @Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS, acceptedMinecraftVersions = Refs.ACC_MC)
@@ -33,6 +34,7 @@ public class Futopia {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		OtherBlocks.preInit();
+//		BlockLoader.loadBlocks();
 		
 		proxy.preInit(event);
 
@@ -40,6 +42,8 @@ public class Futopia {
 		FTItems.init();
 		FTBlocks.register();
 		FTItems.register();
+		
+		FutopiaIntegrations.preInit();
 
 		proxy.registerRenders();
 		proxy.registerTileEntities();

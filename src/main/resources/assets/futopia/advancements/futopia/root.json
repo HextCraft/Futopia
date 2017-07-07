@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "futopia:iron_stick"
+        },
+        "title": {
+            "translate": "futopia:advancements.futopia.root.title"
+        },
+        "description": {
+            "translate": "futopia:advancements.futopia.root.description"
+        },
+        "background": "futopia:textures/gui/advancements/steel_block.png",
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "criteria": {
+        "crafting_table": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:crafting_table"
+                    }
+                ]
+            }
+        }
+    }
+}

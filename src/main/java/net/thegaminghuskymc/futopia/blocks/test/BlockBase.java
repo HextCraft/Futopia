@@ -25,6 +25,7 @@ import net.thegaminghuskymc.futopia.utils.test.interfaces.IOrientable;
 import net.thegaminghuskymc.futopia.utils.test.interfaces.IOrientableBlock;
 
 public abstract class BlockBase extends Block implements IBlockRenderer {
+	
     protected boolean isInventory = false;
     protected String resourcePath = "";
     protected String internalName = "";
@@ -32,8 +33,6 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
 
     protected BlockBase(Material material, String resourcePath) {
         super(material);
-
-        //setStepSound(SoundType.STONE);
         setHardness(2.2F);
         setResistance(5.0F);
         setHarvestLevel("pickaxe", 0);
@@ -103,21 +102,6 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
         worldIn.setBlockToAir(pos);
     }
 
-    /*@Override
-    public List<ItemStack> getDrops(IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
-        TileEntityBase tileEntity = TileHelper.getTileEntity(world, pos, TileEntityBase.class);
-        if (tileEntity != null && tileEntity.hasCustomName()) {
-            final ItemStack itemStack = new ItemStack(this, 1, tileEntity.getBlockMetadata());
-            itemStack.setStackDisplayName(tileEntity.getCustomName());
-
-            ArrayList<ItemStack> drops = new ArrayList<ItemStack>();
-            drops.add(itemStack);
-
-            return drops;
-        }
-        return super.getDrops(world, pos, state, fortune);
-    }*/
-
     @Override
     public boolean rotateBlock(World world, BlockPos pos, EnumFacing axis) {
         final IOrientable rotatable = this.getOrientable(world, pos);
@@ -186,7 +170,6 @@ public abstract class BlockBase extends Block implements IBlockRenderer {
 
         NonNullList<ItemStack> subBlocks = null;
         getSubBlocks(getCreativeTabToDisplayOn(), subBlocks);
-//        getSubBlocks(Item.getItemFromBlock(this), null, subBlocks);
 
         for (ItemStack itemStack : subBlocks) {
             IBlockState blockState = this.getStateFromMeta(itemStack.getItemDamage());

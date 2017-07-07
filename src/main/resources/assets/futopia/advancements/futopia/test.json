@@ -1,0 +1,26 @@
+{
+    "display": {
+        "icon": {
+            "item": "futopia:item_conduit"
+        },
+        "title": {
+            "translate": "futopia:advancements.futopia.test.title"
+        },
+        "description": {
+            "translate": "futopia:advancements.futopia.test.description"
+        }
+    },
+    "parent": "minecraft:story/root",
+    "criteria": {
+        "get_stone": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "forge:ore_shaped",
+  "result": { "item": "futopia:disk_drive" },
+  "pattern": [
+    "xyx",
+    "xxx",
+    "xyx"
+  ],
+  "key": {
+    "x": { "type": "forge:ore_dict", "ore": "paper" },
+    "y": { "type": "forge:ore_dict", "ore": "dustRedstone" }
+  }
+}

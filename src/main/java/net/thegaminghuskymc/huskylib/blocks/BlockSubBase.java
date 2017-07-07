@@ -2,7 +2,6 @@ package net.thegaminghuskymc.huskylib.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -18,13 +17,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.Refs;
-import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone.Type;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 import net.thegaminghuskymc.huskylib.items.blocks.ItemBlockBase;
 
 public class BlockSubBase extends Block {
 	
-	public static final PropertyEnum<EnumMaterialType> META_DATA = PropertyEnum.create("meta", EnumMaterialType.class);
+	public static final PropertyEnum<EnumMaterialType> META_DATA = PropertyEnum.create("type", EnumMaterialType.class);
     private String blockName;
     private String[] subNames = null;
 

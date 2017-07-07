@@ -1,0 +1,6 @@
+{
+  "parent": "futopia:block/controller",
+  "textures": {
+		"all": "futopia:blocks/conputer/controller/controller_offline_test"
+  }
+}

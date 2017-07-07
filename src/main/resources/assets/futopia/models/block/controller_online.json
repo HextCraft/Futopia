@@ -1,0 +1,37 @@
+{
+	"parent": "futopia:block/controller",
+	"ambientocclusion": false,
+	"textures": {
+		"all": "#all",
+		"lights": "#lights"
+	},
+	"elements": [
+        {   "__comment": "Main Texture",
+            "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "texture": "#all" }
+            }
+        },
+        {   "__comment": "Glowing texture",
+            "from": [ 0, 0, 0 ],
+            "to": [ 16, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "down":  { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" },
+                "up":    { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" },
+                "north": { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" },
+                "west":  { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" },
+                "east":  { "uv": [ 0, 0, 16, 16 ], "uvlightmap": { "block": 0.007, "sky": 0.007 }, "texture": "#lights" }
+            }
+        }
+    ],
+	"ctm_version": 1,
+    "faces": {}
+}

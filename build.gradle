@@ -32,8 +32,33 @@ minecraft {
     mappings = "snapshot_20170705"
 }
 
-dependencies {
+repositories {
+	maven { // The repo from which to get waila
+        name "Mobius Repo"
+        url "http://tehnut.info/maven"
+    }
+    maven { // JEI
+        url "http://dvs1.progwml6.com/files/maven"
+    }
+    maven { // IntWheel
+        url "http://maven.k-4u.nl"
+    }
+    maven { // TOP
+        name 'tterrag maven'
+        url "http://maven.tterrag.com/"
+    }
+    maven {
+        name = "CoFH Maven"
+        url = "http://maven.covers1624.net"
+    }
+}
 
+dependencies {
+	deobfCompile "mezz.jei:jei_1.12:4.7.1.71"
+    deobfCompile "mcp.mobius.waila:Hwyla:1.8.19-B33_1.12:api"
+    deobfCompile "cofh:RedstoneFlux:1.12-2.0.0.1:universal"
+    deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.11-5"
+    deobfCompile "com.github.mcjty:intwheel:1.12-1.2.7"
 }
 
 processResources {
@@ -62,16 +87,6 @@ task deobfJar(type: Jar) {
 task srcJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
-}
-
-task incrementBuildNumber() {
-    dependsOn "reobf"
-    doLast {
-        config.build_number = (config.build_number.toString().toInteger()) + 1
-        configFile.withWriter {
-            config.toProperties().store(it, "")
-        }
-    }
 }
 
 artifacts {

@@ -1,0 +1,33 @@
+{
+
+	"multipart":[
+		{
+            "apply": {
+                "model": "futopia:controller_offline"
+            },
+            "when": {
+                "state": "offline",
+                "type": "block"
+            }
+        },
+        {
+            "apply": {
+                "model": "futopia:controller_online"
+            },
+            "when": {
+                "state": "online",
+                "type": "block"
+            }
+        },
+        {
+            "apply": {
+                "model": "futopia:controller_conflicted"
+            },
+            "when": {
+                "state": "conflicted",
+                "type": "block"
+            }
+        }
+	]
+
+}

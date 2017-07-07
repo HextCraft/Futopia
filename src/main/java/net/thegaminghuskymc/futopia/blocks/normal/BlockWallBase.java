@@ -14,15 +14,17 @@ import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockWallBase extends BlockWall implements IModeledBlock {
-	public boolean isOpaqueCube = true, isFullCube = true;
+	
+	public boolean isOpaqueCube = true;
+	public boolean isFullCube = true;
+	
 	public BlockRenderLayer layer = BlockRenderLayer.SOLID;
+	
 	public BlockWallBase(Block block, String name, boolean addToTab){
 		super(block);
 		setUnlocalizedName(name);
-		setRegistryName(Refs.MODID+":"+name);
-		if (addToTab){
-			setCreativeTab(FTCreativeTabs.main);
-		}
+		setRegistryName(Refs.MODID, name);
+		setCreativeTab(FTCreativeTabs.main);
     }
 	
 	@Override

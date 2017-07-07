@@ -32,6 +32,8 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 
     	FTBlocks.init();
     	FTItems.init();
+//    	BlockLoader.initModels();
+//    	BlockLoader.initTesr();
     }
 
     @Override

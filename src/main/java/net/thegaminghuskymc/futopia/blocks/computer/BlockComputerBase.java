@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.blocks.computer;
 
 import net.minecraft.block.BlockHorizontal;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -15,23 +14,26 @@ import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
+import net.thegaminghuskymc.futopia.network.EnumConditionType;
+import net.thegaminghuskymc.futopia.network.EnumPlacingType;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockComputerBase extends BlockBase{
 	
-	public static final PropertyBool ONLINE = PropertyBool.create("online");
+	public static final PropertyEnum<EnumConditionType> CONDITION = PropertyEnum.create("condition", EnumConditionType.class);
+	public static final PropertyEnum<EnumPlacingType> PLACING = PropertyEnum.create("placing", EnumPlacingType.class);
 	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;
 	private static final EnumFacing[] VALID_FACING = { EnumFacing.NORTH, EnumFacing.EAST, EnumFacing.SOUTH, EnumFacing.WEST };
 
 	public BlockComputerBase(String name) {
 		super(Refs.MODID, name, FTCreativeTabs.computer_parts);
 		
-		this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ONLINE, false));
+		this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(PLACING, EnumPlacingType.BLOCK).withProperty(CONDITION, EnumConditionType.OFFLINE));
 	}
 	
 	@Override
 	public BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, FACING, ONLINE);
+		return new BlockStateContainer(this, FACING, PLACING, CONDITION);
 	}
 	
 	@Override
@@ -63,7 +65,7 @@ public class BlockComputerBase extends BlockBase{
 	}
 
 	public String getPreferredRenderState() {
-		return "online=false,facing=north";
+		return "condition=offline,facing=north,placing=block";
 	}
 	
 	@SuppressWarnings("deprecation")
@@ -75,5 +77,10 @@ public class BlockComputerBase extends BlockBase{
 		else
 			return super.getPackedLightmapCoords(state, source, pos);
     }
+	
+	@Override
+	public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+		return layer == BlockRenderLayer.CUTOUT;
+	}
 
 }

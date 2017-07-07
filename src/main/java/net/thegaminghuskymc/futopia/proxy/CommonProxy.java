@@ -21,6 +21,7 @@ public class CommonProxy implements IFutopiaProxy {
 	@Override
 	public void registerTileEntities() {
 		FTBlocks.registerTE();
+//		BlockLoader.initTileEntity();
 	}
 
     @Override

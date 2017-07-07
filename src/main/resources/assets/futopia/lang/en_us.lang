@@ -141,6 +141,7 @@ item.shard.tesselite.name= Tesselite Shard
 item.iron_stick.name=Iron Stick
 item.windows_washer.name=Windows Washer
 item.meteor_spawner.name=Meteor Spawner
+item.stele.name=Stele
 
 # Swords
 item.futopia.sword_blue.name=Blue Sword

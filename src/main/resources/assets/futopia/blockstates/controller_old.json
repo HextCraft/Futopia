@@ -1,0 +1,52 @@
+{
+	"forge_marker": 1,
+	"defaults": {
+		"model": "cube_all",
+		"transform": "forge:default-block"
+	},
+	"variants": {
+		"online":{
+			"true":{
+				"model": "futopia:controller_offline",
+				"textures": {
+					"all": "futopia:blocks/controller_offline_test_2"
+				}
+			},
+			"false":{
+				"model": "futopia:controller_online",
+				"textures": {
+					"all": "futopia:blocks/controller_online_test",
+					"lights": "futopia:blocks/controller_online_lights_test"
+				}
+			}
+		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:controller"
+			},
+			"south": {
+				"model": "futopia:controller",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:controller",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:controller",
+				"y": 270
+			}
+		},
+
+		"placing":{
+
+			"block":{
+				"model": "futopia:controller"
+			}
+
+		},
+
+		"inventory": [{}]
+	}
+}
