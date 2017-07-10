@@ -1,6 +1,7 @@
 package net.thegaminghuskymc.futopia.blocks.computer;
 
 import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -12,6 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.network.EnumConditionType;
@@ -22,18 +25,25 @@ public class BlockComputerBase extends BlockBase{
 	
 	public static final PropertyEnum<EnumConditionType> CONDITION = PropertyEnum.create("condition", EnumConditionType.class);
 	public static final PropertyEnum<EnumPlacingType> PLACING = PropertyEnum.create("placing", EnumPlacingType.class);
+	public static final PropertyBool ACTIVE = PropertyBool.create("online");
 	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;
 	private static final EnumFacing[] VALID_FACING = { EnumFacing.NORTH, EnumFacing.EAST, EnumFacing.SOUTH, EnumFacing.WEST };
 
 	public BlockComputerBase(String name) {
 		super(Refs.MODID, name, FTCreativeTabs.computer_parts);
 		
-		this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(PLACING, EnumPlacingType.BLOCK).withProperty(CONDITION, EnumConditionType.OFFLINE));
+		this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ACTIVE, false));
 	}
 	
 	@Override
+	@SideOnly(Side.CLIENT)
+    public boolean hasCustomBreakingProgress(IBlockState state) {
+        return true;
+    }
+	
+	@Override
 	public BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, FACING, PLACING, CONDITION);
+		return new BlockStateContainer(this, FACING, ACTIVE);
 	}
 	
 	@Override
@@ -65,7 +75,7 @@ public class BlockComputerBase extends BlockBase{
 	}
 
 	public String getPreferredRenderState() {
-		return "condition=offline,facing=north,placing=block";
+		return "online=false,facing=north";
 	}
 	
 	@SuppressWarnings("deprecation")

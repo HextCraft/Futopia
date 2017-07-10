@@ -6,10 +6,12 @@ import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
@@ -22,7 +24,7 @@ import net.thegaminghuskymc.huskylib.items.blocks.ItemBlockBase;
 
 public class BlockSubBase extends Block {
 	
-	public static final PropertyEnum<EnumMaterialType> META_DATA = PropertyEnum.create("type", EnumMaterialType.class);
+	public static final PropertyEnum<EnumMaterialType> TYPE = PropertyEnum.create("type", EnumMaterialType.class);
     private String blockName;
     private String[] subNames = null;
 
@@ -33,7 +35,7 @@ public class BlockSubBase extends Block {
 		setCreativeTab(creativetab);
 		setRegistryName(Refs.MODID, name);
         setUnlocalizedName(Refs.MODID + "." + name);
-        setDefaultState(getBlockState().getBaseState().withProperty(META_DATA, EnumMaterialType.RED));
+        setDefaultState(getBlockState().getBaseState().withProperty(TYPE, EnumMaterialType.RED));
 	}
 	
 	public BlockSubBase(String name, Material material, CreativeTabs creativeTab, String... subNames) {
@@ -43,39 +45,38 @@ public class BlockSubBase extends Block {
 		setCreativeTab(creativeTab);
 		setRegistryName(Refs.MODID, name);
         setUnlocalizedName(Refs.MODID + "." + name);
-        setDefaultState(getBlockState().getBaseState().withProperty(META_DATA, EnumMaterialType.RED));
+        setDefaultState(getBlockState().getBaseState().withProperty(TYPE, EnumMaterialType.RED));
 	}
 
 	@Override
     protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, META_DATA);
+        return new BlockStateContainer(this, TYPE);
     }
 	
 	@Override
     public IBlockState getStateFromMeta(int meta) {
 
-        return this.getDefaultState().withProperty(META_DATA, EnumMaterialType.byMetadata(meta));
+        return this.getDefaultState().withProperty(TYPE, EnumMaterialType.byMetadata(meta));
     }
 
     @Override
     public int getMetaFromState(IBlockState state) {
 
-        return state.getValue(META_DATA).getMeta();
+        return state.getValue(TYPE).getMeta();
     }
 
     @Override
     public int damageDropped(IBlockState state) {
 
-        return state.getValue(META_DATA).getMeta();
+        return state.getValue(TYPE).getMeta();
     }
 
     @Override
     public ItemStack getPickBlock(IBlockState state, RayTraceResult target, World world, BlockPos pos, EntityPlayer player) {
-        return new ItemStack(this, 1, 0);
+        return new ItemStack(this, 1, this.getMetaFromState(state));
     }
 	
 	@Override
-    @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 		for(int i = 0; i < EnumMaterialType.toStringArray().length; i++){
             list.add(new ItemStack(this, 1, i));

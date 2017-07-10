@@ -1,25 +1,25 @@
 {
     "display": {
         "icon": {
-            "item": "futopia:iron_stick"
+            "item": "futopia:alloy"
         },
         "title": {
-            "translate": "futopia:advancements.futopia.root.title"
+            "translate": "advancements.futopia.root.title"
         },
         "description": {
-            "translate": "futopia:advancements.futopia.root.description"
+            "translate": "advancements.futopia.root.description"
         },
-        "background": "futopia:textures/gui/advancements/steel_block.png",
+        "background": "futopia:textures/gui/advancements/concrete_arranged_brick.png",
         "show_toast": false,
         "announce_to_chat": false
     },
     "criteria": {
-        "crafting_table": {
+        "ingot_heaven": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:crafting_table"
+                        "item": "futopia:alloy"
                     }
                 ]
             }

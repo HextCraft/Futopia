@@ -4,30 +4,25 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
-import net.minecraft.inventory.InventoryCraftResult;
-import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotCrafting;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.thegaminghuskymc.futopia.client.container.slot.SlotCraftingCustom;
 
 public class ContainerCrafter extends Container {
 	
 	/** The crafting matrix inventory (3x3). */
-    public InventoryCrafting craftMatrix = new InventoryCrafting(this, 3, 3);
-    public InventoryCraftResult craftResult = new InventoryCraftResult();
+    public InventoryCraftingFutopia craftMatrix = new InventoryCraftingFutopia(this, 3, 3);
+    public InventoryCraftResultFutopia craftResult = new InventoryCraftResultFutopia();
     private final World world;
     /** Position of the workbench */
-    private final BlockPos pos;
     private final EntityPlayer player;
 
-    public ContainerCrafter(InventoryPlayer playerInventory, World worldIn, BlockPos posIn){
+    public ContainerCrafter(InventoryPlayer playerInventory, World worldIn){
     	
     	this.world = worldIn;
-        this.pos = posIn;
         this.player = playerInventory.player;
-    	this.addSlotToContainer(new SlotCrafting(playerInventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
+    	this.addSlotToContainer(new SlotCraftingCustom(playerInventory.player, this.craftMatrix, this.craftResult, 0, 124, 35));
 
     	for (int i = 0; i < 3; ++i)
         {
@@ -49,28 +44,6 @@ public class ContainerCrafter extends Container {
         {
             this.addSlotToContainer(new Slot(playerInventory, l, 8 + l * 18, 142));
         }
-    	
-    	/*int xs = 8, ys = 8 + 9;
-    	
-    	for(int y = 0; y < 3; y++) 
-    		for(int x = 0; x < 9; x++)
-    	        addSlotToContainer(new Slot(inventoryPlayer, x + y * 9 + 9, xs + (x * 18), ys + (y * 18) + 67)); // Player Inventory
-
-    	for(int k = 0; k < 9; k++)
-    	    addSlotToContainer(new Slot(inventoryPlayer, k, xs + (k * 18), ys + 58 + 67)); // Player Hotbar
-    	
-    	this.addSlotToContainer(new SlotCrafting(player, this.craftMatrix, this.craftResult, 0, 124, 35));
-
-        for (int i = 0; i < 3; ++i)
-        {
-            for (int j = 0; j < 3; ++j)
-            {
-                this.addSlotToContainer(new Slot(this.craftMatrix, j + i * 3, 30 + j * 18, 17 + i * 18));
-            }
-        }*/
-    	
-    	
-//    	addSlotToContainer(new Slot(inventoryPlayer, 42, xs + (0 * 18), ys + 10 + 67));
     	
     }
     

@@ -244,3 +244,9 @@ itemGroup.machines_ft=Futopia Machines
 itemGroup.tools_ft=Futopia Tools
 itemGroup.armor_ft=Futopia Armor
 itemGroup.items_ft=Futopia Items
+
+# Advancements
+advancements.futopia.root.title=Futopia
+advancements.futopia.root.description=The future is near
+advancements.futopia.controller.title=Controller
+advancements.futopia.controller.description=Wow did you really get this?

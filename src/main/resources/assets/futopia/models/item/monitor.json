@@ -1,5 +1,9 @@
 {
   "parent": "futopia:block/monitor",
+  	"textures": {
+		"front": "futopia:blocks/computer/monitor/monitor_front_offline",
+		"other": "futopia:blocks/computer/monitor/monitor_side"
+	},
 	"display": {
 		"thirdperson_righthand": {
 			"rotation": [75, 45, 0],

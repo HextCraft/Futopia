@@ -1,6 +1,5 @@
 package net.thegaminghuskymc.futopia.proxy;
 
-import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -21,7 +20,6 @@ public class CommonProxy implements IFutopiaProxy {
 	@Override
 	public void registerTileEntities() {
 		FTBlocks.registerTE();
-//		BlockLoader.initTileEntity();
 	}
 
     @Override
@@ -38,26 +36,6 @@ public class CommonProxy implements IFutopiaProxy {
     public void postInit(FMLPostInitializationEvent event) {
 
     }
-	
-	public void registerFluidBlockRendering(Block block, String name) {
-
-	}
-
-	public void registerCustomBlockStateLocation(Block block, String name) {
-
-	}
-
-	public void registerCustomBlockStateLocation(Block block, String name, boolean item) {
-
-	}
-
-	public void registerSubItemInventoryLocation(Item item, int meta, String location, String name) {
-
-	}
-
-	public void registerSubBlockInventoryLocation(Block block, int meta, String location, String name) {
-		registerSubItemInventoryLocation(Item.getItemFromBlock(block), meta, location, name);
-	}
 
     @Override
     public boolean addIModelRegister(IModelRegister modelRegister) {

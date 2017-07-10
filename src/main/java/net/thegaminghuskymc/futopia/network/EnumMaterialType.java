@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.network;
 
 import net.minecraft.util.IStringSerializable;
-import net.thegaminghuskymc.futopia.blocks.worldgen.BlockLimestone;
 
 public enum EnumMaterialType implements IStringSerializable{
 
@@ -12,7 +11,11 @@ public enum EnumMaterialType implements IStringSerializable{
     ZINC("zinc", 4),
     TUNGSTEN("tungsten", 5),
     BRASS("brass", 6),
-    TESSELITE("tesselite", 7);
+    TESSELITE("tesselite", 7),
+    PINK("pink", 8),
+    YELLOW("yellow", 9),
+    CYAN("cyan", 10),
+    LIGHT_BLUE("light_blue", 11);
 
     public static final EnumMaterialType[] VALUES = new EnumMaterialType[]{
             RED,
@@ -22,7 +25,11 @@ public enum EnumMaterialType implements IStringSerializable{
             ZINC,
             TUNGSTEN,
             BRASS,
-            TESSELITE
+            TESSELITE,
+            PINK,
+            YELLOW,
+            CYAN,
+            LIGHT_BLUE
     };
     
     private static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];

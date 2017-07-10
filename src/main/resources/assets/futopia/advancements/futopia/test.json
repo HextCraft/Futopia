@@ -1,23 +1,23 @@
 {
     "display": {
         "icon": {
-            "item": "futopia:item_conduit"
+            "item": "futopia:controller"
         },
         "title": {
-            "translate": "futopia:advancements.futopia.test.title"
+            "translate": "advancements.futopia.controller.title"
         },
         "description": {
-            "translate": "futopia:advancements.futopia.test.description"
+            "translate": "advancements.futopia.controller.description"
         }
     },
-    "parent": "minecraft:story/root",
+    "parent": "futopia:futopia/root",
     "criteria": {
         "get_stone": {
             "trigger": "minecraft:inventory_changed",
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:cobblestone"
+                        "item": "futopia:controller"
                     }
                 ]
             }

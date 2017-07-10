@@ -6,13 +6,9 @@ import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.network.NetworkRegistry;
-import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.FTItems;
-import net.thegaminghuskymc.futopia.init.FutopiaOreDictionary;
-import net.thegaminghuskymc.futopia.init.Recipies;
 
 public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 	
@@ -32,15 +28,11 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 
     	FTBlocks.init();
     	FTItems.init();
-//    	BlockLoader.initModels();
-//    	BlockLoader.initTesr();
     }
 
     @Override
     public void init(FMLInitializationEvent event) {
-        Recipies.init();
-        FutopiaOreDictionary.init();
-        NetworkRegistry.INSTANCE.registerGuiHandler(Futopia.INSTANCE, Futopia.GUI_HANDLER);
+        
     }
 
     @Override

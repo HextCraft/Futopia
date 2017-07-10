@@ -45,6 +45,26 @@
                 "textures": {
                     "all": "futopia:blocks/worldgen/ore/ore_tesselite"
                 }
+            },
+            "pink": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_pink"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_yellow"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_cyan"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "all": "futopia:blocks/worldgen/ore/ore_light_blue"
+                }
             }
         }
     }

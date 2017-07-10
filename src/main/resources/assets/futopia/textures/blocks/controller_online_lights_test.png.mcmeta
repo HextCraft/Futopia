@@ -18,7 +18,7 @@
   },
     "ctm":{
         "ctm_version": 1,
-        "layer":"CUTOUT",
+        "layer":"SOLID",
         "extra": {
             "light": {
                 "block": 20,

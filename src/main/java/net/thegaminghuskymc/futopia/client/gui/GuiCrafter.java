@@ -13,7 +13,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.ClickType;
 import net.minecraft.inventory.Slot;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -25,15 +24,10 @@ public class GuiCrafter extends GuiContainer implements IRecipeShownListener{
 	private GuiButtonImage recipeButton;
     private final GuiRecipeBook recipeBookGui;
     private boolean widthTooNarrow;
-	
+
     public GuiCrafter(InventoryPlayer playerInv, World worldIn)
     {
-        this(playerInv, worldIn, BlockPos.ORIGIN);
-    }
-
-    public GuiCrafter(InventoryPlayer playerInv, World worldIn, BlockPos blockPosition)
-    {
-        super(new ContainerCrafter(playerInv, worldIn, blockPosition));
+        super(new ContainerCrafter(playerInv, worldIn));
         this.recipeBookGui = new GuiRecipeBook();
     }
     

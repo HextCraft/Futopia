@@ -18,14 +18,14 @@ public class BlockMonitor extends BlockComputerBase {
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
     	switch(state.getValue(FACING)){
+    		case NORTH:
+    			return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
+    		case SOUTH:
+    			return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
 			case EAST:
-				return new AxisAlignedBB(0.87, 0.88, 0.44, 0.12, 2f/16, 0.56f);
-			case NORTH:
-				return new AxisAlignedBB(0.87, 0.88, 0.44, 0.12, 2f/16, 0.56);
-			case SOUTH:
-				return new AxisAlignedBB(0.87, 0.88, 0.44, 0.12, 2f/16, 0.56);
+				return new AxisAlignedBB(0.45f, 0.88f, 0.13f, 0.56f, 2f/16f, 0.87f);
 			case WEST:
-				return new AxisAlignedBB(0.87, 0.88, 0.44, 0.12, 2f/16, 0.56);
+				return new AxisAlignedBB(0.45f, 0.88f, 0.13f, 0.56f, 2f/16f, 0.87f);
 			default:
 				return new AxisAlignedBB(0, 0, 0, 1, 1, 1);
     	}
@@ -34,14 +34,14 @@ public class BlockMonitor extends BlockComputerBase {
     @Override
     public AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
     	switch(blockState.getValue(FACING)){
-			case EAST:
-				return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
-			case NORTH:
-				return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
-			case SOUTH:
-				return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
-			case WEST:
-				return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
+    		case NORTH:
+    			return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
+    		case SOUTH:
+    			return new AxisAlignedBB(0.87f, 0.88f, 0.44f, 0.12f, 2f/16f, 0.56f);
+    		case EAST:
+    			return new AxisAlignedBB(0.45f, 0.88f, 0.13f, 0.56f, 2f/16f, 0.87f);
+    		case WEST:
+    			return new AxisAlignedBB(0.45f, 0.88f, 0.13f, 0.56f, 2f/16f, 0.87f);
 			default:
 				return new AxisAlignedBB(0, 0, 0, 1, 1, 1);
     	}
