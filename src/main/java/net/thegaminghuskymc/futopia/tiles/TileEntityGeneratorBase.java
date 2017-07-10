@@ -1,7 +1,5 @@
 package net.thegaminghuskymc.futopia.tiles;
 
-import cofh.redstoneflux.api.IEnergyProvider;
-import cofh.redstoneflux.impl.EnergyStorage;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -12,7 +10,7 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class TileEntityGeneratorBase extends TileEntityMachineBase implements ITickable, ICapabilityProvider, IEnergyProvider{
+public class TileEntityGeneratorBase extends TileEntityMachineBase implements ITickable, ICapabilityProvider {
 	
 	private ItemStackHandler handler;
 	private int totalBurnTime;
@@ -20,7 +18,6 @@ public class TileEntityGeneratorBase extends TileEntityMachineBase implements IT
 	private boolean isBurning;
 	
 	byte facing = 1;
-	protected EnergyStorage energyStorage = new EnergyStorage(0);
 	
 	public TileEntityGeneratorBase() {
 		handler = new ItemStackHandler(1);
@@ -96,26 +93,6 @@ public class TileEntityGeneratorBase extends TileEntityMachineBase implements IT
 		
 	public int getBurnTime() {
 		return burnTime;
-	}
-
-	@Override
-	public int getEnergyStored(EnumFacing from) {
-		return energyStorage.getEnergyStored();
-	}
-
-	@Override
-	public int getMaxEnergyStored(EnumFacing from) {
-		return energyStorage.getEnergyStored();
-	}
-
-	@Override
-	public boolean canConnectEnergy(EnumFacing from) {
-		return from.ordinal() == facing;
-	}
-
-	@Override
-	public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate) {
-		return from.ordinal() != facing ? 0 : energyStorage.extractEnergy(Math.min(energyStorage.getMaxEnergyStored() * 2, maxExtract), simulate);
 	}
 
 }

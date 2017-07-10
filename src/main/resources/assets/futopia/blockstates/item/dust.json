@@ -48,6 +48,26 @@
                 "textures": {
                     "layer0": "futopia:items/material/dust_tesselite"
                 }
+            },
+            "pink": {
+                "textures": {
+                    "layer0": "futopia:items/material/dust_pink"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "layer0": "futopia:items/material/dust_yellow"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "layer0": "futopia:items/material/dust_light_blue"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "layer0": "futopia:items/material/dust_cyan"
+                }
             }
         }
     }

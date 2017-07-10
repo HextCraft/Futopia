@@ -18,9 +18,9 @@ import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.GameData;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
@@ -104,11 +104,11 @@ public class BlockMarble extends BlockCore implements IInitializer, IModelRegist
     @Override
     public boolean preInit() {
         setRegistryName("marble");
-        GameData.register_impl(this);
+        ForgeRegistries.BLOCKS.register(this);
 
         ItemBlockMarble itemBlock = new ItemBlockMarble(this);
         itemBlock.setRegistryName(this.getRegistryName());
-        GameData.register_impl(itemBlock);
+        ForgeRegistries.ITEMS.register(itemBlock);
 
         marble = new ItemStack(this, 1, Type.RAW.getMetadata());
         marblePaver = new ItemStack(this, 1, Type.PAVER.getMetadata());

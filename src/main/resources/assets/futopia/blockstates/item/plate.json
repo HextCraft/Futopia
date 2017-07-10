@@ -48,6 +48,26 @@
                 "textures": {
                     "layer0": "futopia:items/material/plate_tesselite"
                 }
+            },
+            "pink": {
+                "textures": {
+                    "layer0": "futopia:items/material/plate_pink"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "layer0": "futopia:items/material/plate_yellow"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "layer0": "futopia:items/material/plate_light_blue"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "layer0": "futopia:items/material/plate_cyan"
+                }
             }
         }
     }

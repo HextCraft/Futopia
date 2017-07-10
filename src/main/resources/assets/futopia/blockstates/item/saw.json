@@ -48,6 +48,26 @@
                 "textures": {
                     "layer0": "futopia:items/tool/saw_tesselite"
                 }
+            },
+            "pink": {
+                "textures": {
+                    "layer0": "futopia:items/tool/saw_pink"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "layer0": "futopia:items/tool/saw_yellow"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "layer0": "futopia:items/tool/saw_light_blue"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "layer0": "futopia:items/tool/saw_cyan"
+                }
             }
         }
     }

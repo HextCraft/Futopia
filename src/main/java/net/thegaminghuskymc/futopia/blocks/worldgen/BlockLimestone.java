@@ -17,9 +17,9 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.GameData;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
@@ -105,11 +105,11 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
     @Override
     public boolean preInit() {
         setRegistryName("limestone");
-        GameData.register_impl(this);
+        ForgeRegistries.BLOCKS.register(this);
 
         ItemBlockLimestone itemBlock = new ItemBlockLimestone(this);
         itemBlock.setRegistryName(this.getRegistryName());
-        GameData.register_impl(itemBlock);
+        ForgeRegistries.ITEMS.register(itemBlock);
 
         limestone = new ItemStack(this, 1, BlockLimestone.Type.RAW.getMetadata());
         limestonePaver = new ItemStack(this, 1, BlockLimestone.Type.PAVER.getMetadata());

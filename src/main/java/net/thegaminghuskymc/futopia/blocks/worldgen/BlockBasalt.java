@@ -15,9 +15,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.GameData;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
@@ -83,16 +83,6 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         return state.getValue(VARIANT).getMetadata();
     }
 
-//    @Override
-//    public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
-//        if (!GuiScreen.isShiftKeyDown()) {
-//            tooltip.add("Hold " + ChatFormatting.YELLOW + "Shift" + ChatFormatting.GRAY + " for Crafting.");
-//        } else {
-//            tooltip.add(Names.CraftingToolTips.CRAFT_WITH);
-//            tooltip.add(Names.CraftingToolTips.STONE_BLOCKS);
-//        }
-//    }
-
     @Override
     @SideOnly(Side.CLIENT)
     public void registerModels() {
@@ -100,16 +90,17 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
         for (int i = 0; i < Type.values().length; i++) {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
         }
+        
     }
 
     @Override
     public boolean preInit() {
         this.setRegistryName("basalt");
-        GameData.register_impl(this);
+        ForgeRegistries.BLOCKS.register(this);
 
         ItemBlockBasalt itemBlock = new ItemBlockBasalt(this);
         itemBlock.setRegistryName(this.getRegistryName());
-        GameData.register_impl(itemBlock);
+        ForgeRegistries.ITEMS.register(itemBlock);
 
         basalt = new ItemStack(this, 1, Type.RAW.getMetadata());
         basaltCobble = new ItemStack(this, 1, Type.COBBLE.getMetadata());

@@ -48,6 +48,26 @@
                 "textures": {
                     "layer0": "futopia:items/material/shard_tesselite"
                 }
+            },
+            "pink": {
+                "textures": {
+                    "layer0": "futopia:items/material/shard_pink"
+                }
+            },
+            "yellow": {
+                "textures": {
+                    "layer0": "futopia:items/material/shard_yellow"
+                }
+            },
+            "light_blue": {
+                "textures": {
+                    "layer0": "futopia:items/material/shard_light_blue"
+                }
+            },
+            "cyan": {
+                "textures": {
+                    "layer0": "futopia:items/material/shard_cyan"
+                }
             }
         }
     }

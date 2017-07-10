@@ -9,6 +9,7 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
+import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.OtherBlocks;
 
@@ -39,6 +40,7 @@ public class OreGen implements IWorldGenerator {
 		        int y = minHeight + rand.nextInt(heightDiff);
 		        int z = chunk_Z * 16 + rand.nextInt(16);
 		        generator.generate(world, rand, new BlockPos(x, y, z));
+		        Futopia.LOGGER.finer("Generating" + generator.toString());
 		}
 	}
 

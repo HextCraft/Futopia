@@ -5,7 +5,6 @@ import static net.thegaminghuskymc.futopia.Refs.SSIDE;
 
 import java.util.logging.Logger;
 
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
