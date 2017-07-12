@@ -1,6 +1,7 @@
 package net.thegaminghuskymc.futopia.blocks;
 
-public interface IModelRegister
-{
-    public abstract void registerModels();
+public interface IModelRegister {
+	
+    abstract void registerModels();
+    
 }

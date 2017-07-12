@@ -1,5 +1,7 @@
 package net.thegaminghuskymc.futopia.init;
 
+import java.util.stream.IntStream;
+
 import cofh.core.util.helpers.RecipeHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.RecipeItemHelper;
@@ -25,110 +27,117 @@ public class Recipies {
     }
 
     private static void addSawRecipes() {
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.PURPLE.ordinal()), "alloyFutopiaPurple");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addSawRecipe(new ItemStack(FTItems.saw, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
+        registerSaws(EnumMaterialType.VALUES);
     }
 
     private static void addHammerRecipes() {
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.PURPLE.ordinal()), "alloyFutopiaPurple");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addHammerRecipe(new ItemStack(FTItems.hammer, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
+        registerHammers(EnumMaterialType.VALUES);
     }
 
     private static void addPlateRecipes() {
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.RED.ordinal()),  "alloyFutopiaRed");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.BLUE.ordinal()),  "alloyFutopiaBlue");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.PURPLE.ordinal()), "alloyFutopiaPurple");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.TUNGSTEN.ordinal()),  "alloyFutopiaTungsten");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.BRASS.ordinal()),  "alloyFutopiaBrass");
-        addPlateRecipe(new ItemStack(FTItems.plates, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
+        registerPlates(EnumMaterialType.VALUES);
     }
 
     private static void addDustRecipes() {
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.PURPLE.ordinal()),"alloyFutopiaPurple");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addDustRecipe(new ItemStack(FTItems.dusts, 4, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
+        registerDusts(EnumMaterialType.VALUES);
     }
 
     private static void addNuggetRecipes() {
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.PURPLE.ordinal()),"alloyFutopiaPurple");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
+        registerNuggets(EnumMaterialType.VALUES);
     }
 
     private static void addItemRecipes() {
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.RED.ordinal()), "alloyFutopiaRed");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.BLUE.ordinal()), "alloyFutopiaBlue");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.PURPLE.ordinal()), "alloyFutopiaPurple");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.GREEN.ordinal()), "alloyFutopiaGreen");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.ZINC.ordinal()), "alloyFutopiaZinc");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TUNGSTEN.ordinal()), "alloyFutopiaTungsten");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.BRASS.ordinal()), "alloyFutopiaBrass");
-        addGearRecipe(new ItemStack(FTItems.gears, 1, EnumMaterialType.TESSELITE.ordinal()), "alloyFutopiaTesselite");
-    	
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.RED.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.PURPLE.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.GREEN.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
-        addSmelting(new ItemStack(FTItems.dusts, 9, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), 0.0F);
+        registerGears(EnumMaterialType.VALUES);
+        registerSmeltingDusts(EnumMaterialType.VALUES);
     }
 
     private static void addBlockRecipes() {
     	addBlockRecipe(new ItemStack(FTBlocks.particleSummoner), new Object[]{ "RBG", "GRB", "BGR", 'B', "alloyFutopiaBlue",
                 'R', "alloyFutopiaRed", 'G', "alloyFutopiaGreen"});
 
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.RED.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.PURPLE.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.GREEN.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), 0.0F);
-    	RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), 0.0F);
-
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.RED.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.PURPLE.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.GREEN.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()));
-        RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()));
-        
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.RED.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.RED.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.BLUE.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.BLUE.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.PURPLE.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.PURPLE.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.GREEN.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.GREEN.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.ZINC.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.ZINC.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.TUNGSTEN.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.TUNGSTEN.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.BRASS.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.BRASS.ordinal()));
-        RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, EnumMaterialType.TESSELITE.ordinal()), new ItemStack(FTBlocks.storages, 1, EnumMaterialType.TESSELITE.ordinal()));
+    	registerSmeltingOres(EnumMaterialType.VALUES);
+        registerStorageBlocks(EnumMaterialType.VALUES);
+        registerReversedStorageBlocks(EnumMaterialType.VALUES);
+    }
+    
+    public static void registerSmeltingOres(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		RecipeHelper.addSmelting(new ItemStack(FTBlocks.ores, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()), 0.0F);
+    	}
+    	
+    }
+    
+    public static void registerSmeltingDusts(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addSmelting(new ItemStack(FTItems.dusts, 9, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()), 0.0F);
+    	}
+    	
+    }
+    
+    public static void registerStorageBlocks(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		RecipeHelper.addStorageRecipe(new ItemStack(FTBlocks.storages, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerReversedStorageBlocks(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		RecipeHelper.addReverseStorageRecipe(new ItemStack(FTItems.ingots, 1, type.getMeta()), new ItemStack(FTBlocks.storages, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerGears(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addGearRecipe(new ItemStack(FTItems.gears, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerNuggets(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addNuggetRecipe(new ItemStack(FTItems.nuggets, 4, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerDusts(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addDustRecipe(new ItemStack(FTItems.dusts, 4, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerPlates(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addPlateRecipe(new ItemStack(FTItems.plates, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerSaws(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addSawRecipe(new ItemStack(FTItems.saw, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
+    }
+    
+    public static void registerHammers(EnumMaterialType... types) {
+    	
+    	for(EnumMaterialType type : types) {
+    		addSawRecipe(new ItemStack(FTItems.hammer, 1, type.getMeta()), new ItemStack(FTItems.ingots, 1, type.getMeta()));
+    	}
+    	
     }
     
     private static void addBlockRecipe(Block block, String material){
@@ -158,6 +167,10 @@ public class Recipies {
 	private static void addGearRecipe(ItemStack gear, String material){
 		HLCraftingHelper.addShapedOreRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
     }
+	
+	private static void addGearRecipe(ItemStack gear, ItemStack material){
+		HLCraftingHelper.addShapedOreRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
+    }
 
     private static void addPlateRecipe(ItemStack plates, String material){
     	HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
@@ -166,20 +179,41 @@ public class Recipies {
     private static void addPlateRecipe(ItemStack plates, Item material){
     	HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
     }
+    
+    private static void addPlateRecipe(ItemStack plates, ItemStack material){
+    	HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
+    }
 
     private static void addDustRecipe(ItemStack dusts, String material){
+    	HLCraftingHelper.addShapedOreRecipe(dusts, " X ", 'X', material);
+    }
+    
+    private static void addDustRecipe(ItemStack dusts, ItemStack material){
     	HLCraftingHelper.addShapedOreRecipe(dusts, " X ", 'X', material);
     }
 
     private static void addNuggetRecipe(ItemStack nuggets, String material){
     	HLCraftingHelper.addShapedOreRecipe(nuggets, " X ", 'X', material);
     }
+    
+    private static void addNuggetRecipe(ItemStack nuggets, ItemStack material){
+    	HLCraftingHelper.addShapedOreRecipe(nuggets, " X ", 'X', material);
+    }
 
     private static void addHammerRecipe(ItemStack hammers, String material){
     	HLCraftingHelper.addShapedOreRecipe(hammers, "XCX", "XCX", " C ",  'X', material, 'C', Items.STICK);
     }
+    
+    private static void addHammerRecipe(ItemStack hammers, ItemStack material){
+    	HLCraftingHelper.addShapedOreRecipe(hammers, "XCX", "XCX", " C ",  'X', material, 'C', Items.STICK);
+    }
 
     private static void addSawRecipe(ItemStack saws, String material){
+    	Block P = Blocks.PLANKS;
+    	HLCraftingHelper.addShapedOreRecipe(saws, new Object[]{ "XX ", " XP", "  P",  'X', material, 'P', P});
+    }
+    
+    private static void addSawRecipe(ItemStack saws, ItemStack material){
     	Block P = Blocks.PLANKS;
     	HLCraftingHelper.addShapedOreRecipe(saws, new Object[]{ "XX ", " XP", "  P",  'X', material, 'P', P});
     }

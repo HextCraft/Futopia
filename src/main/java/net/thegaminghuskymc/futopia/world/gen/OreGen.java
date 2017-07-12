@@ -40,14 +40,12 @@ public class OreGen implements IWorldGenerator {
 		        int y = minHeight + rand.nextInt(heightDiff);
 		        int z = chunk_Z * 16 + rand.nextInt(16);
 		        generator.generate(world, rand, new BlockPos(x, y, z));
-		        Futopia.LOGGER.finer("Generating" + generator.toString());
 		}
 	}
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,IChunkProvider chunkProvider) {
-		switch(world.provider.getDimension()) {
-		case 1: //OverWorld
+		if(world.provider.getDimension() == 0) {
 			this.runGenerator(ores, world, random, chunkX, chunkZ, 1, 0, 128);
 			this.runGenerator(marble, world, random, chunkX, chunkZ, 1, 0, 128);
 			this.runGenerator(basalt, world, random, chunkX, chunkZ, 1, 0, 128);

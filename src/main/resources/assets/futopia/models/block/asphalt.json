@@ -1,0 +1,8 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"side": "futopia:blocks/decoration/asphalt/asphalt",
+		"top": "#top"
+	}
+
+}

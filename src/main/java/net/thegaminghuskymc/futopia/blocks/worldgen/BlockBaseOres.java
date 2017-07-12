@@ -1,15 +1,17 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
 import net.minecraft.block.material.Material;
-import net.thegaminghuskymc.futopia.Refs;
+import net.minecraft.block.properties.PropertyEnum;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
-import net.thegaminghuskymc.huskylib.blocks.BlockSubBase;
+import net.thegaminghuskymc.huskylib.blocks.EnumBlock;
 
-public class BlockBaseOres extends BlockSubBase{
+public class BlockBaseOres extends EnumBlock<EnumMaterialType>{
+	
+	public static final PropertyEnum<EnumMaterialType> TYPE = PropertyEnum.create("type", EnumMaterialType.class);
 
 	public BlockBaseOres() {
-		super(Refs.MODID, "ore", Material.ROCK, FTCreativeTabs.world_gen, EnumMaterialType.toStringArray());
+		super(Material.ROCK, "ore", FTCreativeTabs.world_gen, TYPE, EnumMaterialType.class, EnumMaterialType.toStringArray());
 	}
 
 }

@@ -8,70 +8,89 @@
 		"type": {
 			"raw": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_raw"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_raw"
 				}
 			},
 			"middle": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_middle"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_middle"
 				}
 			},
 			"middle_white": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_middle_white"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_middle_white"
 				}
 			},
 			"middle_yellow": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_middle_yellow"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_middle_yellow"
 				}
 			},
 			"middle_white_glowing": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_middle_white_glowing"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_middle_white_glowing"
 				}
 			},
 			"middle_yellow_glowing": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_middle_yellow_glowing"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_middle_yellow_glowing"
 				}
 			},
 			"side": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_side"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_side"
 				}
 			},
 			"side_white": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_side_white"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_side_white"
 				}
 			},
 			"side_yellow": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_side_yellow"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_side_yellow"
 				}
 			},
 
 			"side_white_glowing": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_side_white_glowing"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_side_white_glowing"
 				}
 			},
 			"side_yellow_glowing": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_side_yellow_glowing"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_side_yellow_glowing"
 				}
 			},
 			"sidewalk": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_sidewalk"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_sidewalk"
 				}
 			},
 			"sidewalk_glowing": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/asphalt/asphalt_sidewalk_glowing"
+					"top": "futopia:blocks/decoration/asphalt/asphalt_sidewalk_glowing"
 				}
 			}
-		}
+		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:asphalt"
+			},
+			"south": {
+				"model": "futopia:asphalt",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:asphalt",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:asphalt",
+				"y": 270
+			}
+		},
+
 	}
 }

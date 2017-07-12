@@ -1,8 +1,6 @@
 package net.thegaminghuskymc.futopia.init;
 
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.Refs;
@@ -43,7 +41,7 @@ public class FTCreativeTabs {
         world_gen = new CreativeTabs("worldgen_ft") {
         	@Override
         	public ItemStack getTabIconItem() {
-        		return new ItemStack(Blocks.DIAMOND_ORE);
+        		return new ItemStack(FTBlocks.ores);
         	}
         };
 
@@ -54,12 +52,12 @@ public class FTCreativeTabs {
         	}
         };
 
-        tools = new CreativeTabs("tools_ft") {
+        /*tools = new CreativeTabs("tools_ft") {
             @Override
             public ItemStack getTabIconItem() {
                 return new ItemStack(Items.IRON_AXE);
             }
-        };
+        };*/
     }
 
 }

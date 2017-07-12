@@ -58,7 +58,6 @@ public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegis
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
         for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
             list.add(new ItemStack(this, 1, i));
@@ -74,13 +73,11 @@ public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegis
 
     @Override
     public int getMetaFromState(IBlockState state) {
-
         return state.getValue(VARIANT).getMetadata();
     }
 
     @Override
     public int damageDropped(IBlockState state) {
-
         return state.getValue(VARIANT).getMetadata();
     }
 

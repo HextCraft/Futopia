@@ -55,7 +55,6 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 
         for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {

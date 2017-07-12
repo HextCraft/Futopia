@@ -54,6 +54,10 @@ tile.futopia.ore.zinc.name=Zinc Ore
 tile.futopia.ore.tesselite.name=Tesselite Ore
 tile.futopia.ore.tungsten.name=Tungsten Ore
 tile.futopia.ore.brass.name=Brass Ore
+tile.futopia.ore.pink.name=Pink Ore
+tile.futopia.ore.yellow.name=Yellow Ore
+tile.futopia.ore.cyan.name=Cyan Ore
+tile.futopia.ore.light_blue.name=Light Blue Ore
 
 tile.futopia.storage.red.name=Red Storage Block
 tile.futopia.storage.blue.name=Blue Storage Block
@@ -63,6 +67,10 @@ tile.futopia.storage.tesselite.name=Tesselite Block
 tile.futopia.storage.zinc.name=Zinc Block
 tile.futopia.storage.tungsten.name=Tungsten Block
 tile.futopia.storage.brass.name=Brass Block
+tile.futopia.storage.pink.name=Pink Block
+tile.futopia.storage.yellow.name=Yellow Block
+tile.futopia.storage.cyan.name=Cyan Block
+tile.futopia.storage.light_blue.name=Light Blue Block
 
 # Computer
 tile.cpu.name=CPU
@@ -84,14 +92,18 @@ tile.power_conduit.name=Power Conduit
 tile.item_conduit.name=Item Conduit
 tile.conveyer_belt.name=Conveyer Belt
 
-# Gems, dusts, ingots and nuggets
+# Dusts, alloys and nuggets
 item.alloy.tesselite.name=Tesselite Ingot
 item.alloy.zinc.name=Zinc Ingot
-item.alloy.red.name=Red Alloy Ingot
-item.alloy.blue.name=Blue Alloy Ingot
-item.alloy.purple.name=Purple Alloy Ingot
+item.alloy.red.name=Red Ingot
+item.alloy.blue.name=Blue Ingot
+item.alloy.purple.name=Purple Ingot
 item.alloy.brass.name=Brass Ingot
 item.alloy.tungsten.name=Tungsten Ingot
+item.alloy.pink.name=Pink Ingot
+item.alloy.yellow.name=Yellow Ingot
+item.alloy.cyan.name=Cyan Ingot
+item.alloy.light_blue.name=Light Blue Ingot
 
 item.nugget.tungsten.name=Tungsten Nugget
 item.nugget.red.name=Red Nugget
@@ -101,6 +113,10 @@ item.nugget.purple.name=Purple Nugget
 item.nugget.brass.name=Brass Nugget
 item.nugget.zinc.name=Zinc Nugget
 item.nugget.tesselite.name= Tesselite Nugget
+item.alloy.pink.name=Pink Ingot
+item.alloy.yellow.name=Yellow Ingot
+item.alloy.cyan.name=Cyan Ingot
+item.alloy.light_blue.name=Light Blue Ingot
 
 item.plate.tungsten.name=Tungsten Plate
 item.plate.red.name=Red Plate
@@ -110,6 +126,10 @@ item.plate.purple.name=Purple Plate
 item.plate.brass.name=Brass Plate
 item.plate.zinc.name=Zinc Plate
 item.plate.tesselite.name= Tesselite Plate
+item.plate.pink.name=Pink Plate
+item.plate.yellow.name=Yellow Plate
+item.plate.cyan.name=Cyan Plate
+item.plate.light_blue.name=Light Blue Plate
 
 item.gear.tungsten.name=Tungsten Gear
 item.gear.red.name=Red Gear
@@ -119,6 +139,10 @@ item.gear.purple.name=Purple Gear
 item.gear.brass.name=Brass Gear
 item.gear.zinc.name=Zinc Gear
 item.gear.tesselite.name= Tesselite Gear
+item.gear.pink.name=Pink Gear
+item.gear.yellow.name=Yellow Gear
+item.gear.cyan.name=Cyan Gear
+item.gear.light_blue.name=Light Blue Gear
 
 item.dust.tungsten.name=Tungsten Dust
 item.dust.red.name=Red Dust
@@ -128,6 +152,10 @@ item.dust.purple.name=Purple Dust
 item.dust.brass.name=Brass Dust
 item.dust.zinc.name=Zinc Dust
 item.dust.tesselite.name= Tesselite Dust
+item.dust.pink.name=Pink Dust
+item.dust.yellow.name=Yellow Dust
+item.dust.cyan.name=Cyan Dust
+item.dust.light_blue.name=Light Blue Dust
 
 item.shard.tungsten.name=Tungsten Shard
 item.shard.red.name=Red Shard
@@ -137,6 +165,10 @@ item.shard.purple.name=Purple Shard
 item.shard.brass.name=Brass Shard
 item.shard.zinc.name=Zinc Shard
 item.shard.tesselite.name= Tesselite Shard
+item.shard.pink.name=Pink Shard
+item.shard.yellow.name=Yellow Shard
+item.shard.cyan.name=Cyan Shard
+item.shard.light_blue.name=Light Blue Shard
 
 item.iron_stick.name=Iron Stick
 item.windows_washer.name=Windows Washer

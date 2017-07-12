@@ -29,21 +29,21 @@ public class OtherBlocks {
         meteor = new BlockMeteor();
         marble = new BlockMarble();
         concrete = new BlockConcrete();
-        asphalt = new BlockAsphalt();
+//        asphalt = new BlockAsphalt();
 
         initList.add(limestone);
         initList.add(basalt);
         initList.add(meteor);
         initList.add(marble);
         initList.add(concrete);
-        initList.add(asphalt);
+//        initList.add(asphalt);
 
         Futopia.proxy.addIModelRegister(limestone);
         Futopia.proxy.addIModelRegister(marble);
         Futopia.proxy.addIModelRegister(basalt);
         Futopia.proxy.addIModelRegister(meteor);
         Futopia.proxy.addIModelRegister(concrete);
-        Futopia.proxy.addIModelRegister(asphalt);
+//        Futopia.proxy.addIModelRegister(asphalt);
 
         for (IInitializer init : initList) {
             init.preInit();

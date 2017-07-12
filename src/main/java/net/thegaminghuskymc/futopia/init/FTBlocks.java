@@ -20,12 +20,12 @@ import net.thegaminghuskymc.futopia.blocks.machine.BlockFilter;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockParticleSummoner;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOres;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseStorage;
-import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockBase;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 import net.thegaminghuskymc.futopia.tiles.TileAlloyFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileElectricalFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileProjectTable;
 import net.thegaminghuskymc.huskylib.RebornRegistry;
+import net.thegaminghuskymc.huskylib.items.blocks.ItemBlockBase;
 
 public class FTBlocks {
 	

@@ -1,8 +1,9 @@
 package net.thegaminghuskymc.futopia.network;
 
 import net.minecraft.util.IStringSerializable;
+import net.thegaminghuskymc.huskylib.blocks.EnumBlock.IEnumMeta;
 
-public enum EnumMaterialType implements IStringSerializable{
+public enum EnumMaterialType implements IStringSerializable, IEnumMeta{
 
     RED("red", 0),
     BLUE("blue", 1),
