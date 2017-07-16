@@ -9,62 +9,62 @@ import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
 
 public class TileCompressor extends TileEntityBase {
 
-    public TileCompressor compressor;
-    
-    private ItemStack stack;
+	public TileCompressor compressor;
 
-    public TileCompressor() {
-    }
+	private ItemStack stack;
 
-    public ItemStack getStack() {
-        return stack;
-    }
+	public TileCompressor() {
+	}
 
-    public void setStack(ItemStack stack) {
-        this.stack = stack;
-        markDirty();
-        if (world != null) {
-            IBlockState state = world.getBlockState(getPos());
-            world.notifyBlockUpdate(getPos(), state, state, 3);
-        }
-    }
+	public ItemStack getStack() {
+		return stack;
+	}
 
-    @Override
-    public NBTTagCompound getUpdateTag() {
-        return writeToNBT(new NBTTagCompound());
-    }
+	public void setStack(ItemStack stack) {
+		this.stack = stack;
+		markDirty();
+		if (world != null) {
+			IBlockState state = world.getBlockState(getPos());
+			world.notifyBlockUpdate(getPos(), state, state, 3);
+		}
+	}
 
-    @Override
-    public SPacketUpdateTileEntity getUpdatePacket() {
-        NBTTagCompound nbtTag = new NBTTagCompound();
-        this.writeToNBT(nbtTag);
+	@Override
+	public NBTTagCompound getUpdateTag() {
+		return writeToNBT(new NBTTagCompound());
+	}
 
-        return new SPacketUpdateTileEntity(getPos(), 1, nbtTag);
-    }
+	@Override
+	public SPacketUpdateTileEntity getUpdatePacket() {
+		NBTTagCompound nbtTag = new NBTTagCompound();
+		this.writeToNBT(nbtTag);
 
-    @Override
-    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
-        this.readFromNBT(packet.getNbtCompound());
-    }
+		return new SPacketUpdateTileEntity(getPos(), 1, nbtTag);
+	}
 
-    @Override
-    public void readFromNBT(NBTTagCompound compound) {
-        super.readFromNBT(compound);
-        if (compound.hasKey("item")) {
-            stack = new ItemStack(compound.getCompoundTag("item"));
-        } else {
-            stack = null;
-        }
-    }
+	@Override
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity packet) {
+		this.readFromNBT(packet.getNbtCompound());
+	}
 
-    @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound compound) {
-        super.writeToNBT(compound);
-        if (stack != null) {
-            NBTTagCompound tagCompound = new NBTTagCompound();
-            stack.writeToNBT(tagCompound);
-            compound.setTag("item", tagCompound);
-        }
-        return compound;
-    }
+	@Override
+	public void readFromNBT(NBTTagCompound compound) {
+		super.readFromNBT(compound);
+		if (compound.hasKey("item")) {
+			stack = new ItemStack(compound.getCompoundTag("item"));
+		} else {
+			stack = null;
+		}
+	}
+
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
+		super.writeToNBT(compound);
+		if (stack != null) {
+			NBTTagCompound tagCompound = new NBTTagCompound();
+			stack.writeToNBT(tagCompound);
+			compound.setTag("item", tagCompound);
+		}
+		return compound;
+	}
 }

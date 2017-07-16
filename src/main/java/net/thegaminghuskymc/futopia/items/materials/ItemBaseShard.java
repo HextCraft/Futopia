@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBaseShard extends ItemSubBase {
 
-    public ItemBaseShard(CreativeTabs tabs) {
-        super("shard", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBaseShard(CreativeTabs tabs) {
+		super("shard", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

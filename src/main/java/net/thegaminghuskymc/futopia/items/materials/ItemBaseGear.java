@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBaseGear extends ItemSubBase {
 
-    public ItemBaseGear(CreativeTabs tabs) {
-        super("gear", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBaseGear(CreativeTabs tabs) {
+		super("gear", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

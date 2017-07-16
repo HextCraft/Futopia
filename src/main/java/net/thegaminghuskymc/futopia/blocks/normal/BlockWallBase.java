@@ -14,51 +14,52 @@ import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockWallBase extends BlockWall implements IModeledBlock {
-	
+
 	public boolean isOpaqueCube = true;
 	public boolean isFullCube = true;
-	
+
 	public BlockRenderLayer layer = BlockRenderLayer.SOLID;
-	
-	public BlockWallBase(Block block, String name, boolean addToTab){
+
+	public BlockWallBase(Block block, String name, boolean addToTab) {
 		super(block);
 		setUnlocalizedName(name);
 		setRegistryName(Refs.MODID, name);
 		setCreativeTab(FTCreativeTabs.main);
-    }
-	
-	@Override
-	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list){
-		list.add(new ItemStack(this,1));
 	}
-	
-	public BlockWallBase setIsOpaqueCube(boolean b){
+
+	@Override
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+		list.add(new ItemStack(this, 1));
+	}
+
+	public BlockWallBase setIsOpaqueCube(boolean b) {
 		isOpaqueCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isOpaqueCube(IBlockState state){
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
-	
-	public BlockWallBase setIsFullCube(boolean b){
+
+	public BlockWallBase setIsFullCube(boolean b) {
 		isFullCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isFullCube(IBlockState state){
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
-	
-	public BlockWallBase setHarvestProperties(String toolType, int level){
+
+	public BlockWallBase setHarvestProperties(String toolType, int level) {
 		super.setHarvestLevel(toolType, level);
 		return this;
 	}
-	
+
 	@Override
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString()));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName().toString()));
 	}
 }

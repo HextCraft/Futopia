@@ -17,6 +17,6 @@
 
 package net.thegaminghuskymc.futopia.tiles;
 
-public class TileAlloyFurnace extends TileBase{
+public class TileAlloyFurnace extends TileBase {
 
 }

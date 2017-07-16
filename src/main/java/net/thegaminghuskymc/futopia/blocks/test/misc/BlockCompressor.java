@@ -21,84 +21,85 @@ import net.thegaminghuskymc.futopia.utils.BlockNames;
 
 public class BlockCompressor extends Block implements ITileEntityProvider {
 
-    public BlockCompressor() {
-        super(Material.IRON);
-        setUnlocalizedName(BlockNames.compressor);
-        setRegistryName(BlockNames.compressor);
-        setCreativeTab(FTCreativeTabs.machines);
-    }
+	public BlockCompressor() {
+		super(Material.IRON);
+		setUnlocalizedName(BlockNames.compressor);
+		setRegistryName(BlockNames.compressor);
+		setCreativeTab(FTCreativeTabs.machines);
+	}
 
-    private TileCompressor getTE(World world, BlockPos pos) {
-        return (TileCompressor) world.getTileEntity(pos);
-    }
+	private TileCompressor getTE(World world, BlockPos pos) {
+		return (TileCompressor) world.getTileEntity(pos);
+	}
 
-    @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player,
-    		EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
-        if (!world.isRemote) {
-            TileCompressor te = getTE(world, pos);
-            if (te.getStack() == null) {
-                if (player.getHeldItem(hand).isEmpty()) {
-                    ItemStack stack = player.getHeldItem(hand).copy();
-                    int stackSize  = stack.getMaxStackSize();
+	@Override
+	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
+			EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if (!world.isRemote) {
+			TileCompressor te = getTE(world, pos);
+			if (te.getStack() == null) {
+				if (player.getHeldItem(hand).isEmpty()) {
+					ItemStack stack = player.getHeldItem(hand).copy();
+					int stackSize = stack.getMaxStackSize();
 
-                    if (player.getHeldItem(hand).getMaxStackSize() > 9) {
-                        stack.setCount(9);
-                        te.setStack(stack);
+					if (player.getHeldItem(hand).getMaxStackSize() > 9) {
+						stack.setCount(9);
+						te.setStack(stack);
 
-                        ItemStack returnStack = player.getHeldItem(hand).copy();
-                        returnStack.setCount(9);
-                        player.inventory.setInventorySlotContents(player.inventory.currentItem, returnStack);
-                    } else {
-                        stack.setCount(stackSize);
-                        te.setStack(stack);
+						ItemStack returnStack = player.getHeldItem(hand).copy();
+						returnStack.setCount(9);
+						player.inventory.setInventorySlotContents(player.inventory.currentItem, returnStack);
+					} else {
+						stack.setCount(stackSize);
+						te.setStack(stack);
 
-                        ItemStack returnStack = player.getHeldItem(hand).copy();
-                        returnStack.setCount(stackSize);
-                        player.inventory.setInventorySlotContents(player.inventory.currentItem, returnStack);
+						ItemStack returnStack = player.getHeldItem(hand).copy();
+						returnStack.setCount(stackSize);
+						player.inventory.setInventorySlotContents(player.inventory.currentItem, returnStack);
 
-                    }
-                    player.openContainer.detectAndSendChanges();
-                }
-            } else {
-                ItemStack stack = te.getStack();
+					}
+					player.openContainer.detectAndSendChanges();
+				}
+			} else {
+				ItemStack stack = te.getStack();
 
-                te.setStack(null);
-                if (!player.inventory.addItemStackToInventory(stack)) {
-                    EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), stack);
-                    world.spawnEntity(entityItem);
-                } else {
-                    player.openContainer.detectAndSendChanges();
-                }
-            }
-        }
-        return true;
-    }
+				te.setStack(null);
+				if (!player.inventory.addItemStackToInventory(stack)) {
+					EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY() + 1, pos.getZ(), stack);
+					world.spawnEntity(entityItem);
+				} else {
+					player.openContainer.detectAndSendChanges();
+				}
+			}
+		}
+		return true;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        return false;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,
+			EnumFacing side) {
+		return false;
+	}
 
-    @Override
-    public boolean isBlockNormalCube(IBlockState blockState) {
-        return false;
-    }
+	@Override
+	public boolean isBlockNormalCube(IBlockState blockState) {
+		return false;
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState blockState) {
-        return false;
-    }
-    
-    @Override
-    public boolean isFullCube(IBlockState state) {
-    	return false;
-    }
+	@Override
+	public boolean isOpaqueCube(IBlockState blockState) {
+		return false;
+	}
 
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return new TileCompressor();
-    }
-    
+	@Override
+	public boolean isFullCube(IBlockState state) {
+		return false;
+	}
+
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return new TileCompressor();
+	}
+
 }

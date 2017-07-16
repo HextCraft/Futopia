@@ -26,198 +26,192 @@ import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockBasalt;
 
 public class BlockBasalt extends BlockCore implements IInitializer, IModelRegister {
 
-    public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
-    /* REFERENCES */
-    public static ItemStack basalt;
-    public static ItemStack basaltCobble;
-    public static ItemStack basaltPaver;
-    public static ItemStack basaltBrick;
-    public static ItemStack basaltFancy;
-    public static ItemStack basaltCrackedLava;
-    public static ItemStack basaltBrickCracked;
-    public static ItemStack basaltBrickSmall;
-    public static ItemStack basaltTile;
+	public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
+	/* REFERENCES */
+	public static ItemStack basalt;
+	public static ItemStack basaltCobble;
+	public static ItemStack basaltPaver;
+	public static ItemStack basaltBrick;
+	public static ItemStack basaltFancy;
+	public static ItemStack basaltCrackedLava;
+	public static ItemStack basaltBrickCracked;
+	public static ItemStack basaltBrickSmall;
+	public static ItemStack basaltTile;
 
-    public BlockBasalt() {
-        super(Material.ROCK, Refs.MODID);
+	public BlockBasalt() {
+		super(Material.ROCK, Refs.MODID);
 
-        setUnlocalizedName("basalt");
-        setCreativeTab(FTCreativeTabs.main);
+		setUnlocalizedName("basalt");
+		setCreativeTab(FTCreativeTabs.main);
 
-        setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
-    }
+		setSoundType(SoundType.STONE);
+		setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
+	}
 
-    @Override
-    protected BlockStateContainer createBlockState() {
+	@Override
+	protected BlockStateContainer createBlockState() {
 
-        return new BlockStateContainer(this, VARIANT);
-    }
+		return new BlockStateContainer(this, VARIANT);
+	}
 
-    @Override
-    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+	@Override
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 
-        for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
-            list.add(new ItemStack(this, 1, i));
-        }
-        
-    }
+		for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
+			list.add(new ItemStack(this, 1, i));
+		}
 
-    /* TYPE METHODS */
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
+	}
 
-        return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
-    }
+	/* TYPE METHODS */
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
 
-    @Override
-    public int getMetaFromState(IBlockState state) {
+		return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
+	}
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+	@Override
+	public int getMetaFromState(IBlockState state) {
 
-    @Override
-    public int damageDropped(IBlockState state) {
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+	@Override
+	public int damageDropped(IBlockState state) {
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerModels() {
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-        for (int i = 0; i < Type.values().length; i++) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-        }
-        
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerModels() {
 
-    @Override
-    public boolean preInit() {
-        this.setRegistryName("basalt");
-        ForgeRegistries.BLOCKS.register(this);
+		for (int i = 0; i < Type.values().length; i++) {
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
+					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+		}
 
-        ItemBlockBasalt itemBlock = new ItemBlockBasalt(this);
-        itemBlock.setRegistryName(this.getRegistryName());
-        ForgeRegistries.ITEMS.register(itemBlock);
+	}
 
-        basalt = new ItemStack(this, 1, Type.RAW.getMetadata());
-        basaltCobble = new ItemStack(this, 1, Type.COBBLE.getMetadata());
-        basaltPaver = new ItemStack(this, 1, Type.PAVER.getMetadata());
-        basaltBrick = new ItemStack(this, 1, Type.BRICK.getMetadata());
-        basaltFancy = new ItemStack(this, 1, Type.FANCY.getMetadata());
-        basaltCrackedLava = new ItemStack(this, 1, Type.CRACKED_LAVA.getMetadata());
-        basaltBrickCracked = new ItemStack(this, 1, Type.BRICK_CRACKED.getMetadata());
-        basaltBrickSmall = new ItemStack(this, 1, Type.BRICK_SMALL.getMetadata());
-        basaltTile = new ItemStack(this, 1, Type.TILE.getMetadata());
+	@Override
+	public boolean preInit() {
+		this.setRegistryName("basalt");
+		ForgeRegistries.BLOCKS.register(this);
 
-        registerWithHandlers("blockBasalt", basalt);
-        registerWithHandlers("blockBasaltCobble", basaltCobble);
-        registerWithHandlers("blockBasaltPaver", basaltPaver);
-        registerWithHandlers("blockBasaltBrick", basaltBrick);
-        registerWithHandlers("blockBasaltFancy", basaltFancy);
-        registerWithHandlers("blockBasaltCrackedLava", basaltCrackedLava);
-        registerWithHandlers("blockBasaltBrickCracked", basaltBrickCracked);
-        registerWithHandlers("blockBasaltBrickSmall", basaltBrickSmall);
-        registerWithHandlers("blockBasaltTile", basaltTile);
+		ItemBlockBasalt itemBlock = new ItemBlockBasalt(this);
+		itemBlock.setRegistryName(this.getRegistryName());
+		ForgeRegistries.ITEMS.register(itemBlock);
 
-        return true;
-    }
+		basalt = new ItemStack(this, 1, Type.RAW.getMetadata());
+		basaltCobble = new ItemStack(this, 1, Type.COBBLE.getMetadata());
+		basaltPaver = new ItemStack(this, 1, Type.PAVER.getMetadata());
+		basaltBrick = new ItemStack(this, 1, Type.BRICK.getMetadata());
+		basaltFancy = new ItemStack(this, 1, Type.FANCY.getMetadata());
+		basaltCrackedLava = new ItemStack(this, 1, Type.CRACKED_LAVA.getMetadata());
+		basaltBrickCracked = new ItemStack(this, 1, Type.BRICK_CRACKED.getMetadata());
+		basaltBrickSmall = new ItemStack(this, 1, Type.BRICK_SMALL.getMetadata());
+		basaltTile = new ItemStack(this, 1, Type.TILE.getMetadata());
 
-    @Override
-    public boolean initialize() {
-        return false;
-    }
+		registerWithHandlers("blockBasalt", basalt);
+		registerWithHandlers("blockBasaltCobble", basaltCobble);
+		registerWithHandlers("blockBasaltPaver", basaltPaver);
+		registerWithHandlers("blockBasaltBrick", basaltBrick);
+		registerWithHandlers("blockBasaltFancy", basaltFancy);
+		registerWithHandlers("blockBasaltCrackedLava", basaltCrackedLava);
+		registerWithHandlers("blockBasaltBrickCracked", basaltBrickCracked);
+		registerWithHandlers("blockBasaltBrickSmall", basaltBrickSmall);
+		registerWithHandlers("blockBasaltTile", basaltTile);
 
-    @Override
-    public boolean postInit() {
-        return false;
-    }
+		return true;
+	}
 
-    /* TYPE */
-    public enum Type implements IStringSerializable {
+	@Override
+	public boolean initialize() {
+		return false;
+	}
 
-        // @formatter:off
-        RAW(0, "raw"),
-        COBBLE(1, "cobble"),
-        PAVER(2, "paver"),
-        BRICK(3, "brick"),
-        FANCY(4, "fancy"),
-        CRACKED_LAVA(5, "cracked_lava"),
-        BRICK_CRACKED(6, "brick_cracked"),
-        BRICK_SMALL(7, "brick_small"),
-        TILE(8, "tile");
-        // @formatter: on
+	@Override
+	public boolean postInit() {
+		return false;
+	}
 
-        private static final Type[] METADATA_LOOKUP = new Type[values().length];
+	/* TYPE */
+	public enum Type implements IStringSerializable {
 
-        static {
-            for (Type type : values()) {
-                METADATA_LOOKUP[type.getMetadata()] = type;
-            }
-        }
+		// @formatter:off
+		RAW(0, "raw"), COBBLE(1, "cobble"), PAVER(2, "paver"), BRICK(3, "brick"), FANCY(4, "fancy"), CRACKED_LAVA(5,
+				"cracked_lava"), BRICK_CRACKED(6, "brick_cracked"), BRICK_SMALL(7, "brick_small"), TILE(8, "tile");
+		// @formatter: on
 
-        private final int metadata;
-        private final String name;
-        private final int light;
-        private final float hardness;
-        private final float resistance;
+		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 
-        Type(int metadata, String name, int light, float hardness, float resistance) {
+		static {
+			for (Type type : values()) {
+				METADATA_LOOKUP[type.getMetadata()] = type;
+			}
+		}
 
-            this.metadata = metadata;
-            this.name = name;
-            this.light = light;
-            this.hardness = hardness;
-            this.resistance = resistance;
-        }
+		private final int metadata;
+		private final String name;
+		private final int light;
+		private final float hardness;
+		private final float resistance;
 
-        Type(int metadata, String name, float hardness, float resistance) {
-            this(metadata, name, 0, hardness, resistance);
-        }
+		Type(int metadata, String name, int light, float hardness, float resistance) {
 
-        Type(int metadata, String name, int light) {
+			this.metadata = metadata;
+			this.name = name;
+			this.light = light;
+			this.hardness = hardness;
+			this.resistance = resistance;
+		}
 
-            this(metadata, name, light, 5.0F, 6.0F);
-        }
+		Type(int metadata, String name, float hardness, float resistance) {
+			this(metadata, name, 0, hardness, resistance);
+		}
 
-        Type(int metadata, String name) {
+		Type(int metadata, String name, int light) {
 
-            this(metadata, name, 0, 5.0F, 6.0F);
-        }
+			this(metadata, name, light, 5.0F, 6.0F);
+		}
 
-        public static Type byMetadata(int metadata) {
+		Type(int metadata, String name) {
 
-            if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
-                metadata = 0;
-            }
-            return METADATA_LOOKUP[metadata];
-        }
+			this(metadata, name, 0, 5.0F, 6.0F);
+		}
 
-        public int getMetadata() {
-            return this.metadata;
-        }
+		public static Type byMetadata(int metadata) {
 
-        @Override
-        public String getName() {
+			if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+				metadata = 0;
+			}
+			return METADATA_LOOKUP[metadata];
+		}
 
-            return this.name;
-        }
+		public int getMetadata() {
+			return this.metadata;
+		}
 
-        public int getLight() {
+		@Override
+		public String getName() {
 
-            return this.light;
-        }
+			return this.name;
+		}
 
-        public float getHardness() {
+		public int getLight() {
 
-            return this.hardness;
-        }
+			return this.light;
+		}
 
-        public float getResistance() {
+		public float getHardness() {
 
-            return this.resistance;
-        }
-    }
+			return this.hardness;
+		}
+
+		public float getResistance() {
+
+			return this.resistance;
+		}
+	}
 
 }

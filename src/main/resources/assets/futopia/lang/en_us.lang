@@ -46,31 +46,31 @@ tile.concrete.small_bricks.name=Concrete Small Bricks
 tile.futopia.asphalt.name=Asphalt
 
 # Ores and ore blocks
-tile.futopia.ore.red.name=Red Ore
-tile.futopia.ore.blue.name=Blue Ore
-tile.futopia.ore.green.name=Green Ore
-tile.futopia.ore.purple.name=Purple Ore
-tile.futopia.ore.zinc.name=Zinc Ore
-tile.futopia.ore.tesselite.name=Tesselite Ore
-tile.futopia.ore.tungsten.name=Tungsten Ore
-tile.futopia.ore.brass.name=Brass Ore
-tile.futopia.ore.pink.name=Pink Ore
-tile.futopia.ore.yellow.name=Yellow Ore
-tile.futopia.ore.cyan.name=Cyan Ore
-tile.futopia.ore.light_blue.name=Light Blue Ore
+tile.ore.red.name=Red Ore
+tile.ore.blue.name=Blue Ore
+tile.ore.green.name=Green Ore
+tile.ore.purple.name=Purple Ore
+tile.ore.zinc.name=Zinc Ore
+tile.ore.tesselite.name=Tesselite Ore
+tile.ore.tungsten.name=Tungsten Ore
+tile.ore.brass.name=Brass Ore
+tile.ore.pink.name=Pink Ore
+tile.ore.yellow.name=Yellow Ore
+tile.ore.cyan.name=Cyan Ore
+tile.ore.light_blue.name=Light Blue Ore
 
-tile.futopia.storage.red.name=Red Storage Block
-tile.futopia.storage.blue.name=Blue Storage Block
-tile.futopia.storage.green.name=Green Storage Block
-tile.futopia.storage.purple.name=Purple Storage Block
-tile.futopia.storage.tesselite.name=Tesselite Block
-tile.futopia.storage.zinc.name=Zinc Block
-tile.futopia.storage.tungsten.name=Tungsten Block
-tile.futopia.storage.brass.name=Brass Block
-tile.futopia.storage.pink.name=Pink Block
-tile.futopia.storage.yellow.name=Yellow Block
-tile.futopia.storage.cyan.name=Cyan Block
-tile.futopia.storage.light_blue.name=Light Blue Block
+tile.storage.red.name=Red Storage Block
+tile.storage.blue.name=Blue Storage Block
+tile.storage.green.name=Green Storage Block
+tile.storage.purple.name=Purple Storage Block
+tile.storage.tesselite.name=Tesselite Block
+tile.storage.zinc.name=Zinc Block
+tile.storage.tungsten.name=Tungsten Block
+tile.storage.brass.name=Brass Block
+tile.storage.pink.name=Pink Block
+tile.storage.yellow.name=Yellow Block
+tile.storage.cyan.name=Cyan Block
+tile.storage.light_blue.name=Light Blue Block
 
 # Computer
 tile.cpu.name=CPU

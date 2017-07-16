@@ -11,52 +11,55 @@ import net.thegaminghuskymc.futopia.Refs;
 
 public class FluidHelper {
 
-    public static Fluid createFluid(String name, String textureName, boolean hasFlowIcon) {
+	public static Fluid createFluid(String name, String textureName, boolean hasFlowIcon) {
 
-        ResourceLocation still = new ResourceLocation(textureName + "-still");
-        ResourceLocation flowing = hasFlowIcon ? new ResourceLocation(textureName + "-flow") : still;
+		ResourceLocation still = new ResourceLocation(textureName + "-still");
+		ResourceLocation flowing = hasFlowIcon ? new ResourceLocation(textureName + "-flow") : still;
 
-        Fluid fluid = new Fluid(name, still, flowing);
-        fluid.setUnlocalizedName(Refs.MODID + "." + name);
-        FluidRegistry.registerFluid(fluid);
+		Fluid fluid = new Fluid(name, still, flowing);
+		fluid.setUnlocalizedName(Refs.MODID + "." + name);
+		FluidRegistry.registerFluid(fluid);
 
-        return fluid;
-    }
+		return fluid;
+	}
 
-    public static void registerBucket(Fluid fluid) {
+	public static void registerBucket(Fluid fluid) {
 
-    }
+	}
 
-    public static <T extends Block & IFluidBlock> T registerFluidBlock(T block) {
-        String fluidName = block.getFluid().getUnlocalizedName();
-        block.setUnlocalizedName(fluidName);
-        block.setRegistryName(fluidName);
-        GameData.register_impl(block);
+	public static <T extends Block & IFluidBlock> T registerFluidBlock(T block) {
+		String fluidName = block.getFluid().getUnlocalizedName();
+		block.setUnlocalizedName(fluidName);
+		block.setRegistryName(fluidName);
+		GameData.register_impl(block);
 
-        ItemBlock itemBlock = new ItemBlock(block);
-        itemBlock.setRegistryName(fluidName);
-        GameData.register_impl(itemBlock);
+		ItemBlock itemBlock = new ItemBlock(block);
+		itemBlock.setRegistryName(fluidName);
+		GameData.register_impl(itemBlock);
 
-        return block;
-    }
+		return block;
+	}
 
-//    public static BlockFluidBlock registerBlockFluid(Fluid fluid) {
-//        BlockFluidBlock fluidBlock = new BlockFluidBlock(fluid);
-//        return
-//    }
-//
-//    protected static <T extends Block> T registerBlock(T block, String name) {
-//        ItemBlock itemBlock = new ItemBlock(block);
-//        return registerBlock(block, itemBlock, name);
-//    }
-//
-//    protected static <T extends Block> T registerBlock(T block, ItemBlock itemBlock, String name) {
-//
-//    }
-//
-//    protected static <T extends IForgeRegistryEntry<?>> T register(T thing, String name) {
-//        thing.setRegistryName(name);
-//        GameRegistry.register(thing);
-//        return thing;
-//    }
+	// public static BlockFluidBlock registerBlockFluid(Fluid fluid) {
+	// BlockFluidBlock fluidBlock = new BlockFluidBlock(fluid);
+	// return
+	// }
+	//
+	// protected static <T extends Block> T registerBlock(T block, String name)
+	// {
+	// ItemBlock itemBlock = new ItemBlock(block);
+	// return registerBlock(block, itemBlock, name);
+	// }
+	//
+	// protected static <T extends Block> T registerBlock(T block, ItemBlock
+	// itemBlock, String name) {
+	//
+	// }
+	//
+	// protected static <T extends IForgeRegistryEntry<?>> T register(T thing,
+	// String name) {
+	// thing.setRegistryName(name);
+	// GameRegistry.register(thing);
+	// return thing;
+	// }
 }

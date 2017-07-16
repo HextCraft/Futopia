@@ -6,15 +6,15 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockCompressor extends ItemBlockCore {
 
-    public ItemBlockCompressor(Block block) {
+	public ItemBlockCompressor(Block block) {
 
-        super(block);
-        setMaxDamage(0);
-    }
+		super(block);
+		setMaxDamage(0);
+	}
 
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        return "tile.compressor.name";
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.compressor.name";
+	}
 
 }

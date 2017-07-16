@@ -16,64 +16,65 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.RebornRegistry;
 
 public class BlockBase extends Block implements IModeledBlock {
-	
+
 	public Item itemBlock = null;
 	public boolean isOpaqueCube = true, isFullCube = true, isBeaconBase = false;
 	public BlockRenderLayer layer = BlockRenderLayer.SOLID;
-	
-	public BlockBase(Material material, String name, boolean addToTab){
+
+	public BlockBase(Material material, String name, boolean addToTab) {
 		super(material);
 		setUnlocalizedName(name);
-		setRegistryName(Refs.MODID+":"+name);
-		if (addToTab){
+		setRegistryName(Refs.MODID + ":" + name);
+		if (addToTab) {
 			setCreativeTab(FTCreativeTabs.main);
 		}
 		RebornRegistry.registerBlock(this);
 		RebornRegistry.registerItem(new ItemBlock(this), getRegistryName());
-    }
-	
-	public BlockBase setIsOpaqueCube(boolean b){
+	}
+
+	public BlockBase setIsOpaqueCube(boolean b) {
 		isOpaqueCube = b;
 		return this;
 	}
-	
-	public BlockBase setBeaconBase(boolean b){
+
+	public BlockBase setBeaconBase(boolean b) {
 		isBeaconBase = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isBeaconBase(IBlockAccess world, BlockPos pos, BlockPos beacon){
+	public boolean isBeaconBase(IBlockAccess world, BlockPos pos, BlockPos beacon) {
 		return isBeaconBase;
 	}
-	
+
 	@Override
-	public boolean isOpaqueCube(IBlockState state){
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
-	
-	public BlockBase setIsFullCube(boolean b){
+
+	public BlockBase setIsFullCube(boolean b) {
 		isFullCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isFullCube(IBlockState state){
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
-	
+
 	@Override
-	public boolean isFullBlock(IBlockState state){
+	public boolean isFullBlock(IBlockState state) {
 		return isFullCube;
 	}
-	
-	public BlockBase setHarvestProperties(String toolType, int level){
+
+	public BlockBase setHarvestProperties(String toolType, int level) {
 		super.setHarvestLevel(toolType, level);
 		return this;
 	}
-	
+
 	@Override
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString(),"inventory"));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName().toString(), "inventory"));
 	}
 }

@@ -16,92 +16,87 @@ import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockSlabBase extends BlockSlab {
-	
+
 	public boolean isOpaqueCube = true;
 	public boolean isFullCube = true;
-	
+
 	public BlockRenderLayer layer = BlockRenderLayer.SOLID;
-	
-	public BlockSlabBase(Block block, String name){
+
+	public BlockSlabBase(Block block, String name) {
 		super(block.getDefaultState().getMaterial());
 		setUnlocalizedName(name);
 		setRegistryName(Refs.MODID, name);
 		setCreativeTab(FTCreativeTabs.main);
 		this.useNeighborBrightness = true;
 	}
-	
-	public BlockSlabBase setIsOpaqueCube(boolean b){
+
+	public BlockSlabBase setIsOpaqueCube(boolean b) {
 		isOpaqueCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isOpaqueCube(IBlockState state){
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
-	
-	public BlockSlabBase setIsFullCube(boolean b){
+
+	public BlockSlabBase setIsFullCube(boolean b) {
 		isFullCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isFullCube(IBlockState state){
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
-	
-	public BlockSlabBase setHarvestProperties(String toolType, int level){
+
+	public BlockSlabBase setHarvestProperties(String toolType, int level) {
 		super.setHarvestLevel(toolType, level);
 		return this;
 	}
-	
-    @SideOnly(Side.CLIENT)
-	protected static boolean isHalfSlab(IBlockState state){
+
+	@SideOnly(Side.CLIENT)
+	protected static boolean isHalfSlab(IBlockState state) {
 		return true;
 	}
-	
+
 	@SideOnly(Side.CLIENT)
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString()));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName().toString()));
 	}
 
 	@Override
-	public IBlockState getStateFromMeta(int meta){
+	public IBlockState getStateFromMeta(int meta) {
 		IBlockState iblockstate = this.getDefaultState();
 		if (!this.isDouble())
-			iblockstate = iblockstate.withProperty(HALF, (meta) == 0 ?
-				                                             EnumBlockHalf.BOTTOM :
-				                                             EnumBlockHalf.TOP);
+			iblockstate = iblockstate.withProperty(HALF, (meta) == 0 ? EnumBlockHalf.BOTTOM : EnumBlockHalf.TOP);
 
 		return iblockstate;
 	}
 
 	@Override
-	public int getMetaFromState(IBlockState state){
-		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0 : 1; 
+	public int getMetaFromState(IBlockState state) {
+		return state.getValue(HALF) == EnumBlockHalf.BOTTOM ? 0 : 1;
 	}
 
 	@Override
-	protected BlockStateContainer createBlockState()
-	{
+	protected BlockStateContainer createBlockState() {
 		return new BlockStateContainer(this, HALF);
 	}
 
 	@Override
-	public boolean isDouble()
-	{
+	public boolean isDouble() {
 		return false;
 	}
 
 	@Override
-	public String getUnlocalizedName(int meta)
-	{
+	public String getUnlocalizedName(int meta) {
 		return null;
 	}
 
 	@Override
-	public IProperty<?> getVariantProperty()
-	{
+	public IProperty<?> getVariantProperty() {
 		return HALF;
 	}
 

@@ -24,18 +24,19 @@ public class BlockBase extends Block {
 		setHarvestLevel("pickaxe", 1);
 		setCreativeTab(tabs);
 	}
-	
+
 	@Override
-	public Item getItemDropped(IBlockState state, Random rand, int fortune){
+	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
 		return Item.getItemFromBlock(this);
 	}
-	
+
 	@SideOnly(Side.CLIENT)
-	public void registerItemModels(Item item){
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(this.getRegistryName(), "inventory"));
+	public void registerItemModels(Item item) {
+		ModelLoader.setCustomModelResourceLocation(item, 0,
+				new ModelResourceLocation(this.getRegistryName(), "inventory"));
 	}
 
-	public Item createItemBlock(){
+	public Item createItemBlock() {
 		return new ItemBlock(this).setRegistryName(this.getRegistryName());
 	}
 

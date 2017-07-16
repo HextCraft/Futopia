@@ -8,23 +8,23 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public interface IIntegrationModule {
 
-    String getName();
+	String getName();
 
-    boolean isEnabled();
+	boolean isEnabled();
 
-    void preInit(FMLPreInitializationEvent event);
+	void preInit(FMLPreInitializationEvent event);
 
-    void init(FMLInitializationEvent event);
+	void init(FMLInitializationEvent event);
 
-    void postInit(FMLPostInitializationEvent event);
+	void postInit(FMLPostInitializationEvent event);
 
-    @SideOnly(Side.CLIENT)
-    void preInitClient(FMLPreInitializationEvent event);
+	@SideOnly(Side.CLIENT)
+	void preInitClient(FMLPreInitializationEvent event);
 
-    @SideOnly(Side.CLIENT)
-    void initClient(FMLInitializationEvent event);
+	@SideOnly(Side.CLIENT)
+	void initClient(FMLInitializationEvent event);
 
-    @SideOnly(Side.CLIENT)
-    void postInitClient(FMLPostInitializationEvent event);
+	@SideOnly(Side.CLIENT)
+	void postInitClient(FMLPostInitializationEvent event);
 
 }

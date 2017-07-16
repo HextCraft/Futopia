@@ -6,15 +6,15 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockPlatingPresser extends ItemBlockCore {
 
-    public ItemBlockPlatingPresser(Block block) {
+	public ItemBlockPlatingPresser(Block block) {
 
-        super(block);
-        setMaxDamage(0);
-    }
+		super(block);
+		setMaxDamage(0);
+	}
 
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        return "tile.plating_presser.name";
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.plating_presser.name";
+	}
 
 }

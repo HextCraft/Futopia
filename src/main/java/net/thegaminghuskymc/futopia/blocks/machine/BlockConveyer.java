@@ -9,14 +9,14 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockConveyer extends BlockBase {
-	
-    public BlockConveyer() {
-        super(Refs.MODID, "conveyer_belt", FTCreativeTabs.main);
-    }
-    
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-    	return new AxisAlignedBB(0f, 0f, 0f, 1f, 2f/16f, 1f);
-    }
+
+	public BlockConveyer() {
+		super(Refs.MODID, "conveyer_belt", FTCreativeTabs.main);
+	}
+
+	@Override
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+		return new AxisAlignedBB(0f, 0f, 0f, 1f, 2f / 16f, 1f);
+	}
 
 }

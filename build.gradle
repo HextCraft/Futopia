@@ -1,51 +1,49 @@
 buildscript {
-    repositories {
-        jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
-    }
-    dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-    }
+	repositories {
+		jcenter()
+		maven {
+			name = "forge"
+			url = "http://files.minecraftforge.net/maven"
+		}
+	}
+	dependencies {
+		classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+	}
 }
-apply plugin: 'net.minecraftforge.gradle.forge'
 
-ext.configFile = file('build.properties')
+apply plugin: 'java'
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'maven'
+
+// Define properties file
+ext.configFile = file "build.properties"
 
 configFile.withReader {
-    def prop = new Properties()
-    prop.load(it)
-    ext.config = new ConfigSlurper().parse prop
+	// Load config. It shall from now be referenced as simply config or project.config
+	def prop = new Properties()
+	prop.load(it)
+	project.ext.config = new ConfigSlurper().parse prop
 }
 
 version = "${config.major_version}.${config.minor_version}.${config.build_number}"
-group= "net.thegaminghuskymc.futopia"
+group = "net.thegaminghuskymc.futopia"
 archivesBaseName = config.mod_name
 
-sourceCompatibility = targetCompatibility = '1.8'
-compileJava {
-    sourceCompatibility = targetCompatibility = '1.8'
-}
-
-minecraft {
-    version = "1.12-14.21.1.2405"
-    runDir = "run"
-    mappings = "snapshot_20170709"
-}
+targetCompatibility = "1.8"
+sourceCompatibility = "1.8"
 
 repositories {
 	maven { // The repo from which to get waila
         name "Mobius Repo"
         url "http://tehnut.info/maven"
     }
-    maven { // JEI
-        url "http://dvs1.progwml6.com/files/maven"
+    maven {
+        name = "ChickenBones Maven"
+        url = "http://chickenbones.net/maven/"
     }
-    maven { // IntWheel
-        url "http://maven.k-4u.nl"
-    }
-    maven { // TOP
-        name 'tterrag maven'
-        url "http://maven.tterrag.com/"
+    maven {
+        name = "JEI Maven"
+        url = "http://dvs1.progwml6.com/files/maven"
     }
     maven {
         name = "CoFH Maven"
@@ -54,43 +52,51 @@ repositories {
 }
 
 dependencies {
-	deobfCompile "mezz.jei:jei_1.12:4.7.1.74"
-    deobfCompile "mcp.mobius.waila:Hwyla:1.8.19-B33_1.12:api"
-    deobfCompile "cofh:RedstoneFlux:1.12-2.0.0.1:universal"
-    deobfCompile "cofh:CoFHCore:1.12-4.3.1.6:universal"
-    deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.11-5"
-    deobfCompile "com.github.mcjty:intwheel:1.12-1.2.7"
+    deobfCompile "mcp.mobius.waila:Hwyla:+:api"
+    compile "cofh:RedstoneFlux:${config.mc_version}-${config.rf_version}:deobf"
+    compile "cofh:CoFHCore:${config.mc_version}-${config.cofh_core_version}:deobf"
+    compile "codechicken:CodeChickenLib:${config.mc_version}-${config.ccl_version}:deobf"
+    compile "mezz.jei:jei_${config.mc_version}:${config.jei_version}"
+}
+
+minecraft {
+	version = config.mc_version + "-" + config.forge_version
+	mappings = config.mappings
+	runDir = "run"
+	replace '${mod_version}', project.config.mod_version
+	makeObfSourceJar = false
 }
 
 processResources {
-    inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+	inputs.property "version", project.version
+	inputs.property "mc_version", project.config.mc_version
 
-    from(sourceSets.main.resources.srcDirs) {
-        include 'mcmod.info'
-        expand 'version':project.version, 'mcversion':project.minecraft.version
-    }
-        
-    from(sourceSets.main.resources.srcDirs) {
+	from(sourceSets.main.resources.srcDirs) {
+		include 'mcmod.info'
+		expand 'version': project.version, 'mc_version': project.config.mc_version
+	}
+
+	from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
 jar {
-    classifier = 'universal'
+	classifier = 'universal'
 }
 
 task deobfJar(type: Jar) {
-    from sourceSets.main.output
-    classifier = 'deobf'
+	from sourceSets.main.output
+	classifier = 'deobf'
 }
 
 task srcJar(type: Jar) {
-    from sourceSets.main.allSource
-    classifier = 'sources'
+	from sourceSets.main.allSource
+	classifier = 'sources'
 }
 
+// Tell artifact system about extra jars.
 artifacts {
-    archives deobfJar
-    archives srcJar
+	archives deobfJar
+	archives srcJar
 }

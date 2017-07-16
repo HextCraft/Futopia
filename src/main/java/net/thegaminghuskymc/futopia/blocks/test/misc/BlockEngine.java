@@ -19,43 +19,44 @@ import net.thegaminghuskymc.futopia.utils.BlockNames;
 
 public class BlockEngine extends Block implements ITileEntityProvider {
 
-    public BlockEngine() {
-        super(Material.IRON);
-        setUnlocalizedName(BlockNames.engine);
-        setRegistryName(BlockNames.engine);
-        setCreativeTab(FTCreativeTabs.main);
-    }
+	public BlockEngine() {
+		super(Material.IRON);
+		setUnlocalizedName(BlockNames.engine);
+		setRegistryName(BlockNames.engine);
+		setCreativeTab(FTCreativeTabs.main);
+	}
 
-    @Override
-    public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
-        return true;
-    }
+	@Override
+	public boolean isFlammable(IBlockAccess world, BlockPos pos, EnumFacing face) {
+		return true;
+	}
 
-    @Override
-    public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
-        if(world.isBlockPowered(pos)) {
-            world.setBlockState(pos.down(), Blocks.FIRE.getDefaultState());
-        }
-    }
+	@Override
+	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rand) {
+		if (world.isBlockPowered(pos)) {
+			world.setBlockState(pos.down(), Blocks.FIRE.getDefaultState());
+		}
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        return false;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,
+			EnumFacing side) {
+		return false;
+	}
 
-    @Override
-    public boolean isBlockNormalCube(IBlockState blockState) {
-        return false;
-    }
+	@Override
+	public boolean isBlockNormalCube(IBlockState blockState) {
+		return false;
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState blockState) {
-        return false;
-    }
+	@Override
+	public boolean isOpaqueCube(IBlockState blockState) {
+		return false;
+	}
 
-    @Override
-    public TileEntity createNewTileEntity(World world, int meta) {
-        return null;
-    }
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return null;
+	}
 }

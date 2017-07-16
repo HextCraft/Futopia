@@ -16,8 +16,17 @@ out
 # gradle
 build
 .gradle
+.cfg
 
 # other
 eclipse
 run
 libs
+
+src/main/java/keri/*
+src/main/java/org/*
+src/main/java/javax/*
+
+src/main/resources/assets/jurassicraft/*
+src/main/resources/assets/ninetaillib/*
+src/main/resources/assets/projectx/*

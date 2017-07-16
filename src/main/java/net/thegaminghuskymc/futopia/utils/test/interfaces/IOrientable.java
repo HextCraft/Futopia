@@ -3,9 +3,11 @@ package net.thegaminghuskymc.futopia.utils.test.interfaces;
 import net.minecraft.util.EnumFacing;
 
 public interface IOrientable {
-    boolean canRotateVertically();
+	
+	boolean canRotateVertically();
 
-    EnumFacing getForward();
+	EnumFacing getForward();
 
-    void setFacing(EnumFacing facing);
+	void setFacing(EnumFacing facing);
+	
 }

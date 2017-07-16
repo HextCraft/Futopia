@@ -14,32 +14,33 @@ import net.thegaminghuskymc.futopia.utils.BlockNames;
 
 public class BlockRefinery extends Block {
 
-    public BlockRefinery() {
-        super(Material.GLASS);
-        setUnlocalizedName(BlockNames.refinery);
-        setRegistryName(BlockNames.refinery);
-        setCreativeTab(FTCreativeTabs.machines);
-    }
+	public BlockRefinery() {
+		super(Material.GLASS);
+		setUnlocalizedName(BlockNames.refinery);
+		setRegistryName(BlockNames.refinery);
+		setCreativeTab(FTCreativeTabs.machines);
+	}
 
-    @SideOnly(Side.CLIENT)
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.CUTOUT;
-    }
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.CUTOUT;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
-        return false;
-    }
+	@Override
+	@SideOnly(Side.CLIENT)
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,
+			EnumFacing side) {
+		return false;
+	}
 
-    @Override
-    public boolean isBlockNormalCube(IBlockState blockState) {
-        return false;
-    }
+	@Override
+	public boolean isBlockNormalCube(IBlockState blockState) {
+		return false;
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState blockState) {
-        return false;
-    }
-    
+	@Override
+	public boolean isOpaqueCube(IBlockState blockState) {
+		return false;
+	}
+
 }

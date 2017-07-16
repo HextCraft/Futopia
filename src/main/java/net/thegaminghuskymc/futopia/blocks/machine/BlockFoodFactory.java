@@ -14,17 +14,18 @@ import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 
 public class BlockFoodFactory extends BlockMachineBase {
 
-    public BlockFoodFactory() {
-        super(Refs.MODID, BlockNames.FOOD_FACTORY, FTCreativeTabs.machines);
-    }
+	public BlockFoodFactory() {
+		super(Refs.MODID, BlockNames.FOOD_FACTORY, FTCreativeTabs.machines);
+	}
 
-    @Override
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-        if (!StringHelper.isShiftKeyDown()) {
-            tooltip.add("Hold" + StringHelper.getDeactivationText(" Shift ") + StringHelper.getFlavorText("for information."));
-        } else {
-            tooltip.add(Names.CraftingToolTips.FOOD_FACTORY);
-        }
-    }
+	@Override
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		if (!StringHelper.isShiftKeyDown()) {
+			tooltip.add("Hold" + StringHelper.getDeactivationText(" Shift ")
+					+ StringHelper.getFlavorText("for information."));
+		} else {
+			tooltip.add(Names.CraftingToolTips.FOOD_FACTORY);
+		}
+	}
 
 }

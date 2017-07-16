@@ -26,54 +26,56 @@ import net.thegaminghuskymc.futopia.tiles.TileTank;
 public class BlockLoader {
 
 	public static BlockEngine engine;
-    public static BlockRefinery refinery;
-    public static BlockPlatingPress platingPress;
-    public static BlockCompressor compressor;
+	public static BlockRefinery refinery;
+	public static BlockPlatingPress platingPress;
+	public static BlockCompressor compressor;
 
-    public static void loadBlocks() {
-        register(engine);
-        register(refinery);
-        register(platingPress);
-        register(compressor);
-    }
+	public static void loadBlocks() {
+		register(engine);
+		register(refinery);
+		register(platingPress);
+		register(compressor);
+	}
 
-    @SideOnly(Side.CLIENT)
-    public static void initModels() {
-        registerModel(engine);
-        registerModel(refinery);
-        registerModel(platingPress);
-        registerModel(compressor);
-    }
-    
-    public static void initTileEntity(){
-    	registerTileEntity(TileCompressor.class, compressor);
-    	registerTileEntity(TilePlatingPress.class, platingPress);
-    	registerTileEntity(TileEngine.class, engine);
-    	registerTileEntity(TileTank.class, refinery);
-    }
-    
-    @SideOnly(Side.CLIENT)
-    public static void initTesr(){
-    	registerTESR(TileCompressor.class, new CompressorRenderer());
-    	registerTESR(TilePlatingPress.class, new PlatingPressRenderer());
-    }
-    
-    private static void registerModel(Block block){
-    	ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
-    }
-    
-    private static <T extends TileEntity> void registerTESR(Class<T> te, TileEntitySpecialRenderer<? super T> tesr){
-    	ClientRegistry.bindTileEntitySpecialRenderer(te, tesr);
-    }
-    
-    private static void register(Block block){
-    	ForgeRegistries.BLOCKS.register(block);
-        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
-    }
-    
-    private static void registerTileEntity(Class<? extends TileEntity> tileClass, Block owner){
-        String registryName = owner.getRegistryName().getResourceDomain() + ".tile." + owner.getRegistryName().getResourcePath();
-        GameRegistry.registerTileEntity(tileClass, registryName);
-    }
-    
+	@SideOnly(Side.CLIENT)
+	public static void initModels() {
+		registerModel(engine);
+		registerModel(refinery);
+		registerModel(platingPress);
+		registerModel(compressor);
+	}
+
+	public static void initTileEntity() {
+		registerTileEntity(TileCompressor.class, compressor);
+		registerTileEntity(TilePlatingPress.class, platingPress);
+		registerTileEntity(TileEngine.class, engine);
+		registerTileEntity(TileTank.class, refinery);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public static void initTesr() {
+		registerTESR(TileCompressor.class, new CompressorRenderer());
+		registerTESR(TilePlatingPress.class, new PlatingPressRenderer());
+	}
+
+	private static void registerModel(Block block) {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation(block.getRegistryName(), "inventory"));
+	}
+
+	private static <T extends TileEntity> void registerTESR(Class<T> te, TileEntitySpecialRenderer<? super T> tesr) {
+		ClientRegistry.bindTileEntitySpecialRenderer(te, tesr);
+	}
+
+	private static void register(Block block) {
+		ForgeRegistries.BLOCKS.register(block);
+		ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+	}
+
+	private static void registerTileEntity(Class<? extends TileEntity> tileClass, Block owner) {
+		String registryName = owner.getRegistryName().getResourceDomain() + ".tile."
+				+ owner.getRegistryName().getResourcePath();
+		GameRegistry.registerTileEntity(tileClass, registryName);
+	}
+
 }

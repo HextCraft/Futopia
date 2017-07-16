@@ -9,24 +9,24 @@ import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 
 public class BlockWindmillController extends BlockMachineBase {
 
-    public BlockWindmillController() {
-        super(Refs.MODID, BlockNames.WINDMILL_NAME, FTCreativeTabs.machines);
-    }
+	public BlockWindmillController() {
+		super(Refs.MODID, BlockNames.WINDMILL_NAME, FTCreativeTabs.machines);
+	}
 
-    @Override
-    public boolean isNormalCube(IBlockState state) {
-        return false;
-    }
+	@Override
+	public boolean isNormalCube(IBlockState state) {
+		return false;
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
 
-        return false;
-    }
+		return false;
+	}
 
-    @Override
-    public EnumBlockRenderType getRenderType(IBlockState state) {
-        return EnumBlockRenderType.MODEL;
-    }
+	@Override
+	public EnumBlockRenderType getRenderType(IBlockState state) {
+		return EnumBlockRenderType.MODEL;
+	}
 
 }

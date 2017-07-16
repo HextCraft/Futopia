@@ -6,7 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.thegaminghuskymc.futopia.integration.IIntegrationModule;
 
-public class IntegrationWaila implements IIntegrationModule{
+public class IntegrationWaila implements IIntegrationModule {
 
 	@Override
 	public String getName() {
@@ -20,32 +20,32 @@ public class IntegrationWaila implements IIntegrationModule{
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		
+
 	}
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		
+
 	}
 
 	@Override
 	public void postInit(FMLPostInitializationEvent event) {
-		
+
 	}
 
 	@Override
 	public void preInitClient(FMLPreInitializationEvent event) {
-		
+
 	}
 
 	@Override
 	public void initClient(FMLInitializationEvent event) {
-		
+
 	}
 
 	@Override
 	public void postInitClient(FMLPostInitializationEvent event) {
-		
+
 	}
 
 }

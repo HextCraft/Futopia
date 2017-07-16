@@ -10,42 +10,42 @@ import net.minecraftforge.fluids.capability.IFluidTankProperties;
 
 public class TileProjectTable extends TileEntityMachineBase implements IFluidHandler, ITickable {
 
-    private EnumFacing orientation = EnumFacing.NORTH;
-    private FluidTank tankRedstone = new FluidTank(16000);
+	private EnumFacing orientation = EnumFacing.NORTH;
+	private FluidTank tankRedstone = new FluidTank(16000);
 
-    public TileProjectTable() {
-        super();
-    }
+	public TileProjectTable() {
+		super();
+	}
 
-    @Override
-    public void update() {
+	@Override
+	public void update() {
 
-    }
+	}
 
-    @Override
-    public void readFromNBT(NBTTagCompound tag) {
-        super.readFromNBT(tag);
-        this.tankRedstone.readFromNBT(tag.getCompoundTag("tank_redstone"));
-    }
+	@Override
+	public void readFromNBT(NBTTagCompound tag) {
+		super.readFromNBT(tag);
+		this.tankRedstone.readFromNBT(tag.getCompoundTag("tank_redstone"));
+	}
 
-    @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound tag) {
-        super.writeToNBT(tag);
-        tag.setTag("tank_redstone", this.tankRedstone.writeToNBT(new NBTTagCompound()));
-        return tag;
-    }
+	@Override
+	public NBTTagCompound writeToNBT(NBTTagCompound tag) {
+		super.writeToNBT(tag);
+		tag.setTag("tank_redstone", this.tankRedstone.writeToNBT(new NBTTagCompound()));
+		return tag;
+	}
 
-    public FluidTank getTankRedstone() {
-        return this.tankRedstone;
-    }
+	public FluidTank getTankRedstone() {
+		return this.tankRedstone;
+	}
 
-    public EnumFacing getOrientation() {
-        return this.orientation;
-    }
+	public EnumFacing getOrientation() {
+		return this.orientation;
+	}
 
-    public void setOrientation(EnumFacing orientation) {
-        this.orientation = orientation;
-    }
+	public void setOrientation(EnumFacing orientation) {
+		this.orientation = orientation;
+	}
 
 	@Override
 	public IFluidTankProperties[] getTankProperties() {

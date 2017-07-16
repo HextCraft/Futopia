@@ -4,8 +4,8 @@ import net.thegaminghuskymc.futopia.utils.BlockNames;
 
 public class BlockIOExpander extends BlockComputerBase {
 
-    public BlockIOExpander() {
-        super(BlockNames.BLOCKIOEXPANDER_NAME);
-    }
+	public BlockIOExpander() {
+		super(BlockNames.BLOCKIOEXPANDER_NAME);
+	}
 
 }

@@ -5,7 +5,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemSeeds;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
-public class ItemSeedBase extends ItemSeeds{
+public class ItemSeedBase extends ItemSeeds {
 
 	public ItemSeedBase(String name, Block crop) {
 		super(crop, Blocks.FARMLAND);

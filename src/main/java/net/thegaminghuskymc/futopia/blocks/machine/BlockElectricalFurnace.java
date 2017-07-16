@@ -6,8 +6,8 @@ import net.thegaminghuskymc.futopia.utils.BlockNames;
 
 public class BlockElectricalFurnace extends BlockFurnaceBase {
 
-    public BlockElectricalFurnace() {
-        super(BlockNames.ELECTRICALFURNACE_NAME, FTCreativeTabs.machines, new TileElectricalFurnace());
-    }
+	public BlockElectricalFurnace() {
+		super(BlockNames.ELECTRICALFURNACE_NAME, FTCreativeTabs.machines, new TileElectricalFurnace());
+	}
 
 }

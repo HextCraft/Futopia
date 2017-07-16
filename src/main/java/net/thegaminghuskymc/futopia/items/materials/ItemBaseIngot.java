@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBaseIngot extends ItemSubBase {
 
-    public ItemBaseIngot(CreativeTabs tabs) {
-        super("alloy", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBaseIngot(CreativeTabs tabs) {
+		super("alloy", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

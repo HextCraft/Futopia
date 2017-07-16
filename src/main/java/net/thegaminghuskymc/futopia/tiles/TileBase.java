@@ -8,196 +8,204 @@ import net.minecraft.tileentity.TileEntity;
 
 public class TileBase extends TileEntity {
 
-    private boolean isRedstonePowered;
-    private int outputtingRedstone;
-    private int ticker = 0;
+	private boolean isRedstonePowered;
+	private int outputtingRedstone;
+	private int ticker = 0;
 
-    /*@Override
-    public void readFromNBT(NBTTagCompound tCompound) {
+	/*
+	 * @Override public void readFromNBT(NBTTagCompound tCompound) {
+	 * 
+	 * super.readFromNBT(tCompound); isRedstonePowered =
+	 * tCompound.getBoolean("isRedstonePowered"); //
+	 * readFromPacketNBT(tCompound); }
+	 * 
+	 *//**
+		 * This function gets called whenever the world/chunk is saved
+		 *
+		 * @return
+		 */
+	/*
+	 * @Override public NBTTagCompound writeToNBT(NBTTagCompound tCompound) {
+	 * 
+	 * super.writeToNBT(tCompound); tCompound.setBoolean("isRedstonePowered",
+	 * isRedstonePowered);
+	 * 
+	 * writeToPacketNBT(tCompound);
+	 * 
+	 * return tCompound; }
+	 * 
+	 *//**
+		 * Tags written in here are synced upon markBlockForUpdate.
+		 *
+		 * @param tCompound
+		 *//*
+		 * protected void writeToPacketNBT(NBTTagCompound tCompound) {
+		 * 
+		 * tCompound.setByte("rotation", (byte) rotation.ordinal());
+		 * tCompound.setByte("outputtingRedstone", (byte) outputtingRedstone); }
+		 */
 
-        super.readFromNBT(tCompound);
-        isRedstonePowered = tCompound.getBoolean("isRedstonePowered");
-//        readFromPacketNBT(tCompound);
-    }
+	// protected void readFromPacketNBT(NBTTagCompound tCompound) {
+	//
+	// rotation = EnumFacing.random(tCompound.getByte("rotation"));
+	// if (rotation.ordinal() > 5) {
+	// BluePower.log.warn("invalid rotation!");
+	// rotation = ForgeDirection.UP;
+	// }
+	// outputtingRedstone = tCompound.getByte("outputtingRedstone");
+	// if (worldObj != null)
+	// markForRenderUpdate();
+	// }
 
-    *//**
-     * This function gets called whenever the world/chunk is saved
-     *
-     * @return
-     *//*
-    @Override
-    public NBTTagCompound writeToNBT(NBTTagCompound tCompound) {
+	// @Override
+	// public Packet getDescriptionPacket() {
+	//
+	// NBTTagCompound tCompound = new NBTTagCompound();
+	// writeToPacketNBT(tCompound);
+	// return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 0,
+	// tCompound);
+	// }
 
-        super.writeToNBT(tCompound);
-        tCompound.setBoolean("isRedstonePowered", isRedstonePowered);
+	// @Override
+	// public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt)
+	// {
+	//
+	// readFromPacketNBT(pkt.getNbtCompound());
+	// }
 
-        writeToPacketNBT(tCompound);
+	// protected void sendUpdatePacket() {
+	//
+	// if (!worldObj.isRemote)
+	// worldObj.ma(pos.getX(), pos.getY(), pos.getZ());
+	// }
 
-        return tCompound;
-    }
+	// protected void markForRenderUpdate() {
+	//
+	// if (worldObj != null)
+	// worldObj.markBlockRangeForRenderUpdate(xCoord, yCoord, zCoord, xCoord,
+	// yCoord, zCoord);
+	// }
+	//
+	// protected void notifyNeighborBlockUpdate() {
+	//
+	// worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord, zCoord,
+	// getBlockType());
+	// }
 
-    *//**
-     * Tags written in here are synced upon markBlockForUpdate.
-     *
-     * @param tCompound
-     *//*
-    protected void writeToPacketNBT(NBTTagCompound tCompound) {
+	/**
+	 * Function gets called every tick. Do not forget to call the super method!
+	 */
+	// @Override
+	// public void update() {
+	//
+	// if (ticker == 0) {
+	// onTileLoaded();
+	// }
+	// super.updateEntity();
+	// ticker++;
+	// }
 
-        tCompound.setByte("rotation", (byte) rotation.ordinal());
-        tCompound.setByte("outputtingRedstone", (byte) outputtingRedstone);
-    }*/
+	/**
+	 * ************** ADDED FUNCTIONS ****************
+	 */
 
-//    protected void readFromPacketNBT(NBTTagCompound tCompound) {
-//
-//        rotation = EnumFacing.random(tCompound.getByte("rotation"));
-//        if (rotation.ordinal() > 5) {
-//            BluePower.log.warn("invalid rotation!");
-//            rotation = ForgeDirection.UP;
-//        }
-//        outputtingRedstone = tCompound.getByte("outputtingRedstone");
-//        if (worldObj != null)
-//            markForRenderUpdate();
-//    }
+	// public void onBlockNeighbourChanged() {
+	//
+	// checkRedstonePower();
+	// }
 
-//    @Override
-//    public Packet getDescriptionPacket() {
-//
-//        NBTTagCompound tCompound = new NBTTagCompound();
-//        writeToPacketNBT(tCompound);
-//        return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 0, tCompound);
-//    }
+	/**
+	 * Checks if redstone has changed.
+	 */
+	// public void checkRedstonePower() {
+	//
+	// boolean isIndirectlyPowered =
+	// getWorld().isBlockIndirectlyGettingPowered(false);
+	// if (isIndirectlyPowered && !getIsRedstonePowered()) {
+	// redstoneChanged(true);
+	// } else if (getIsRedstonePowered() && !isIndirectlyPowered) {
+	// redstoneChanged(false);
+	// }
+	// }
 
-//    @Override
-//    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-//
-//        readFromPacketNBT(pkt.getNbtCompound());
-//    }
+	/**
+	 * Before being able to use this, remember to mark the block as redstone
+	 * emitter by calling BlockContainerBase#emitsRedstone()
+	 *
+	 * @param newValue
+	 */
+	public void setOutputtingRedstone(boolean newValue) {
 
-//    protected void sendUpdatePacket() {
-//
-//        if (!worldObj.isRemote)
-//            worldObj.ma(pos.getX(), pos.getY(), pos.getZ());
-//    }
+		setOutputtingRedstone(newValue ? 15 : 0);
+	}
 
-//    protected void markForRenderUpdate() {
-//
-//        if (worldObj != null)
-//            worldObj.markBlockRangeForRenderUpdate(xCoord, yCoord, zCoord, xCoord, yCoord, zCoord);
-//    }
-//
-//    protected void notifyNeighborBlockUpdate() {
-//
-//        worldObj.notifyBlocksOfNeighborChange(xCoord, yCoord, zCoord, getBlockType());
-//    }
+	public int getOutputtingRedstone() {
 
-    /**
-     * Function gets called every tick. Do not forget to call the super method!
-     */
-//    @Override
-//    public void update() {
-//
-//        if (ticker == 0) {
-//            onTileLoaded();
-//        }
-//        super.updateEntity();
-//        ticker++;
-//    }
+		return outputtingRedstone;
+	}
 
-    /**
-     * ************** ADDED FUNCTIONS ****************
-     */
+	/**
+	 * Before being able to use this, remember to mark the block as redstone
+	 * emitter by calling BlockContainerBase#emitsRedstone()
+	 *
+	 * @param value
+	 */
+	public void setOutputtingRedstone(int value) {
 
-//    public void onBlockNeighbourChanged() {
-//
-//        checkRedstonePower();
-//    }
+		value = Math.max(0, value);
+		value = Math.min(15, value);
+		if (outputtingRedstone != value) {
+			outputtingRedstone = value;
+		}
+	}
 
-    /**
-     * Checks if redstone has changed.
-     */
-//    public void checkRedstonePower() {
-//
-//        boolean isIndirectlyPowered = getWorld().isBlockIndirectlyGettingPowered(false);
-//        if (isIndirectlyPowered && !getIsRedstonePowered()) {
-//            redstoneChanged(true);
-//        } else if (getIsRedstonePowered() && !isIndirectlyPowered) {
-//            redstoneChanged(false);
-//        }
-//    }
+	/**
+	 * This method can be overwritten to get alerted when the redstone level has
+	 * changed.
+	 *
+	 * @param newValue
+	 *            The redstone level it is at now
+	 */
+	protected void redstoneChanged(boolean newValue) {
 
-    /**
-     * Before being able to use this, remember to mark the block as redstone emitter by calling BlockContainerBase#emitsRedstone()
-     *
-     * @param newValue
-     */
-    public void setOutputtingRedstone(boolean newValue) {
+		isRedstonePowered = newValue;
+	}
 
-        setOutputtingRedstone(newValue ? 15 : 0);
-    }
+	/**
+	 * Check whether or not redstone level is high
+	 */
+	public boolean getIsRedstonePowered() {
 
-    public int getOutputtingRedstone() {
+		return isRedstonePowered;
+	}
 
-        return outputtingRedstone;
-    }
+	/**
+	 * Returns the ticker of the Tile, this number wll increase every tick
+	 *
+	 * @return the ticker
+	 */
+	public int getTicker() {
 
-    /**
-     * Before being able to use this, remember to mark the block as redstone emitter by calling BlockContainerBase#emitsRedstone()
-     *
-     * @param value
-     */
-    public void setOutputtingRedstone(int value) {
+		return ticker;
+	}
 
-        value = Math.max(0, value);
-        value = Math.min(15, value);
-        if (outputtingRedstone != value) {
-            outputtingRedstone = value;
-        }
-    }
+	/**
+	 * Gets called when the TileEntity ticks for the first time, the world is
+	 * accessible and updateEntity() has not been ran yet
+	 */
+	// protected void onTileLoaded() {
+	//
+	// if (!worldObj.isRemote)
+	//
+	// }
+	public List<ItemStack> getDrops() {
 
-    /**
-     * This method can be overwritten to get alerted when the redstone level has changed.
-     *
-     * @param newValue The redstone level it is at now
-     */
-    protected void redstoneChanged(boolean newValue) {
+		return new ArrayList<ItemStack>();
+	}
 
-        isRedstonePowered = newValue;
-    }
+	public boolean canConnectRedstone() {
 
-    /**
-     * Check whether or not redstone level is high
-     */
-    public boolean getIsRedstonePowered() {
+		return false;
+	}
 
-        return isRedstonePowered;
-    }
-
-    /**
-     * Returns the ticker of the Tile, this number wll increase every tick
-     *
-     * @return the ticker
-     */
-    public int getTicker() {
-
-        return ticker;
-    }
-
-    /**
-     * Gets called when the TileEntity ticks for the first time, the world is accessible and updateEntity() has not been ran yet
-     */
-//    protected void onTileLoaded() {
-//
-//        if (!worldObj.isRemote)
-//        	
-//    }
-    public List<ItemStack> getDrops() {
-
-        return new ArrayList<ItemStack>();
-    }
-
-    public boolean canConnectRedstone() {
-
-        return false;
-    }
-    
 }

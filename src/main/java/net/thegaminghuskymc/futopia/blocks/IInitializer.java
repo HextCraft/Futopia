@@ -1,11 +1,10 @@
 package net.thegaminghuskymc.futopia.blocks;
 
-public interface IInitializer
-{
+public interface IInitializer {
 
-    public abstract boolean preInit();
+	public abstract boolean preInit();
 
-    public abstract boolean initialize();
+	public abstract boolean initialize();
 
-    public abstract boolean postInit();
+	public abstract boolean postInit();
 }

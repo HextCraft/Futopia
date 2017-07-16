@@ -11,10 +11,10 @@ import net.thegaminghuskymc.futopia.init.FTBlocks;
  * Created by TheGamingHuskyMC on 26.05.2017.
  */
 public class CommonProxy implements IFutopiaProxy {
-	
+
 	@Override
 	public void registerRenders() {
-		
+
 	}
 
 	@Override
@@ -22,29 +22,29 @@ public class CommonProxy implements IFutopiaProxy {
 		FTBlocks.registerTE();
 	}
 
-    @Override
-    public void preInit(FMLPreInitializationEvent event) {
+	@Override
+	public void preInit(FMLPreInitializationEvent event) {
 
-    }
+	}
 
-    @Override
-    public void init(FMLInitializationEvent event) {
+	@Override
+	public void init(FMLInitializationEvent event) {
 
-    }
+	}
 
-    @Override
-    public void postInit(FMLPostInitializationEvent event) {
+	@Override
+	public void postInit(FMLPostInitializationEvent event) {
 
-    }
+	}
 
-    @Override
-    public boolean addIModelRegister(IModelRegister modelRegister) {
-        return false;
-    }
+	@Override
+	public boolean addIModelRegister(IModelRegister modelRegister) {
+		return false;
+	}
 
 	@Override
 	public void registerItemRenderer(Item item, int meta, String id) {
-		
+
 	}
 
 }

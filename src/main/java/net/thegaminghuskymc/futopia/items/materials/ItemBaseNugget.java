@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBaseNugget extends ItemSubBase {
 
-    public ItemBaseNugget(CreativeTabs tabs) {
-        super("nugget", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBaseNugget(CreativeTabs tabs) {
+		super("nugget", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

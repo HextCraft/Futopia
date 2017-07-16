@@ -6,10 +6,10 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockDecorationBase extends BlockBase {
 
-    public BlockDecorationBase(String blockName) {
-        super(Material.ROCK, blockName, true);
-        setCreativeTab(FTCreativeTabs.main);
-        setSoundType(SoundType.METAL);
-    }
+	public BlockDecorationBase(String blockName) {
+		super(Material.ROCK, blockName, true);
+		setCreativeTab(FTCreativeTabs.main);
+		setSoundType(SoundType.METAL);
+	}
 
 }

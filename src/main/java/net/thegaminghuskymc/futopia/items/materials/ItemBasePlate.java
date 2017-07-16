@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBasePlate extends ItemSubBase {
 
-    public ItemBasePlate(CreativeTabs tabs) {
-        super("plate", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBasePlate(CreativeTabs tabs) {
+		super("plate", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

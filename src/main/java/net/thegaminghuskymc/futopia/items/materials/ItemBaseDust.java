@@ -6,8 +6,8 @@ import net.thegaminghuskymc.huskylib.items.ItemSubBase;
 
 public class ItemBaseDust extends ItemSubBase {
 
-    public ItemBaseDust(CreativeTabs tabs) {
-        super("dust", tabs, EnumMaterialType.toStringArray());
-    }
+	public ItemBaseDust(CreativeTabs tabs) {
+		super("dust", tabs, EnumMaterialType.toStringArray());
+	}
 
 }

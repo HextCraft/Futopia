@@ -10,47 +10,48 @@ import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockStairsBase extends BlockStairs implements IModeledBlock {
-	
+
 	public boolean isOpaqueCube = true;
 	public boolean isFullCube = true;
-	
+
 	public BlockRenderLayer layer = BlockRenderLayer.SOLID;
-	
-	public BlockStairsBase(IBlockState state, String name){
+
+	public BlockStairsBase(IBlockState state, String name) {
 		super(state);
 		this.useNeighborBrightness = true;
 		setUnlocalizedName(name);
 		setRegistryName(Refs.MODID, name);
 		setCreativeTab(FTCreativeTabs.main);
-    }
-	
-	public BlockStairsBase setIsOpaqueCube(boolean b){
+	}
+
+	public BlockStairsBase setIsOpaqueCube(boolean b) {
 		isOpaqueCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isOpaqueCube(IBlockState state){
+	public boolean isOpaqueCube(IBlockState state) {
 		return isOpaqueCube;
 	}
-	
-	public BlockStairsBase setIsFullCube(boolean b){
+
+	public BlockStairsBase setIsFullCube(boolean b) {
 		isFullCube = b;
 		return this;
 	}
-	
+
 	@Override
-	public boolean isFullCube(IBlockState state){
+	public boolean isFullCube(IBlockState state) {
 		return isFullCube;
 	}
-	
-	public BlockStairsBase setHarvestProperties(String toolType, int level){
+
+	public BlockStairsBase setHarvestProperties(String toolType, int level) {
 		super.setHarvestLevel(toolType, level);
 		return this;
 	}
-	
+
 	@Override
-	public void initModel(){
-		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0, new ModelResourceLocation(getRegistryName().toString()));
+	public void initModel() {
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), 0,
+				new ModelResourceLocation(getRegistryName().toString()));
 	}
 }

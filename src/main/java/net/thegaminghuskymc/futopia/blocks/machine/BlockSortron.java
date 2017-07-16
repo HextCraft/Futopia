@@ -7,8 +7,8 @@ import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockSortron extends BlockBase {
 
-    public BlockSortron() {
-        super(Refs.MODID, BlockNames.BLOCKSORTON_NAME, FTCreativeTabs.machines);
-    }
+	public BlockSortron() {
+		super(Refs.MODID, BlockNames.BLOCKSORTON_NAME, FTCreativeTabs.machines);
+	}
 
 }

@@ -6,16 +6,16 @@ import net.minecraft.item.ItemStack;
 
 public class ItemBlockEngine extends ItemBlockCore {
 
-    public ItemBlockEngine(Block block) {
+	public ItemBlockEngine(Block block) {
 
-        super(block);
-        setHasSubtypes(false);
-        setMaxDamage(0);
-    }
+		super(block);
+		setHasSubtypes(false);
+		setMaxDamage(0);
+	}
 
-    @Override
-    public String getUnlocalizedName(ItemStack stack) {
-        return "tile.engine.name";
-    }
+	@Override
+	public String getUnlocalizedName(ItemStack stack) {
+		return "tile.engine.name";
+	}
 
 }

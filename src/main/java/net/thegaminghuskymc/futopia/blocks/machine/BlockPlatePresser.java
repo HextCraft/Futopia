@@ -10,8 +10,8 @@ import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
  */
 public class BlockPlatePresser extends BlockMachineBase {
 
-    public BlockPlatePresser() {
-        super(Refs.MODID, "plate_presser", new TilePlatePresser(), FTCreativeTabs.machines);
-    }
-    
+	public BlockPlatePresser() {
+		super(Refs.MODID, "plate_presser", new TilePlatePresser(), FTCreativeTabs.machines);
+	}
+
 }

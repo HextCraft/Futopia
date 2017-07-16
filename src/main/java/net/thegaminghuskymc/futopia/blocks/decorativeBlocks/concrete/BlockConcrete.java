@@ -38,218 +38,217 @@ import net.thegaminghuskymc.futopia.utils.RandomThings;
 
 public class BlockConcrete extends BlockCore implements IInitializer, IModelRegister {
 
-    public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
-    /* REFERENCES */
-    public static ItemStack concrete;
-    public static ItemStack concreteArrangedBricks;
-    public static ItemStack concreteBricks;
-    public static ItemStack concreteBricksDark;
-    public static ItemStack concreteFanzyBricks;
-    public static ItemStack concreteOldSquares;
-    public static ItemStack concreteRocks;
-    public static ItemStack concreteSmallBricks;
+	public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
+	/* REFERENCES */
+	public static ItemStack concrete;
+	public static ItemStack concreteArrangedBricks;
+	public static ItemStack concreteBricks;
+	public static ItemStack concreteBricksDark;
+	public static ItemStack concreteFanzyBricks;
+	public static ItemStack concreteOldSquares;
+	public static ItemStack concreteRocks;
+	public static ItemStack concreteSmallBricks;
 
-    public BlockConcrete() {
-        super(Material.ROCK, Refs.MODID);
+	public BlockConcrete() {
+		super(Material.ROCK, Refs.MODID);
 
-        setUnlocalizedName("concrete");
-        setCreativeTab(FTCreativeTabs.main);
-        setHardness(5.0F);
-        setResistance(10.0F);
-        setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
+		setUnlocalizedName("concrete");
+		setCreativeTab(FTCreativeTabs.main);
+		setHardness(5.0F);
+		setResistance(10.0F);
+		setSoundType(SoundType.STONE);
+		setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
 
-        setHarvestLevel("pickaxe", 2);
-    }
+		setHarvestLevel("pickaxe", 2);
+	}
 
-    @Override
-    protected BlockStateContainer createBlockState() {
+	@Override
+	protected BlockStateContainer createBlockState() {
 
-        return new BlockStateContainer(this, VARIANT);
-    }
+		return new BlockStateContainer(this, VARIANT);
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 
-        for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
-            list.add(new ItemStack(this, 1, i));
-        }
-    }
+		for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
+			list.add(new ItemStack(this, 1, i));
+		}
+	}
 
-    /* TYPE METHODS */
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
+	/* TYPE METHODS */
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
 
-        return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
-    }
+		return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
+	}
 
-    @Override
-    public int getMetaFromState(IBlockState state) {
+	@Override
+	public int getMetaFromState(IBlockState state) {
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-    @Override
-    public int damageDropped(IBlockState state) {
+	@Override
+	public int damageDropped(IBlockState state) {
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
-        return false;
-    }
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
 
-    @Nonnull
-    @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.SOLID;
-    }
+	@Nonnull
+	@Override
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.SOLID;
+	}
 
-    @Override
-    public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-        if (!GuiScreen.isShiftKeyDown()) {
-            tooltip.add("Hold " + ChatFormatting.YELLOW + "Shift" + ChatFormatting.GRAY + " for Crafting.");
-        } else {
-            /*tooltip.add(Names.CraftingToolTips.CRAFT_WITH);
-            tooltip.add(Names.CraftingToolTips.CONCRETE_BLOCKS);*/
-        	tooltip.add(Names.HelpToolTips.WIP_BLOCK);
-        }
-    }
+	@Override
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
+		if (!GuiScreen.isShiftKeyDown()) {
+			tooltip.add("Hold " + ChatFormatting.YELLOW + "Shift" + ChatFormatting.GRAY + " for Crafting.");
+		} else {
+			/*
+			 * tooltip.add(Names.CraftingToolTips.CRAFT_WITH);
+			 * tooltip.add(Names.CraftingToolTips.CONCRETE_BLOCKS);
+			 */
+			tooltip.add(Names.HelpToolTips.WIP_BLOCK);
+		}
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerModels() {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerModels() {
 
-        for (int i = 0; i < Type.values().length; i++) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-        }
-    }
+		for (int i = 0; i < Type.values().length; i++) {
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
+					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+		}
+	}
 
-    @Override
-    public boolean preInit() {
-        this.setRegistryName("concrete");
-        GameData.register_impl(this);
+	@Override
+	public boolean preInit() {
+		this.setRegistryName("concrete");
+		GameData.register_impl(this);
 
-        ItemBlockConcrete itemBlock = new ItemBlockConcrete(this);
-        itemBlock.setRegistryName(this.getRegistryName());
-        GameData.register_impl(itemBlock);
+		ItemBlockConcrete itemBlock = new ItemBlockConcrete(this);
+		itemBlock.setRegistryName(this.getRegistryName());
+		GameData.register_impl(itemBlock);
 
-        concrete = new ItemStack(this, 1, Type.NORMAL.getMetadata());
-        concreteArrangedBricks = new ItemStack(this, 1, Type.ARRANGED_BRICK.getMetadata());
-        concreteBricks = new ItemStack(this, 1, Type.BRICK.getMetadata());
-        concreteBricksDark = new ItemStack(this, 1, Type.BRICK_DARK.getMetadata());
-        concreteFanzyBricks = new ItemStack(this, 1, Type.FANCY_BRICK.getMetadata());
-        concreteOldSquares = new ItemStack(this, 1, Type.OLD_SQUARES.getMetadata());
-        concreteRocks = new ItemStack(this, 1, Type.ROCKS.getMetadata());
-        concreteSmallBricks = new ItemStack(this, 1, Type.SMALL_BRICKS.getMetadata());
+		concrete = new ItemStack(this, 1, Type.NORMAL.getMetadata());
+		concreteArrangedBricks = new ItemStack(this, 1, Type.ARRANGED_BRICK.getMetadata());
+		concreteBricks = new ItemStack(this, 1, Type.BRICK.getMetadata());
+		concreteBricksDark = new ItemStack(this, 1, Type.BRICK_DARK.getMetadata());
+		concreteFanzyBricks = new ItemStack(this, 1, Type.FANCY_BRICK.getMetadata());
+		concreteOldSquares = new ItemStack(this, 1, Type.OLD_SQUARES.getMetadata());
+		concreteRocks = new ItemStack(this, 1, Type.ROCKS.getMetadata());
+		concreteSmallBricks = new ItemStack(this, 1, Type.SMALL_BRICKS.getMetadata());
 
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE.getUnlocalizedName(), concrete);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ARRANGED_BRICKS.getUnlocalizedName(), concreteArrangedBricks);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS.getUnlocalizedName(), concreteBricks);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS_DARK.getUnlocalizedName(), concreteBricksDark);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_FANCY_BLOCKS.getUnlocalizedName(), concreteFanzyBricks);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_OLD_SQUARES.getUnlocalizedName(), concreteOldSquares);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ROCKS.getUnlocalizedName(), concreteRocks);
-        registerWithHandlers(RandomThings.ModBlocks.CONCRETE_SMALL_BRICKS.getUnlocalizedName(), concreteSmallBricks);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE.getUnlocalizedName(), concrete);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ARRANGED_BRICKS.getUnlocalizedName(),
+				concreteArrangedBricks);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS.getUnlocalizedName(), concreteBricks);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS_DARK.getUnlocalizedName(), concreteBricksDark);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_FANCY_BLOCKS.getUnlocalizedName(), concreteFanzyBricks);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_OLD_SQUARES.getUnlocalizedName(), concreteOldSquares);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ROCKS.getUnlocalizedName(), concreteRocks);
+		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_SMALL_BRICKS.getUnlocalizedName(), concreteSmallBricks);
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public boolean initialize() {
-        return false;
-    }
+	@Override
+	public boolean initialize() {
+		return false;
+	}
 
-    @Override
-    public boolean postInit() {
-        return false;
-    }
+	@Override
+	public boolean postInit() {
+		return false;
+	}
 
-    /* TYPE */
-    public enum Type implements IStringSerializable {
+	/* TYPE */
+	public enum Type implements IStringSerializable {
 
-        // @formatter:off
-        NORMAL(0, "normal"),
-        ARRANGED_BRICK(1, "arranged_brick"),
-        BRICK(2, "brick"),
-        BRICK_DARK(3, "brick_dark"),
-        FANCY_BRICK(4, "fancy_brick"),
-        OLD_SQUARES(5, "old_squares"),
-        ROCKS(6, "rocks"),
-        SMALL_BRICKS(7, "small_bricks");
-        // @formatter: on
+		// @formatter:off
+		NORMAL(0, "normal"), ARRANGED_BRICK(1, "arranged_brick"), BRICK(2, "brick"), BRICK_DARK(3,
+				"brick_dark"), FANCY_BRICK(4, "fancy_brick"), OLD_SQUARES(5,
+						"old_squares"), ROCKS(6, "rocks"), SMALL_BRICKS(7, "small_bricks");
+		// @formatter: on
 
-        private static final Type[] METADATA_LOOKUP = new Type[values().length];
+		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 
-        static {
-            for (Type type : values()) {
-                METADATA_LOOKUP[type.getMetadata()] = type;
-            }
-        }
+		static {
+			for (Type type : values()) {
+				METADATA_LOOKUP[type.getMetadata()] = type;
+			}
+		}
 
-        private final int metadata;
-        private final String name;
-        private final int light;
-        private final float hardness;
-        private final float resistance;
+		private final int metadata;
+		private final String name;
+		private final int light;
+		private final float hardness;
+		private final float resistance;
 
-        Type(int metadata, String name, int light, float hardness, float resistance) {
+		Type(int metadata, String name, int light, float hardness, float resistance) {
 
-            this.metadata = metadata;
-            this.name = name;
-            this.light = light;
-            this.hardness = hardness;
-            this.resistance = resistance;
-        }
+			this.metadata = metadata;
+			this.name = name;
+			this.light = light;
+			this.hardness = hardness;
+			this.resistance = resistance;
+		}
 
-        Type(int metadata, String name, float hardness, float resistance) {
-            this(metadata, name, 0, hardness, resistance);
-        }
+		Type(int metadata, String name, float hardness, float resistance) {
+			this(metadata, name, 0, hardness, resistance);
+		}
 
-        Type(int metadata, String name, int light) {
+		Type(int metadata, String name, int light) {
 
-            this(metadata, name, light, 5.0F, 6.0F);
-        }
+			this(metadata, name, light, 5.0F, 6.0F);
+		}
 
-        Type(int metadata, String name) {
+		Type(int metadata, String name) {
 
-            this(metadata, name, 0, 5.0F, 6.0F);
-        }
+			this(metadata, name, 0, 5.0F, 6.0F);
+		}
 
-        public static Type byMetadata(int metadata) {
+		public static Type byMetadata(int metadata) {
 
-            if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
-                metadata = 0;
-            }
-            return METADATA_LOOKUP[metadata];
-        }
+			if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+				metadata = 0;
+			}
+			return METADATA_LOOKUP[metadata];
+		}
 
-        public int getMetadata() {
-            return this.metadata;
-        }
+		public int getMetadata() {
+			return this.metadata;
+		}
 
-        @Override
-        public String getName() {
+		@Override
+		public String getName() {
 
-            return this.name;
-        }
+			return this.name;
+		}
 
-        public int getLight() {
+		public int getLight() {
 
-            return this.light;
-        }
+			return this.light;
+		}
 
-        public float getHardness() {
+		public float getHardness() {
 
-            return this.hardness;
-        }
+			return this.hardness;
+		}
 
-        public float getResistance() {
+		public float getResistance() {
 
-            return this.resistance;
-        }
-    }
+			return this.resistance;
+		}
+	}
 
 }

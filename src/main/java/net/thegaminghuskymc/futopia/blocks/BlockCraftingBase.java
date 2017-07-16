@@ -13,22 +13,22 @@ import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.tiles.TileCraftingBase;
 import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 
-public class BlockCraftingBase extends BlockMachineBase{
+public class BlockCraftingBase extends BlockMachineBase {
 
 	public BlockCraftingBase(String name) {
 		super(Refs.MODID, name, new TileCraftingBase(), FTCreativeTabs.machines);
 	}
-	
+
 	/**
-     * Called when the block is right clicked by a player.
-     */
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ)
-    {
-        if (worldIn.isRemote & !playerIn.isSneaking()){
-        	playerIn.openGui(Futopia.INSTANCE, GuiHandler.PROJECT_TABLE, worldIn, pos.getX(), pos.getY(), pos.getZ());
-            return true;
-        }
-        return false;
-    }
+	 * Called when the block is right clicked by a player.
+	 */
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if (worldIn.isRemote & !playerIn.isSneaking()) {
+			playerIn.openGui(Futopia.INSTANCE, GuiHandler.PROJECT_TABLE, worldIn, pos.getX(), pos.getY(), pos.getZ());
+			return true;
+		}
+		return false;
+	}
 
 }

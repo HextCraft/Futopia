@@ -29,186 +29,185 @@ import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockMeteor;
 
 public class BlockMeteor extends BlockCore implements IInitializer, IModelRegister {
 
-    public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
-    /* REFERENCES */
-    public static ItemStack meteor;
-    public static ItemStack meteorPillar;
-    public static ItemStack meteorBricks;
+	public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
+	/* REFERENCES */
+	public static ItemStack meteor;
+	public static ItemStack meteorPillar;
+	public static ItemStack meteorBricks;
 
-    public BlockMeteor() {
-        super(Material.ROCK, Refs.MODID);
+	public BlockMeteor() {
+		super(Material.ROCK, Refs.MODID);
 
-        setUnlocalizedName("meteor");
-        setCreativeTab(FTCreativeTabs.main);
+		setUnlocalizedName("meteor");
+		setCreativeTab(FTCreativeTabs.main);
 
-        setHardness(5.0F);
-        setResistance(10.0F);
-        setSoundType(SoundType.STONE);
-        setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
+		setHardness(5.0F);
+		setResistance(10.0F);
+		setSoundType(SoundType.STONE);
+		setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.NORMAL));
 
-        setHarvestLevel("pickaxe", 2);
-    }
+		setHarvestLevel("pickaxe", 2);
+	}
 
-    @Override
-    protected BlockStateContainer createBlockState() {
+	@Override
+	protected BlockStateContainer createBlockState() {
 
-        return new BlockStateContainer(this, VARIANT);
-    }
+		return new BlockStateContainer(this, VARIANT);
+	}
 
-    @Override
-    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
+	@Override
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 
-        for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
-            list.add(new ItemStack(this, 1, i));
-        }
-    }
+		for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
+			list.add(new ItemStack(this, 1, i));
+		}
+	}
 
-    /* TYPE METHODS */
-    @Override
-    public IBlockState getStateFromMeta(int meta) {
+	/* TYPE METHODS */
+	@Override
+	public IBlockState getStateFromMeta(int meta) {
 
-        return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
-    }
+		return this.getDefaultState().withProperty(VARIANT, Type.byMetadata(meta));
+	}
 
-    @Override
-    public int getMetaFromState(IBlockState state) {
+	@Override
+	public int getMetaFromState(IBlockState state) {
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-    @Override
-    public int damageDropped(IBlockState state) {
+	@Override
+	public int damageDropped(IBlockState state) {
 
-        return state.getValue(VARIANT).getMetadata();
-    }
+		return state.getValue(VARIANT).getMetadata();
+	}
 
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
-        return false;
-    }
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return false;
+	}
 
-    @Nonnull
-    @Override
-    public BlockRenderLayer getBlockLayer() {
-        return BlockRenderLayer.SOLID;
-    }
+	@Nonnull
+	@Override
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.SOLID;
+	}
 
-    @Override
-    @SideOnly(Side.CLIENT)
-    public void registerModels() {
+	@Override
+	@SideOnly(Side.CLIENT)
+	public void registerModels() {
 
-        for (int i = 0; i < Type.values().length; i++) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-        }
-    }
+		for (int i = 0; i < Type.values().length; i++) {
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
+					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+		}
+	}
 
-    @Override
-    public boolean preInit() {
-        this.setRegistryName("meteor");
-        ForgeRegistries.BLOCKS.register(this);
+	@Override
+	public boolean preInit() {
+		this.setRegistryName("meteor");
+		ForgeRegistries.BLOCKS.register(this);
 
-        ItemBlockMeteor itemBlock = new ItemBlockMeteor(this);
-        itemBlock.setRegistryName(this.getRegistryName());
-        ForgeRegistries.ITEMS.register(itemBlock);
+		ItemBlockMeteor itemBlock = new ItemBlockMeteor(this);
+		itemBlock.setRegistryName(this.getRegistryName());
+		ForgeRegistries.ITEMS.register(itemBlock);
 
-        meteor = new ItemStack(this, 1, Type.NORMAL.getMetadata());
-        meteorPillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
-        meteorBricks = new ItemStack(this, 1, Type.BRICKS.getMetadata());
+		meteor = new ItemStack(this, 1, Type.NORMAL.getMetadata());
+		meteorPillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
+		meteorBricks = new ItemStack(this, 1, Type.BRICKS.getMetadata());
 
-        registerWithHandlers("blockMeteor", meteor);
-        registerWithHandlers("blockMeteorPillar", meteorPillar);
-        registerWithHandlers("blockMeteorBricks", meteorBricks);
+		registerWithHandlers("blockMeteor", meteor);
+		registerWithHandlers("blockMeteorPillar", meteorPillar);
+		registerWithHandlers("blockMeteorBricks", meteorBricks);
 
-        return true;
-    }
+		return true;
+	}
 
-    @Override
-    public boolean initialize() {
-        return false;
-    }
+	@Override
+	public boolean initialize() {
+		return false;
+	}
 
-    @Override
-    public boolean postInit() {
-        return false;
-    }
+	@Override
+	public boolean postInit() {
+		return false;
+	}
 
-    /* TYPE */
-    public enum Type implements IStringSerializable {
+	/* TYPE */
+	public enum Type implements IStringSerializable {
 
-        // @formatter:off
-        NORMAL(0, "normal"),
-        PILLAR(1, "pillar"),
-        BRICKS(2, "bricks");
+		// @formatter:off
+		NORMAL(0, "normal"), PILLAR(1, "pillar"), BRICKS(2, "bricks");
 
-        private static final Type[] METADATA_LOOKUP = new Type[values().length];
+		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 
-        static {
-            for (Type type : values()) {
-                METADATA_LOOKUP[type.getMetadata()] = type;
-            }
-        }
+		static {
+			for (Type type : values()) {
+				METADATA_LOOKUP[type.getMetadata()] = type;
+			}
+		}
 
-        private final int metadata;
-        private final String name;
-        private final int light;
-        private final float hardness;
-        private final float resistance;
+		private final int metadata;
+		private final String name;
+		private final int light;
+		private final float hardness;
+		private final float resistance;
 
-        Type(int metadata, String name, int light, float hardness, float resistance) {
+		Type(int metadata, String name, int light, float hardness, float resistance) {
 
-            this.metadata = metadata;
-            this.name = name;
-            this.light = light;
-            this.hardness = hardness;
-            this.resistance = resistance;
-        }
+			this.metadata = metadata;
+			this.name = name;
+			this.light = light;
+			this.hardness = hardness;
+			this.resistance = resistance;
+		}
 
-        Type(int metadata, String name, float hardness, float resistance) {
-            this(metadata, name, 0, hardness, resistance);
-        }
+		Type(int metadata, String name, float hardness, float resistance) {
+			this(metadata, name, 0, hardness, resistance);
+		}
 
-        Type(int metadata, String name, int light) {
+		Type(int metadata, String name, int light) {
 
-            this(metadata, name, light, 5.0F, 6.0F);
-        }
+			this(metadata, name, light, 5.0F, 6.0F);
+		}
 
-        Type(int metadata, String name) {
+		Type(int metadata, String name) {
 
-            this(metadata, name, 0, 5.0F, 6.0F);
-        }
+			this(metadata, name, 0, 5.0F, 6.0F);
+		}
 
-        public static Type byMetadata(int metadata) {
+		public static Type byMetadata(int metadata) {
 
-            if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
-                metadata = 0;
-            }
-            return METADATA_LOOKUP[metadata];
-        }
+			if (metadata < 0 || metadata >= METADATA_LOOKUP.length) {
+				metadata = 0;
+			}
+			return METADATA_LOOKUP[metadata];
+		}
 
-        public int getMetadata() {
-            return this.metadata;
-        }
+		public int getMetadata() {
+			return this.metadata;
+		}
 
-        @Override
-        public String getName() {
+		@Override
+		public String getName() {
 
-            return this.name;
-        }
+			return this.name;
+		}
 
-        public int getLight() {
+		public int getLight() {
 
-            return this.light;
-        }
+			return this.light;
+		}
 
-        public float getHardness() {
+		public float getHardness() {
 
-            return this.hardness;
-        }
+			return this.hardness;
+		}
 
-        public float getResistance() {
+		public float getResistance() {
 
-            return this.resistance;
-        }
-    }
+			return this.resistance;
+		}
+	}
 
 }

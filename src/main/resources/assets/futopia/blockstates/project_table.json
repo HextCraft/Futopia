@@ -8,13 +8,13 @@
 		"online":{
 			"true":{
 				"textures": {
-					"top": "futopia:blocks/machines/project_table/project_table_top_on",
-					"glow": "futopia:blocks/machines/project_table/project_table_top_glow"
+					"top": "futopia:blocks/computer/project_table/project_table_top_on",
+					"glow": "futopia:blocks/computer/project_table/project_table_top_glow"
 				}
 			},
 			"false":{
 				"textures": {
-					"top": "futopia:blocks/machines/project_table/project_table_top_off"
+					"top": "futopia:blocks/computer/project_table/project_table_top_off"
 				}
 			}
 		},

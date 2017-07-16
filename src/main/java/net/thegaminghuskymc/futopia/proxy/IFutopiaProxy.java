@@ -11,18 +11,18 @@ import net.thegaminghuskymc.futopia.blocks.IModelRegister;
  */
 public interface IFutopiaProxy {
 
-    void preInit(FMLPreInitializationEvent event);
+	void preInit(FMLPreInitializationEvent event);
 
-    void init(FMLInitializationEvent event);
+	void init(FMLInitializationEvent event);
 
-    void postInit(FMLPostInitializationEvent event);
-    
-    void registerRenders();
-	
+	void postInit(FMLPostInitializationEvent event);
+
+	void registerRenders();
+
 	void registerTileEntities();
 
-    void registerItemRenderer(Item item, int meta, String id);
+	void registerItemRenderer(Item item, int meta, String id);
 
-    boolean addIModelRegister(IModelRegister modelRegister);
+	boolean addIModelRegister(IModelRegister modelRegister);
 
 }

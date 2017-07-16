@@ -10,45 +10,47 @@ import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
 
 public class TileTank extends TileEntityBase implements IFluidHandler, ITickable {
 
-    public FluidTank tank = new FluidTank(1000);
-    private int prevAmount = tank.getFluidAmount();
+	public FluidTank tank = new FluidTank(1000);
+	private int prevAmount = tank.getFluidAmount();
 
+	public boolean containsFluid() {
+		return tank.getFluid() != null;
+	}
 
-    public boolean containsFluid() {
-        return tank.getFluid() != null;
-    }
+	public int getBrightness() {
+		if (containsFluid()) {
+			return tank.getFluid().getFluid().getLuminosity();
+		}
+		return 0;
+	}
 
-    public int getBrightness() {
-        if(containsFluid()) {
-            return tank.getFluid().getFluid().getLuminosity();
-        }
-        return 0;
-    }
-
-    @SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	private void save() {
-        markDirty();
-        if (Math.abs(prevAmount - tank.getFluidAmount()) >= 1000) {
-            prevAmount = tank.getFluidAmount();
-            if (!world.isRemote) {
-                update();
-            }
-        }
-    }
+		markDirty();
+		if (Math.abs(prevAmount - tank.getFluidAmount()) >= 1000) {
+			prevAmount = tank.getFluidAmount();
+			if (!world.isRemote) {
+				update();
+			}
+		}
+	}
 
-    @SuppressWarnings("unused")
+	@SuppressWarnings("unused")
 	@Override
-    public void update() {
-        if (tank.getFluid() != null && tank.getFluidAmount() > 0) {
-            TileEntity te = world.getTileEntity(pos.down());
-            if (te != null && te instanceof IFluidHandler) {
-                IFluidHandler fluidHandler = (IFluidHandler) te;
-                /*if (fluidHandler.fill(FluidStack.loadFluidStackFromNBT(new NBTTagCompound()), tank.canFill())) {
-                    drain(EnumFacing.DOWN, fluidHandler.fill(EnumFacing.UP, drain(EnumFacing.DOWN, tank.getCapacity(), false), true), true);
-                }*/
-            }
-        }
-    }
+	public void update() {
+		if (tank.getFluid() != null && tank.getFluidAmount() > 0) {
+			TileEntity te = world.getTileEntity(pos.down());
+			if (te != null && te instanceof IFluidHandler) {
+				IFluidHandler fluidHandler = (IFluidHandler) te;
+				/*
+				 * if (fluidHandler.fill(FluidStack.loadFluidStackFromNBT(new
+				 * NBTTagCompound()), tank.canFill())) { drain(EnumFacing.DOWN,
+				 * fluidHandler.fill(EnumFacing.UP, drain(EnumFacing.DOWN,
+				 * tank.getCapacity(), false), true), true); }
+				 */
+			}
+		}
+	}
 
 	@Override
 	public IFluidTankProperties[] getTankProperties() {
