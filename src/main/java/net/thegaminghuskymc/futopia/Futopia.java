@@ -33,21 +33,14 @@ public class Futopia {
 
 	@Mod.Instance(value = Refs.MODID)
 	public static Futopia INSTANCE;
-	public static ModHandler HANDLER;
 	public static final GuiHandler GUI_HANDLER = new GuiHandler();
 	public static Logger LOGGER = Logger.getLogger(Refs.NAME);
 
 	@SidedProxy(clientSide = CSIDE, serverSide = SSIDE)
 	public static IFutopiaProxy proxy;
-	@ModLogger
-	public static IModLogger logger;
-	@ModConfig
-	public static IModConfig config;
 
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		HANDLER = new ModHandler(INSTANCE);
-		HANDLER.handlePreInit(event);
 
 		OtherBlocks.preInit();
 
@@ -66,7 +59,6 @@ public class Futopia {
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
-		HANDLER.handleInit(event);
 		OtherBlocks.initialize();
 		FutopiaOreDictionary.init();
 		Recipies.init();
@@ -77,7 +69,6 @@ public class Futopia {
 
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent event) {
-		HANDLER.handlePostInit(event);
 		OtherBlocks.postInit();
 		proxy.postInit(event);
 	}

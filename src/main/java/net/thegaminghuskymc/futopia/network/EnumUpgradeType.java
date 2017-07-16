@@ -4,8 +4,12 @@ import net.minecraft.util.IStringSerializable;
 
 public enum EnumUpgradeType implements IStringSerializable {
 
-	BASIC(0, "basic"), CAPACITY(1, "capacity"), POWER(2, "power"), SPEED(3, "speed"), BASE(4, "base"), CREATIVE(5,
-			"creative");
+	BASIC(0, "basic"), 
+	CAPACITY(1, "capacity"), 
+	POWER(2, "power"), 
+	SPEED(3, "speed"), 
+	BASE(4, "base"), 
+	CREATIVE(5, "creative");
 
 	public static final EnumUpgradeType[] VALUES = new EnumUpgradeType[] { BASIC, CAPACITY, POWER, SPEED, BASE,
 			CREATIVE };

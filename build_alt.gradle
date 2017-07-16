@@ -37,15 +37,13 @@ repositories {
         name "Mobius Repo"
         url "http://tehnut.info/maven"
     }
-    maven { // JEI
-        url "http://dvs1.progwml6.com/files/maven"
+    maven {
+        name = "ChickenBones Maven"
+        url = "http://chickenbones.net/maven/"
     }
-    maven { // IntWheel
-        url "http://maven.k-4u.nl"
-    }
-    maven { // TOP
-        name 'tterrag maven'
-        url "http://maven.tterrag.com/"
+    maven {
+        name = "JEI Maven"
+        url = "http://dvs1.progwml6.com/files/maven"
     }
     maven {
         name = "CoFH Maven"
@@ -54,8 +52,8 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "mcp.mobius.waila:Hwyla:${config.hwyla_version}_${config.mc_version}:api"
-    deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:${config.mc_version}_${config.top_version}-${config.top_suffix}"
+    deobfCompile "mcp.mobius.waila:Hwyla:+:api"
+    compile "codechicken:ChickenASM:${config.chicken_version}"
     compile "cofh:RedstoneFlux:${config.mc_version}-${config.rf_version}:deobf"
     compile "cofh:CoFHCore:${config.mc_version}-${config.cofh_core_version}:deobf"
     compile "codechicken:CodeChickenLib:${config.mc_version}-${config.ccl_version}:deobf"

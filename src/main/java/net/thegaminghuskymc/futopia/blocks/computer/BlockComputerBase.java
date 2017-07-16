@@ -17,14 +17,11 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
-import net.thegaminghuskymc.futopia.network.EnumConditionType;
 import net.thegaminghuskymc.futopia.network.EnumPlacingType;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockComputerBase extends BlockBase {
 
-	public static final PropertyEnum<EnumConditionType> CONDITION = PropertyEnum.create("condition",
-			EnumConditionType.class);
 	public static final PropertyEnum<EnumPlacingType> PLACING = PropertyEnum.create("placing", EnumPlacingType.class);
 	public static final PropertyBool ACTIVE = PropertyBool.create("online");
 	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;

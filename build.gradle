@@ -1,36 +1,38 @@
 buildscript {
-	repositories {
-		jcenter()
-		maven {
-			name = "forge"
-			url = "http://files.minecraftforge.net/maven"
-		}
-	}
-	dependencies {
-		classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
-	}
+    repositories {
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
 }
-
-apply plugin: 'java'
 apply plugin: 'net.minecraftforge.gradle.forge'
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
-// Define properties file
-ext.configFile = file "build.properties"
+ext.configFile = file('build.properties')
 
 configFile.withReader {
-	// Load config. It shall from now be referenced as simply config or project.config
-	def prop = new Properties()
-	prop.load(it)
-	project.ext.config = new ConfigSlurper().parse prop
+    def prop = new Properties()
+    prop.load(it)
+    ext.config = new ConfigSlurper().parse prop
 }
 
 version = "${config.major_version}.${config.minor_version}.${config.build_number}"
-group = "net.thegaminghuskymc.futopia"
+group= "net.thegaminghuskymc.futopia"
 archivesBaseName = config.mod_name
 
-targetCompatibility = "1.8"
-sourceCompatibility = "1.8"
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "1.12-14.21.1.2413"
+    runDir = "run"
+    mappings = "snapshot_20170716"
+    replace '${mod_version}', project.config.mod_version
+}
 
 repositories {
 	maven { // The repo from which to get waila
@@ -52,51 +54,43 @@ repositories {
 }
 
 dependencies {
-    deobfCompile "mcp.mobius.waila:Hwyla:+:api"
+	deobfCompile "mcp.mobius.waila:Hwyla:+:api"
+    compile "codechicken:ChickenASM:${config.chicken_version}"
     compile "cofh:RedstoneFlux:${config.mc_version}-${config.rf_version}:deobf"
     compile "cofh:CoFHCore:${config.mc_version}-${config.cofh_core_version}:deobf"
     compile "codechicken:CodeChickenLib:${config.mc_version}-${config.ccl_version}:deobf"
     compile "mezz.jei:jei_${config.mc_version}:${config.jei_version}"
 }
 
-minecraft {
-	version = config.mc_version + "-" + config.forge_version
-	mappings = config.mappings
-	runDir = "run"
-	replace '${mod_version}', project.config.mod_version
-	makeObfSourceJar = false
-}
-
 processResources {
-	inputs.property "version", project.version
-	inputs.property "mc_version", project.config.mc_version
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
 
-	from(sourceSets.main.resources.srcDirs) {
-		include 'mcmod.info'
-		expand 'version': project.version, 'mc_version': project.config.mc_version
-	}
-
-	from(sourceSets.main.resources.srcDirs) {
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version':project.version, 'mcversion':project.minecraft.version
+    }
+        
+    from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
 }
 
 jar {
-	classifier = 'universal'
+    classifier = 'universal'
 }
 
 task deobfJar(type: Jar) {
-	from sourceSets.main.output
-	classifier = 'deobf'
+    from sourceSets.main.output
+    classifier = 'deobf'
 }
 
 task srcJar(type: Jar) {
-	from sourceSets.main.allSource
-	classifier = 'sources'
+    from sourceSets.main.allSource
+    classifier = 'sources'
 }
 
-// Tell artifact system about extra jars.
 artifacts {
-	archives deobfJar
-	archives srcJar
+    archives deobfJar
+    archives srcJar
 }
