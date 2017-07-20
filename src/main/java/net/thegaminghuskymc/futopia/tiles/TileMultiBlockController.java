@@ -1,6 +1,6 @@
 package net.thegaminghuskymc.futopia.tiles;
 
-public class TileTestBlock extends TileMultiBlock {
+public class TileMultiBlockController extends TileMultiBlock {
 
 	@Override
 	public boolean isMaster() {

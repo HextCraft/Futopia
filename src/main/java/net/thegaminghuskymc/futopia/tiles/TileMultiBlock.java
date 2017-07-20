@@ -4,17 +4,19 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
+import net.thegaminghuskymc.futopia.Futopia;
 
 public class TileMultiBlock extends TileEntity implements ITickable{
+	
     private boolean hasMaster, isMaster;
-    private int masterX, masterY, masterZ;
- 
+    public static int masterX, masterY, masterZ;
+    
     @Override
     public void update() {
         if (!world.isRemote) {
             if (hasMaster()) { 
                 if (isMaster()) {
-                    // Put stuff you want the multiblock to do here!
+                	Futopia.LOGGER.fine("This is a multiblock");
                 }
             } else {
                 // Constantly check if structure is formed until it is.

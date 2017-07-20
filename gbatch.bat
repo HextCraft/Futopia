@@ -57,6 +57,7 @@ ECHO.
 ECHO Please select what IDE you use below.
 ECHO 1 Eclipse
 ECHO 2 Intellij IDEA
+ECHO 3 No IDE
 ECHO.
 SET /P INPUT="Enter your option:"
 IF %INPUT%==1 (
@@ -65,6 +66,9 @@ IF %INPUT%==1 (
 	IF %INPUT%==2 (
 		GOTO:SETUPIDEA
 	) ELSE (
+		IF %INPUT%==3 (
+			GOTO:SETUP
+		)
 		GOTO:INPUTERROR
 	)
 )
@@ -85,6 +89,17 @@ ECHO Please wait while Gradle is setting
 ECHO up your workspace...
 ECHO.
 START gradlew setupDecompWorkspace idea
+ECHO.
+ECHO Task successfull !
+PAUSE
+CLS
+GOTO:INIT
+
+:SETUP
+ECHO Please wait while Gradle is setting
+ECHO up your workspace...
+ECHO.
+START gradlew setupDecompWorkspace
 ECHO.
 ECHO Task successfull !
 PAUSE

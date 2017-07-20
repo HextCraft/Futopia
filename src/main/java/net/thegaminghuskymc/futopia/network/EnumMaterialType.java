@@ -5,12 +5,33 @@ import net.thegaminghuskymc.huskylib.blocks.EnumBlock.IEnumMeta;
 
 public enum EnumMaterialType implements IStringSerializable, IEnumMeta {
 
-	RED("red", 0), BLUE("blue", 1), PURPLE("purple", 2), GREEN("green", 3), ZINC("zinc", 4), TUNGSTEN("tungsten",
-			5), BRASS("brass", 6), TESSELITE("tesselite",
-					7), PINK("pink", 8), YELLOW("yellow", 9), CYAN("cyan", 10), LIGHT_BLUE("light_blue", 11);
+	RED("red", 0), 
+	BLUE("blue", 1), 
+	PURPLE("purple", 2), 
+	GREEN("green", 3), 
+	ZINC("zinc", 4), 
+	TUNGSTEN("tungsten", 5), 
+	BRASS("brass", 6), 
+	TESSELITE("tesselite", 7),
+	PINK("pink", 8), 
+	YELLOW("yellow", 9), 
+	CYAN("cyan", 10), 
+	LIGHT_BLUE("light_blue", 11);
 
-	public static final EnumMaterialType[] VALUES = new EnumMaterialType[] { RED, BLUE, PURPLE, GREEN, ZINC, TUNGSTEN,
-			BRASS, TESSELITE, PINK, YELLOW, CYAN, LIGHT_BLUE };
+	public static final EnumMaterialType[] VALUES = new EnumMaterialType[] { 
+			RED, 
+			BLUE, 
+			PURPLE, 
+			GREEN, 
+			ZINC, 
+			TUNGSTEN,
+			BRASS, 
+			TESSELITE, 
+			PINK, 
+			YELLOW, 
+			CYAN, 
+			LIGHT_BLUE 
+	};
 
 	private static final EnumMaterialType[] METADATA_LOOKUP = new EnumMaterialType[values().length];
 

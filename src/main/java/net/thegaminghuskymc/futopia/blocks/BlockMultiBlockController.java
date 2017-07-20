@@ -6,35 +6,35 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.Refs;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
-import net.thegaminghuskymc.futopia.tiles.TileTestBlock;
+import net.thegaminghuskymc.futopia.tiles.TileMultiBlockController;
 
-public class BlockTest extends BlockMultiBlock{
+public class BlockMultiBlockController extends BlockMultiBlock{
 
-	public BlockTest() {
+	public BlockMultiBlockController() {
 		super(Material.IRON);
-		setUnlocalizedName("test_block");
-		setRegistryName(Refs.MODID, getUnlocalizedName());
+		setUnlocalizedName("multiblock_controller");
+		setRegistryName(Refs.MODID, "multiblock_controller");
 		setCreativeTab(FTCreativeTabs.main);
 	}
 	
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileTestBlock();
+		return new TileMultiBlockController();
 	}
 	
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
-		return false;
+		return true;
 	}
 	
 	@Override
 	public boolean isNormalCube(IBlockState state) {
-		return false;
+		return true;
 	}
 	
 	@Override
 	public boolean isFullBlock(IBlockState state) {
-		return false;
+		return true;
 	}
 
 }

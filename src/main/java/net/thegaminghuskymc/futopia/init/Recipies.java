@@ -1,16 +1,12 @@
 package net.thegaminghuskymc.futopia.init;
 
-import java.util.stream.IntStream;
-
 import cofh.core.util.helpers.RecipeHelper;
 import net.minecraft.block.Block;
-import net.minecraft.client.util.RecipeItemHelper;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
-import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 import net.thegaminghuskymc.huskylib.utils.HLCraftingHelper;
 

@@ -1,18 +1,19 @@
 package net.thegaminghuskymc.futopia.init;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.thegaminghuskymc.futopia.blocks.BlockMultiBlock;
-import net.thegaminghuskymc.futopia.blocks.BlockTest;
+import net.thegaminghuskymc.futopia.blocks.BlockMultiBlockController;
+import net.thegaminghuskymc.futopia.blocks.BlockMultiBlockWalls;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockComputerTower;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockController;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockDiskDrive;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockFilter;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitor;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitorNew;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockParticleSummoner;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockProjectTable;
 import net.thegaminghuskymc.futopia.blocks.conduits.BlockFluidConduit;
@@ -24,14 +25,15 @@ import net.thegaminghuskymc.futopia.blocks.machine.BlockElectricalFurnace;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOres;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOresNether;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseStorage;
+import net.thegaminghuskymc.futopia.network.EnumDyeColor;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 import net.thegaminghuskymc.futopia.tiles.TileAlloyFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileDiskDrive;
 import net.thegaminghuskymc.futopia.tiles.TileElectricalFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileMultiBlock;
+import net.thegaminghuskymc.futopia.tiles.TileMultiBlockController;
 import net.thegaminghuskymc.futopia.tiles.TileProjectTable;
-import net.thegaminghuskymc.futopia.tiles.TileTestBlock;
-import net.thegaminghuskymc.huskylib.RebornRegistry;
+import net.thegaminghuskymc.futopia.utils.HuskyRegistry;
 import net.thegaminghuskymc.huskylib.items.blocks.ItemBlockBase;
 
 public class FTBlocks {
@@ -49,14 +51,16 @@ public class FTBlocks {
 
 	public static BlockProjectTable projectTable;
 	public static BlockDiskDrive diskDrive;
-	public static BlockMonitor monitor;
+	public static BlockMonitorNew monitor;
 	public static BlockController controller;
+	public static BlockComputerTower computerTower;
 
 	public static BlockBaseOres ores;
 	public static BlockBaseOresNether nether_ores;
 	public static BlockBaseStorage storages;
 	
-	public static BlockTest multiBlock;
+	public static BlockMultiBlockController multiBlockController;
+	public static BlockMultiBlockWalls multiBlockWalls;
 
 	public static void init() {
 		alloyfurnace = new BlockAlloyFurnace();
@@ -73,14 +77,16 @@ public class FTBlocks {
 		filter = new BlockFilter();
 		projectTable = new BlockProjectTable();
 		diskDrive = new BlockDiskDrive();
-		monitor = new BlockMonitor();
+		monitor = new BlockMonitorNew();
 		controller = new BlockController();
+		computerTower = new BlockComputerTower();
 
 		ores = new BlockBaseOres();
 		nether_ores = new BlockBaseOresNether();
 		storages = new BlockBaseStorage();
 		
-		multiBlock = new BlockTest();
+		multiBlockController = new BlockMultiBlockController();
+		multiBlockWalls = new BlockMultiBlockWalls();
 	}
 
 	public static void register() {
@@ -98,14 +104,16 @@ public class FTBlocks {
 		registerBlock(filter);
 		registerBlock(projectTable);
 		registerBlock(diskDrive);
-		registerBlock(monitor);
+		registerSpecialBlock(monitor);
 		registerBlock(controller);
+		registerSpecialBlock(computerTower);
 
 		registerSpecialBlock(ores);
 		registerSpecialBlock(storages);
 		registerSpecialBlock(nether_ores);
 		
-		registerBlock(multiBlock);
+		registerBlock(multiBlockController);
+		registerBlock(multiBlockWalls);
 	}
 
 	public static void registerRenders() {
@@ -123,14 +131,16 @@ public class FTBlocks {
 		registerRender(filter);
 		registerRender(projectTable);
 		registerRender(diskDrive);
-		registerRender(monitor);
+		registerRenderDyeColors(monitor);
 		registerRender(controller);
+		registerRenderDyeColors(computerTower);
 
-		registerRenderSpecial(ores);
-		registerRenderSpecial(storages);
-		registerRenderSpecial(nether_ores);
+		registerRenderMaterials(ores);
+		registerRenderMaterials(storages);
+		registerRenderMaterials(nether_ores);
 		
-		registerRender(multiBlock);
+		registerRender(multiBlockController);
+		registerRender(multiBlockWalls);
 
 		registerItemBlocks();
 	}
@@ -145,7 +155,7 @@ public class FTBlocks {
 	}
 
 	public static void registerRender(Block block) {
-		RebornRegistry.registerItemModel(block, 0);
+		HuskyRegistry.registerItemModel(block, 0);
 	}
 
 	public static void registerSpecialBlock(Block block) {
@@ -153,9 +163,15 @@ public class FTBlocks {
 		ForgeRegistries.ITEMS.register(new ItemBlockBase(block).setRegistryName(block.getRegistryName()));
 	}
 
-	public static void registerRenderSpecial(Block block) {
+	public static void registerRenderMaterials(Block block) {
 		for (EnumMaterialType types : EnumMaterialType.values()) {
-			RebornRegistry.registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
+			HuskyRegistry.registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
+		}
+	}
+	
+	public static void registerRenderDyeColors(Block block) {
+		for (EnumDyeColor types : EnumDyeColor.values()) {
+			HuskyRegistry.registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
 		}
 	}
 
@@ -168,7 +184,7 @@ public class FTBlocks {
 		registerTileEntity(TileProjectTable.class, projectTable);
 		registerTileEntity(TileElectricalFurnace.class, electricalfurnace);
 		registerTileEntity(TileDiskDrive.class, diskDrive);
-		registerTileEntity(TileTestBlock.class, multiBlock);
+		registerTileEntity(TileMultiBlockController.class, multiBlockController);
 		GameRegistry.registerTileEntity(TileMultiBlock.class, "tile_multi_block");
 	}
 

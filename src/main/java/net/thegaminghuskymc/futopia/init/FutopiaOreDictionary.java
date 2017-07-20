@@ -12,10 +12,8 @@ import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 public class FutopiaOreDictionary {
 
 	public static void init() {
-		IntStream.range(0, EnumMaterialType.values().length)
-				.forEach(meta -> registerWithHandlers(
-						"oreFutopia" + StringUtils.capitalize(EnumMaterialType.values()[meta].getName()),
-						new ItemStack(FTBlocks.ores, 1, meta)));
+		IntStream.range(0, EnumMaterialType.values().length).forEach(meta -> registerWithHandlers("oreFutopia" + StringUtils.capitalize(EnumMaterialType.values()[meta].getName()),
+				new ItemStack(FTBlocks.ores, 1, meta)));
 		IntStream.range(0, EnumMaterialType.values().length)
 				.forEach(meta -> registerWithHandlers(
 						"oreNetherFutopia" + StringUtils.capitalize(EnumMaterialType.values()[meta].getName()),
