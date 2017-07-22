@@ -5,11 +5,6 @@ import static net.thegaminghuskymc.futopia.Refs.SSIDE;
 
 import java.util.logging.Logger;
 
-import keri.ninetaillib.lib.config.IModConfig;
-import keri.ninetaillib.lib.config.ModConfig;
-import keri.ninetaillib.lib.logger.IModLogger;
-import keri.ninetaillib.lib.logger.ModLogger;
-import keri.ninetaillib.lib.mod.ModHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -28,7 +23,7 @@ import net.thegaminghuskymc.futopia.integration.FutopiaIntegrations;
 import net.thegaminghuskymc.futopia.proxy.IFutopiaProxy;
 import net.thegaminghuskymc.futopia.world.gen.OreGen;
 
-@Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS, acceptedMinecraftVersions = Refs.ACC_MC, guiFactory = "net.thegaminghuskymc.futopia.client.gui.FutopiaGuiFactory")
+@Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS, acceptedMinecraftVersions = Refs.ACC_MC)
 public class Futopia {
 
 	@Mod.Instance(value = Refs.MODID)

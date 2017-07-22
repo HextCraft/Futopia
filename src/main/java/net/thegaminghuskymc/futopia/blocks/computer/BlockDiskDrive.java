@@ -24,7 +24,7 @@ public class BlockDiskDrive extends BlockComputerBase {
 			playerIn.openGui(Futopia.INSTANCE, GuiHandler.DISK_DRIVE, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 
-		return super.onBlockActivated(worldIn, pos, state, playerIn, hand, facing, hitX, hitY, hitZ);
+		return false;
 	}
 
 }

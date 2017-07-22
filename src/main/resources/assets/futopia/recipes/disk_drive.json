@@ -1,14 +1,22 @@
 {
   "type": "forge:ore_shaped",
-  "group": "boat",
-  "result": { "item": "futopia:disk_drive" },
+  "group": "futopia_blocks",
+  "result": { 
+    "item": "futopia:disk_drive" 
+  },
   "pattern": [
     "xyx",
     "xxx",
     "xyx"
   ],
   "key": {
-    "x": { "type": "forge:ore_dict", "ore": "paper" },
-    "y": { "type": "forge:ore_dict", "ore": "dustRedstone" }
+    "x": { 
+      "type": "forge:ore_dict", 
+      "ore": "paper" 
+    },
+    "y": { 
+      "type": "forge:ore_dict", 
+      "ore": "dustRedstone" 
+    }
   }
 }

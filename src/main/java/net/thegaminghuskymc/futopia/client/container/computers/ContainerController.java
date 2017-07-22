@@ -6,7 +6,7 @@ import net.thegaminghuskymc.huskylib.client.container.ContainerBase;
 public class ContainerController extends ContainerBase {
 
 	public ContainerController() {
-
+		
 	}
 
 	@Override

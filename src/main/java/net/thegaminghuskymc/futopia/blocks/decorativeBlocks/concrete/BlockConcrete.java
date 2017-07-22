@@ -25,6 +25,7 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.GameData;
@@ -44,7 +45,7 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	public static ItemStack concreteArrangedBricks;
 	public static ItemStack concreteBricks;
 	public static ItemStack concreteBricksDark;
-	public static ItemStack concreteFanzyBricks;
+	public static ItemStack concreteFancyBricks;
 	public static ItemStack concreteOldSquares;
 	public static ItemStack concreteRocks;
 	public static ItemStack concreteSmallBricks;
@@ -69,7 +70,6 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	}
 
 	@Override
-	@SideOnly(Side.CLIENT)
 	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 
 		for (int i = 0; i < Type.METADATA_LOOKUP.length; i++) {
@@ -112,10 +112,6 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 		if (!GuiScreen.isShiftKeyDown()) {
 			tooltip.add("Hold " + ChatFormatting.YELLOW + "Shift" + ChatFormatting.GRAY + " for Crafting.");
 		} else {
-			/*
-			 * tooltip.add(Names.CraftingToolTips.CRAFT_WITH);
-			 * tooltip.add(Names.CraftingToolTips.CONCRETE_BLOCKS);
-			 */
 			tooltip.add(Names.HelpToolTips.WIP_BLOCK);
 		}
 	}
@@ -133,30 +129,29 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	@Override
 	public boolean preInit() {
 		this.setRegistryName("concrete");
-		GameData.register_impl(this);
+		ForgeRegistries.BLOCKS.register(this);
 
 		ItemBlockConcrete itemBlock = new ItemBlockConcrete(this);
 		itemBlock.setRegistryName(this.getRegistryName());
-		GameData.register_impl(itemBlock);
+		ForgeRegistries.ITEMS.register(itemBlock);
 
 		concrete = new ItemStack(this, 1, Type.NORMAL.getMetadata());
 		concreteArrangedBricks = new ItemStack(this, 1, Type.ARRANGED_BRICK.getMetadata());
 		concreteBricks = new ItemStack(this, 1, Type.BRICK.getMetadata());
 		concreteBricksDark = new ItemStack(this, 1, Type.BRICK_DARK.getMetadata());
-		concreteFanzyBricks = new ItemStack(this, 1, Type.FANCY_BRICK.getMetadata());
+		concreteFancyBricks = new ItemStack(this, 1, Type.FANCY_BRICK.getMetadata());
 		concreteOldSquares = new ItemStack(this, 1, Type.OLD_SQUARES.getMetadata());
 		concreteRocks = new ItemStack(this, 1, Type.ROCKS.getMetadata());
 		concreteSmallBricks = new ItemStack(this, 1, Type.SMALL_BRICKS.getMetadata());
 
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE.getUnlocalizedName(), concrete);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ARRANGED_BRICKS.getUnlocalizedName(),
-				concreteArrangedBricks);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS.getUnlocalizedName(), concreteBricks);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_BRICKS_DARK.getUnlocalizedName(), concreteBricksDark);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_FANCY_BLOCKS.getUnlocalizedName(), concreteFanzyBricks);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_OLD_SQUARES.getUnlocalizedName(), concreteOldSquares);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_ROCKS.getUnlocalizedName(), concreteRocks);
-		registerWithHandlers(RandomThings.ModBlocks.CONCRETE_SMALL_BRICKS.getUnlocalizedName(), concreteSmallBricks);
+		registerWithHandlers("blockConcrete", concrete);
+		registerWithHandlers("blockConcreteArrangedBricks", concreteArrangedBricks);
+		registerWithHandlers("blockConcreteBricks", concreteBricks);
+		registerWithHandlers("blockConcreteBricksDark", concreteBricksDark);
+		registerWithHandlers("blockConcreteFancyBricks", concreteFancyBricks);
+		registerWithHandlers("blockConcreteOldSquares", concreteOldSquares);
+		registerWithHandlers("blockConcreteRocks", concreteRocks);
+		registerWithHandlers("blockConcreteSmallBricks", concreteSmallBricks);
 
 		return true;
 	}
@@ -175,9 +170,14 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	public enum Type implements IStringSerializable {
 
 		// @formatter:off
-		NORMAL(0, "normal"), ARRANGED_BRICK(1, "arranged_brick"), BRICK(2, "brick"), BRICK_DARK(3,
-				"brick_dark"), FANCY_BRICK(4, "fancy_brick"), OLD_SQUARES(5,
-						"old_squares"), ROCKS(6, "rocks"), SMALL_BRICKS(7, "small_bricks");
+		NORMAL(0, "normal"), 
+		ARRANGED_BRICK(1, "arranged_brick"), 
+		BRICK(2, "brick"), 
+		BRICK_DARK(3, "brick_dark"), 
+		FANCY_BRICK(4, "fancy_brick"), 
+		OLD_SQUARES(5, "old_squares"), 
+		ROCKS(6, "rocks"), 
+		SMALL_BRICKS(7, "small_bricks");
 		// @formatter: on
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];

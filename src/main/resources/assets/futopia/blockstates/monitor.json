@@ -5,34 +5,12 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"online":{
-			"true":{
-				"textures": {
-					"front": "futopia:blocks/computer/monitor/monitor_front_online"
-				}
+		"color": {
+			"black": {
+				"model": "futopia:monitor/monitor_black"
 			},
-			"false":{
-				"textures": {
-					"front": "futopia:blocks/computer/monitor/monitor_front_offline"
-				}
-			}
-		},
-
-		"facing":{
-			"north": {
-				"model": "futopia:monitor"
-			},
-			"south": {
-				"model": "futopia:monitor",
-				"y": 180
-			},
-			"east": {
-				"model": "futopia:monitor",
-				"y": 90
-			},
-			"west": {
-				"model": "futopia:monitor",
-				"y": 270
+			"white": {
+				"model": "futopia:monitor/monitor_white"
 			}
 		},
 

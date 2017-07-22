@@ -1,0 +1,19 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "futopia_blocks",
+  "result": { 
+    "item": "futopia:marble",
+    "data": 2
+  },
+  "pattern": [
+    "   ",
+    "MM ",
+    "MM "
+  ],
+  "key": {
+    "M": { 
+      "type": "forge:ore_dict", 
+      "ore": "blockMarble" 
+    }
+  }
+}

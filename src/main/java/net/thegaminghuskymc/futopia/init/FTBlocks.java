@@ -1,9 +1,12 @@
 package net.thegaminghuskymc.futopia.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.blocks.BlockMultiBlockController;
@@ -12,19 +15,22 @@ import net.thegaminghuskymc.futopia.blocks.computer.BlockComputerTower;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockController;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockDiskDrive;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockFilter;
-import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitor;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitorNew;
+import net.thegaminghuskymc.futopia.blocks.computer.BlockMonitorNew.MonitorColors;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockParticleSummoner;
 import net.thegaminghuskymc.futopia.blocks.computer.BlockProjectTable;
 import net.thegaminghuskymc.futopia.blocks.conduits.BlockFluidConduit;
 import net.thegaminghuskymc.futopia.blocks.conduits.BlockItemConduit;
 import net.thegaminghuskymc.futopia.blocks.conduits.BlockPowerConduit;
+import net.thegaminghuskymc.futopia.blocks.decorativeBlocks.BlockSnowGlobe;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockAlloyFurnace;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockConveyer;
 import net.thegaminghuskymc.futopia.blocks.machine.BlockElectricalFurnace;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOres;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseOresNether;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBaseStorage;
+import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockComputerTowers;
+import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockMonitor;
 import net.thegaminghuskymc.futopia.network.EnumDyeColor;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
 import net.thegaminghuskymc.futopia.tiles.TileAlloyFurnace;
@@ -33,7 +39,6 @@ import net.thegaminghuskymc.futopia.tiles.TileElectricalFurnace;
 import net.thegaminghuskymc.futopia.tiles.TileMultiBlock;
 import net.thegaminghuskymc.futopia.tiles.TileMultiBlockController;
 import net.thegaminghuskymc.futopia.tiles.TileProjectTable;
-import net.thegaminghuskymc.futopia.utils.HuskyRegistry;
 import net.thegaminghuskymc.huskylib.items.blocks.ItemBlockBase;
 
 public class FTBlocks {
@@ -61,6 +66,8 @@ public class FTBlocks {
 	
 	public static BlockMultiBlockController multiBlockController;
 	public static BlockMultiBlockWalls multiBlockWalls;
+	
+	public static BlockSnowGlobe snowGlobe;
 
 	public static void init() {
 		alloyfurnace = new BlockAlloyFurnace();
@@ -87,6 +94,8 @@ public class FTBlocks {
 		
 		multiBlockController = new BlockMultiBlockController();
 		multiBlockWalls = new BlockMultiBlockWalls();
+		
+		snowGlobe = new BlockSnowGlobe();
 	}
 
 	public static void register() {
@@ -104,9 +113,9 @@ public class FTBlocks {
 		registerBlock(filter);
 		registerBlock(projectTable);
 		registerBlock(diskDrive);
-		registerSpecialBlock(monitor);
+		registerBlockOnly(monitor);
 		registerBlock(controller);
-		registerSpecialBlock(computerTower);
+		registerBlockOnly(computerTower);
 
 		registerSpecialBlock(ores);
 		registerSpecialBlock(storages);
@@ -114,6 +123,10 @@ public class FTBlocks {
 		
 		registerBlock(multiBlockController);
 		registerBlock(multiBlockWalls);
+		
+		registerBlock(snowGlobe);
+		
+		registerItemBlocks();
 	}
 
 	public static void registerRenders() {
@@ -131,7 +144,7 @@ public class FTBlocks {
 		registerRender(filter);
 		registerRender(projectTable);
 		registerRender(diskDrive);
-		registerRenderDyeColors(monitor);
+		registerMonitorRender(monitor);
 		registerRender(controller);
 		registerRenderDyeColors(computerTower);
 
@@ -139,10 +152,10 @@ public class FTBlocks {
 		registerRenderMaterials(storages);
 		registerRenderMaterials(nether_ores);
 		
+		registerRender(snowGlobe);
+		
 		registerRender(multiBlockController);
 		registerRender(multiBlockWalls);
-
-		registerItemBlocks();
 	}
 
 	public static void registerBlock(Block block) {
@@ -155,7 +168,7 @@ public class FTBlocks {
 	}
 
 	public static void registerRender(Block block) {
-		HuskyRegistry.registerItemModel(block, 0);
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
 	}
 
 	public static void registerSpecialBlock(Block block) {
@@ -165,17 +178,26 @@ public class FTBlocks {
 
 	public static void registerRenderMaterials(Block block) {
 		for (EnumMaterialType types : EnumMaterialType.values()) {
-			HuskyRegistry.registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
+			registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
 		}
 	}
 	
 	public static void registerRenderDyeColors(Block block) {
 		for (EnumDyeColor types : EnumDyeColor.values()) {
-			HuskyRegistry.registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
+			registerItemModel(Item.getItemFromBlock(block), types.getMeta(), types.getName());
+		}
+	}
+	
+	public static void registerMonitorRender(Block block){
+		for(MonitorColors colors: MonitorColors.values()){
+			registerItemModel(Item.getItemFromBlock(block), colors.getMeta(), colors.getName());
 		}
 	}
 
 	private static void registerItemBlocks() {
+		
+		ForgeRegistries.ITEMS.register(new ItemBlockMonitor(monitor));
+		ForgeRegistries.ITEMS.register(new ItemBlockComputerTowers(computerTower));
 
 	}
 
@@ -192,6 +214,13 @@ public class FTBlocks {
 		String registryName = owner.getRegistryName().getResourceDomain() + ".tile."
 				+ owner.getRegistryName().getResourcePath();
 		GameRegistry.registerTileEntity(tileClass, registryName);
+	}
+	
+	public static void registerItemModel(Item i, int meta, String variant) {
+		ResourceLocation loc = i.getRegistryName();
+		if(!(i instanceof ItemBlock))
+			loc = new ResourceLocation(loc.getResourceDomain(), "item/" + loc.getResourcePath());
+		ModelLoader.setCustomModelResourceLocation(i, meta, new ModelResourceLocation(loc, "type=" + variant));
 	}
 
 }
