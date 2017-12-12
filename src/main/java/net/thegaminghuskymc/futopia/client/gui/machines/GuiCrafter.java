@@ -1,7 +1,5 @@
 package net.thegaminghuskymc.futopia.client.gui.machines;
 
-import java.io.IOException;
-
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiButtonImage;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -17,6 +15,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.client.container.machines.ContainerCrafter;
+
+import java.io.IOException;
 
 @SideOnly(Side.CLIENT)
 public class GuiCrafter extends GuiContainer implements IRecipeShownListener {
@@ -125,7 +125,7 @@ public class GuiCrafter extends GuiContainer implements IRecipeShownListener {
 	 * Called by the controls from the buttonList when activated. (Mouse pressed
 	 * for buttons)
 	 */
-	protected void actionPerformed(GuiButton button) throws IOException {
+	protected void actionPerformed(GuiButton button) {
 		if (button.id == 10) {
 			// this.recipeBookGui.initVisuals(this.widthTooNarrow,
 			// ((ContainerCrafter)this.inventorySlots).craftMatrix);
@@ -167,4 +167,8 @@ public class GuiCrafter extends GuiContainer implements IRecipeShownListener {
 		super.onGuiClosed();
 	}
 
+	@Override
+	public GuiRecipeBook func_194310_f() {
+		return this.recipeBookGui;
+	}
 }

@@ -1,7 +1,6 @@
 package net.thegaminghuskymc.futopia.world.gen;
 
 import com.google.common.base.Predicate;
-
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 

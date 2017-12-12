@@ -8,22 +8,22 @@
         "type": {
             "red": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_red_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_red_new"
                 }
             },
             "blue": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_blue_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_blue_new"
                 }
             },
             "purple": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_purple_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_purple_new"
                 }
             },
             "green": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_green_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_green_new"
                 }
             },
             "zinc": {
@@ -33,12 +33,12 @@
             },
             "tungsten": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_tungsten_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_tungsten_new"
                 }
             },
             "brass": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_brass_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_brass_new"
                 }
             },
             "tesselite": {
@@ -48,24 +48,25 @@
             },
             "pink": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_pink_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_pink_new"
                 }
             },
             "yellow": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_yellow_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_yellow_new"
                 }
             },
             "cyan": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_cyan_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_cyan_new"
                 }
             },
             "light_blue": {
                 "textures": {
-                    "all": "futopia:blocks/worldgen/storage/storage_light_blue_newer"
+                    "all": "futopia:blocks/worldgen/storage/storage_light_blue_new"
                 }
             }
-        }
+        },
+        "inventory": [{}]
     }
 }

@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraftforge.client.model.ModelLoader;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockStairsBase extends BlockStairs implements IModeledBlock {
@@ -20,7 +20,7 @@ public class BlockStairsBase extends BlockStairs implements IModeledBlock {
 		super(state);
 		this.useNeighborBrightness = true;
 		setUnlocalizedName(name);
-		setRegistryName(Refs.MODID, name);
+		setRegistryName(Reference.MODID, name);
 		setCreativeTab(FTCreativeTabs.main);
 	}
 

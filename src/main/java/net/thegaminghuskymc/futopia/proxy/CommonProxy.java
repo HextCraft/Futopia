@@ -6,6 +6,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
+import net.thegaminghuskymc.huskylib2.lib.config.Config;
 
 /**
  * Created by TheGamingHuskyMC on 26.05.2017.
@@ -19,12 +20,12 @@ public class CommonProxy implements IFutopiaProxy {
 
 	@Override
 	public void registerTileEntities() {
-		FTBlocks.registerTE();
+
 	}
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-
+		Config.init();
 	}
 
 	@Override

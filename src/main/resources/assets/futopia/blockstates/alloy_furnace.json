@@ -7,14 +7,10 @@
 	"variants": {
 		"active":{
 			"true":{
-				"textures": {
-					"north": "futopia:blocks/machines/alloy_furnace/alloy_furnace_front_on"
-				}
+
 			},
 			"false":{
-				"textures": {
-					"north": "futopia:blocks/machines/alloy_furnace/alloy_furnace_front_off"
-				}
+				
 			}
 		},
 

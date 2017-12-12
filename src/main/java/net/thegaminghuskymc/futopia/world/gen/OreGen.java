@@ -1,7 +1,5 @@
 package net.thegaminghuskymc.futopia.world.gen;
 
-import java.util.Random;
-
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
@@ -9,14 +7,17 @@ import net.minecraft.world.gen.IChunkGenerator;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.fml.common.IWorldGenerator;
-import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.OtherBlocks;
+
+import java.util.Random;
 
 public class OreGen implements IWorldGenerator {
 
 	// World Generators
 	private WorldGenerator ores;
+	private WorldGenerator nether_ores;
+	private WorldGenerator end_ores;
 	private WorldGenerator marble;
 	private WorldGenerator basalt;
 	private WorldGenerator limestone;
@@ -24,6 +25,8 @@ public class OreGen implements IWorldGenerator {
 
 	public OreGen() {
 		ores = new WorldGenMinable(FTBlocks.ores.getDefaultState(), 18);
+		nether_ores = new WorldGenMinable(FTBlocks.nether_ores.getDefaultState(), 18);
+		end_ores = new WorldGenMinable(FTBlocks.end_ores.getDefaultState(), 18);
 		marble = new WorldGenMinable(OtherBlocks.marble.getStateFromMeta(0), 18);
 		basalt = new WorldGenMinable(OtherBlocks.basalt.getStateFromMeta(0), 18);
 		limestone = new WorldGenMinable(OtherBlocks.limestone.getStateFromMeta(0), 18);
@@ -47,6 +50,9 @@ public class OreGen implements IWorldGenerator {
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator,
 			IChunkProvider chunkProvider) {
+	    if(world.provider.getDimension() == -1) {
+            this.runGenerator(nether_ores, world, random, chunkX, chunkZ, 1, 0, 128);
+        }
 		if (world.provider.getDimension() == 0) {
 			this.runGenerator(ores, world, random, chunkX, chunkZ, 1, 0, 128);
 			this.runGenerator(marble, world, random, chunkX, chunkZ, 1, 0, 128);
@@ -54,6 +60,9 @@ public class OreGen implements IWorldGenerator {
 			this.runGenerator(meteor, world, random, chunkX, chunkZ, 1, 0, 128);
 			this.runGenerator(limestone, world, random, chunkX, chunkZ, 1, 0, 128);
 		}
+        if(world.provider.getDimension() == 1) {
+            this.runGenerator(end_ores, world, random, chunkX, chunkZ, 1, 0, 128);
+        }
 	}
 
 }

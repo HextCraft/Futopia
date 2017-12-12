@@ -1,10 +1,14 @@
 package net.thegaminghuskymc.futopia.blocks;
 
+/**
+ * Interface which can be put on just about anything to allow for modular registration.
+ *
+ * @author King Lemming
+ */
 public interface IInitializer {
 
-	public abstract boolean preInit();
+	boolean initialize();
 
-	public abstract boolean initialize();
+	boolean register();
 
-	public abstract boolean postInit();
 }

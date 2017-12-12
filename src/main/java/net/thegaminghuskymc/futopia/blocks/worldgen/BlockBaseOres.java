@@ -4,7 +4,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
-import net.thegaminghuskymc.huskylib.blocks.EnumBlock;
+import net.thegaminghuskymc.huskylib2.lib.blocks.EnumBlock;
 
 public class BlockBaseOres extends EnumBlock<EnumMaterialType> {
 

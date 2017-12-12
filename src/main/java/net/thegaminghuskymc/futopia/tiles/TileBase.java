@@ -1,10 +1,10 @@
 package net.thegaminghuskymc.futopia.tiles;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TileBase extends TileEntity {
 

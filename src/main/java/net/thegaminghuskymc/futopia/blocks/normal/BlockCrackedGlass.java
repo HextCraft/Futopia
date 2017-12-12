@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.normal;
 
-import java.util.Random;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -23,13 +20,17 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.oredict.OreDictionary;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockCrackedGlass;
 import net.thegaminghuskymc.futopia.network.ClearGlassType;
 import net.thegaminghuskymc.huskylib.RebornRegistry;
+
+import java.util.Random;
 
 public class BlockCrackedGlass extends BlockCore implements IInitializer, IModelRegister {
 
@@ -53,7 +54,7 @@ public class BlockCrackedGlass extends BlockCore implements IInitializer, IModel
 	public static ItemStack clearGlassYellow;
 
 	public BlockCrackedGlass() {
-		super(Material.GLASS, Refs.MODID);
+		super(Material.GLASS, Reference.MODID);
 
 		setUnlocalizedName("cracked_glass");
 		setCreativeTab(FTCreativeTabs.main);
@@ -172,15 +173,14 @@ public class BlockCrackedGlass extends BlockCore implements IInitializer, IModel
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 
-		for (int i = 0; i < ClearGlassType.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + ClearGlassType.byMetadata(i).getName()));
-		}
+        for (int i = 0; i < ClearGlassType.values().length; i++) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + ClearGlassType.byMetadata(i).getName()));
+        }
 	}
 
 	/* IInitializer */
 	@Override
-	public boolean preInit() {
+	public boolean initialize() {
 
 		setRegistryName("cracked_glass");
 		RebornRegistry.registerBlock(this);
@@ -208,19 +208,13 @@ public class BlockCrackedGlass extends BlockCore implements IInitializer, IModel
 
 		OreDictionary.registerOre("blockCrackedGlass", new ItemStack(this, 1, OreDictionary.WILDCARD_VALUE));
 
-		return true;
-	}
-
-	@Override
-	public boolean initialize() {
+        Futopia.proxy.addIModelRegister(this);
 
 		return true;
 	}
 
 	@Override
-	public boolean postInit() {
-
-		return true;
+	public boolean register() {
+		return false;
 	}
-
 }

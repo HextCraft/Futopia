@@ -1,10 +1,5 @@
 package net.thegaminghuskymc.futopia;
 
-import static net.thegaminghuskymc.futopia.Refs.CSIDE;
-import static net.thegaminghuskymc.futopia.Refs.SSIDE;
-
-import java.util.logging.Logger;
-
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -15,56 +10,59 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.thegaminghuskymc.futopia.client.gui.GuiHandler;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
+import net.thegaminghuskymc.futopia.init.FTBlocksAlt;
 import net.thegaminghuskymc.futopia.init.FTItems;
-import net.thegaminghuskymc.futopia.init.FutopiaOreDictionary;
 import net.thegaminghuskymc.futopia.init.OtherBlocks;
-import net.thegaminghuskymc.futopia.init.Recipies;
-import net.thegaminghuskymc.futopia.integration.FutopiaIntegrations;
 import net.thegaminghuskymc.futopia.proxy.IFutopiaProxy;
 import net.thegaminghuskymc.futopia.world.gen.OreGen;
+import net.thegaminghuskymc.futopia.world.gen.WorldGenerationHandler;
 
-@Mod(modid = Refs.MODID, name = Refs.NAME, version = Refs.VERSION, dependencies = Refs.DEPS, acceptedMinecraftVersions = Refs.ACC_MC)
+import java.util.logging.Logger;
+
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class Futopia {
 
-	@Mod.Instance(value = Refs.MODID)
-	public static Futopia INSTANCE;
-	public static final GuiHandler GUI_HANDLER = new GuiHandler();
-	public static Logger LOGGER = Logger.getLogger(Refs.NAME);
+    @Mod.Instance(value = Reference.MODID)
+    public static Futopia INSTANCE;
+    public static GuiHandler GUI_HANDLER;
+    public static Logger LOGGER = Logger.getLogger(Reference.NAME);
 
-	@SidedProxy(clientSide = CSIDE, serverSide = SSIDE)
-	public static IFutopiaProxy proxy;
+    @SidedProxy(clientSide = Reference.CSIDE, serverSide = Reference.SSIDE)
+    public static IFutopiaProxy proxy;
 
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
 
-		OtherBlocks.preInit();
+        OtherBlocks.preInit();
 
-		proxy.preInit(event);
+        proxy.preInit(event);
 
-		FTBlocks.init();
-		FTItems.init();
-		FTBlocks.register();
-		FTItems.register();
+        FTBlocks.init();
+        FTItems.init();
+        FTBlocks.register();
+        FTItems.register();
+        FTBlocks.registerTE();
+//        FTBlocksAlt.registerTE();
 
-		FutopiaIntegrations.preInit();
+        proxy.registerRenders();
+    }
 
-		proxy.registerRenders();
-		proxy.registerTileEntities();
-	}
+    @EventHandler
+    public void init(FMLInitializationEvent event) {
+        proxy.init(event);
 
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		OtherBlocks.initialize();
-		FutopiaOreDictionary.init();
-		Recipies.init();
-		GameRegistry.registerWorldGenerator(new OreGen(), 0);
-		NetworkRegistry.INSTANCE.registerGuiHandler(INSTANCE, GUI_HANDLER);
-		proxy.init(event);
-	}
+//        FutopiaOreDictionary.init();
+//        Recipies.init();
+        GameRegistry.registerWorldGenerator(new OreGen(), 0);
+        GameRegistry.registerWorldGenerator(new WorldGenerationHandler(), 1);
+        NetworkRegistry.INSTANCE.registerGuiHandler(INSTANCE, GUI_HANDLER);
+    }
 
-	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
-		OtherBlocks.postInit();
-		proxy.postInit(event);
-	}
+    @EventHandler
+    public void postInit(FMLPostInitializationEvent event) {
+        proxy.postInit(event);
+    }
+
+
+
 }

@@ -1,10 +1,9 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
-import cofh.core.block.ItemBlockCore;
-import cofh.core.util.helpers.ItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockMeteor;
+import net.thegaminghuskymc.futopia.utils.ItemHelper;
 
 public class ItemBlockMeteor extends ItemBlockCore {
 

@@ -1,13 +1,7 @@
 package net.thegaminghuskymc.futopia.blocks.computer;
 
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import cofh.core.util.helpers.StringHelper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +16,10 @@ import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.Futopia;
 import net.thegaminghuskymc.futopia.client.gui.GuiHandler;
 import net.thegaminghuskymc.futopia.utils.BlockNames;
+import net.thegaminghuskymc.futopia.utils.StringHelper;
+
+import javax.annotation.Nonnull;
+import java.util.List;
 
 public class BlockProjectTable extends BlockComputerBase {
 

@@ -1,7 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
-import java.util.Random;
-
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -20,6 +18,8 @@ import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.network.EnumMachineTire;
 import net.thegaminghuskymc.huskylib.blocks.BlockMultiBase;
 import net.thegaminghuskymc.huskylib.tiles.TileEntityMachineBase;
+
+import java.util.Random;
 
 public class BlockMachineBase extends BlockMultiBase {
 
@@ -51,7 +51,7 @@ public class BlockMachineBase extends BlockMultiBase {
 
 	@Override
 	public BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, new IProperty[] { ACTIVE, FACING, MACHINE_TIRE });
+		return new BlockStateContainer(this, ACTIVE, FACING, MACHINE_TIRE);
 	}
 
 	@Override

@@ -1,23 +1,25 @@
 package net.thegaminghuskymc.futopia.proxy;
 
-import java.util.ArrayList;
-
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.thegaminghuskymc.futopia.Futopia;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTBlocks;
 import net.thegaminghuskymc.futopia.init.FTItems;
+
+import java.util.ArrayList;
 
 public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 
 	private static ArrayList<IModelRegister> modelList = new ArrayList<>();
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public void registerRenders() {
-		FTBlocks.registerRenders();
+        FTBlocks.registerRenders();
 		FTItems.registerRenders();
 	}
 
@@ -33,7 +35,7 @@ public class ClientProxy extends CommonProxy implements IFutopiaProxy {
 
 	@Override
 	public void init(FMLInitializationEvent event) {
-		
+
 	}
 
 	@Override

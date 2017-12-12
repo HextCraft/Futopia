@@ -150,7 +150,7 @@ ECHO.
 SET /P INPUT="Enter your option:"
 IF %INPUT%=="yes" (
 	GOTO:CLEANWORKSPACE
-) ELSE (
+) ELSE IF %INPUT%=="no" (
 	GOTO:OPERATIONCANCELED
 )
 

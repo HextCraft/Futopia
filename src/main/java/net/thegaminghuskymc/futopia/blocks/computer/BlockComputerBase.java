@@ -13,84 +13,68 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.MinecraftForgeClient;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.network.EnumPlacingType;
-import net.thegaminghuskymc.huskylib.blocks.BlockBase;
+import net.thegaminghuskymc.huskylib2.lib.blocks.BlockBase2;
 
-public class BlockComputerBase extends BlockBase {
+public class BlockComputerBase extends BlockBase2 {
 
-	public static final PropertyEnum<EnumPlacingType> PLACING = PropertyEnum.create("placing", EnumPlacingType.class);
-	public static final PropertyBool ACTIVE = PropertyBool.create("online");
-	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;
-	private static final EnumFacing[] VALID_FACING = { EnumFacing.NORTH, EnumFacing.EAST, EnumFacing.SOUTH,
-			EnumFacing.WEST };
+    public static PropertyEnum PLACING = PropertyEnum.create("placing", EnumPlacingType.class);
+    public static PropertyBool ACTIVE = PropertyBool.create("online");
+    public static PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;
 
-	public BlockComputerBase(String name) {
-		super(Refs.MODID, name, FTCreativeTabs.computer_parts);
+    public BlockComputerBase(String name) {
+        super(Reference.MODID, name, FTCreativeTabs.computer_parts);
+        this.getDefaultState().withProperty(FACING, EnumFacing.NORTH).withProperty(ACTIVE, false);
+    }
 
-		this.setDefaultState(
-				blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ACTIVE, false));
-	}
+    @Override
+    public boolean hasCustomBreakingProgress(IBlockState state) {
+        return true;
+    }
 
-	@Override
-	@SideOnly(Side.CLIENT)
-	public boolean hasCustomBreakingProgress(IBlockState state) {
-		return true;
-	}
+    public BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, FACING, ACTIVE);
+    }
 
-	@Override
-	public BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, FACING, ACTIVE);
-	}
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
+    }
 
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta & 0x03));
-	}
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(FACING).getHorizontalIndex();
+    }
 
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return state.getValue(FACING).getHorizontalIndex();
-	}
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY,
+                                      float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
 
-	@Override
-	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY,
-			float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-	}
+    public EnumFacing[] getValidRotations(World world, BlockPos pos) {
+        return EnumFacing.HORIZONTALS;
+    }
 
-	@Override
-	public EnumFacing[] getValidRotations(World world, BlockPos pos) {
-		return VALID_FACING;
-	}
+    public boolean rotateBlock(World world, BlockPos pos, EnumFacing axis) {
+        IBlockState cur = world.getBlockState(pos);
 
-	@Override
-	public boolean rotateBlock(World world, BlockPos pos, EnumFacing axis) {
-		IBlockState cur = world.getBlockState(pos);
+        world.setBlockState(pos, cur.withProperty(FACING, cur.getValue(FACING).rotateY()));
+        return true;
+    }
 
-		world.setBlockState(pos, cur.withProperty(FACING, cur.getValue(FACING).rotateY()));
-		return true;
-	}
+    public String preferredRenderState() {
+        return  "online=false,facing=north";
+    }
 
-	public String getPreferredRenderState() {
-		return "online=false,facing=north";
-	}
+    public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
+        if (MinecraftForgeClient.getRenderLayer() == BlockRenderLayer.CUTOUT) {
+            return 15728880;
+        } else
+            return super.getPackedLightmapCoords(state, source, pos);
+    }
 
-	@SuppressWarnings("deprecation")
-	@Override
-	public int getPackedLightmapCoords(IBlockState state, IBlockAccess source, BlockPos pos) {
-		if (MinecraftForgeClient.getRenderLayer() == BlockRenderLayer.CUTOUT) {
-			return 15728880;
-		} else
-			return super.getPackedLightmapCoords(state, source, pos);
-	}
-
-	@Override
-	public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
-		return layer == BlockRenderLayer.CUTOUT;
-	}
+    public boolean canRenderInLayer(IBlockState state, BlockRenderLayer layer) {
+        return layer == BlockRenderLayer.CUTOUT;
+    }
 
 }

@@ -1,7 +1,7 @@
 package net.thegaminghuskymc.futopia.utils;
 
 import net.minecraft.client.resources.I18n;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 
 public class Translations {
 
@@ -12,12 +12,12 @@ public class Translations {
 	public static final String TOOLTIP_WITHER_PROOF = translate("tooltip", "wither_proof");
 
 	private static String translate(String prefix, String key) {
-		return I18n.format(prefix + "." + Refs.MODID + "." + key + ".name");
+		return I18n.format(prefix + "." + Reference.MODID + "." + key + ".name");
 	}
 
 	@SuppressWarnings("unused")
 	private static String translate(String prefix, String key, String suffix) {
-		return I18n.format(prefix + "." + Refs.MODID + "." + key + "." + suffix);
+		return I18n.format(prefix + "." + Reference.MODID + "." + key + "." + suffix);
 	}
 
 }

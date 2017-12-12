@@ -5,13 +5,13 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.client.container.computers.ContainerProjectTable;
 import net.thegaminghuskymc.huskylib.client.gui.GuiContainerBase;
 
 public class GuiProjectTable extends GuiContainerBase {
 
-	private static ResourceLocation texture = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/project_table.png");
 
 	public GuiProjectTable(InventoryPlayer playerInv, World world) {

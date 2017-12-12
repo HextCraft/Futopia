@@ -10,7 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.client.model.ModelLoader;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 
 public class BlockWallBase extends BlockWall implements IModeledBlock {
@@ -23,7 +23,7 @@ public class BlockWallBase extends BlockWall implements IModeledBlock {
 	public BlockWallBase(Block block, String name, boolean addToTab) {
 		super(block);
 		setUnlocalizedName(name);
-		setRegistryName(Refs.MODID, name);
+		setRegistryName(Reference.MODID, name);
 		setCreativeTab(FTCreativeTabs.main);
 	}
 

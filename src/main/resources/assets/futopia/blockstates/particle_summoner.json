@@ -1,13 +1,41 @@
 {
 	"forge_marker": 1,
 	"defaults": {
-		"model": "cube_all",
+		"model": "cube",
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"normal": {
-			"model": "futopia:particle_summoner"
+		"active":{
+			"true":{
+				"textures": {
+					"side": "futopia:blocks/machines/particle_summoner/particle_summoner_side"
+				}
+			},
+			"false":{
+				"textures": {
+					"side": "futopia:blocks/machines/particle_summoner/particle_summoner_side"
+				}
+			}
 		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:particle_summoner"
+			},
+			"south": {
+				"model": "futopia:particle_summoner",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:particle_summoner",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:particle_summoner",
+				"y": 270
+			}
+		},
+
 		"inventory": [{}]
 	}
 }

@@ -1,15 +1,15 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
-import java.util.List;
-
-import cofh.core.util.helpers.StringHelper;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.utils.Names;
+import net.thegaminghuskymc.futopia.utils.StringHelper;
 import net.thegaminghuskymc.huskylib.tiles.TileEntityBase;
+
+import java.util.List;
 
 public class BlockGeneratorBase extends BlockMachineBase {
 

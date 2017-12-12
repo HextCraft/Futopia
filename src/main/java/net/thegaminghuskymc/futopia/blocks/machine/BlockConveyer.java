@@ -4,14 +4,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockConveyer extends BlockBase {
 
 	public BlockConveyer() {
-		super(Refs.MODID, "conveyer_belt", FTCreativeTabs.main);
+		super(Reference.MODID, "conveyer_belt", FTCreativeTabs.main);
 	}
 
 	@Override

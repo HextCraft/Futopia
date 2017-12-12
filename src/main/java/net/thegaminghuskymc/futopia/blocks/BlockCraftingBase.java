@@ -7,7 +7,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.Futopia;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.client.gui.GuiHandler;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.tiles.TileCraftingBase;
@@ -16,7 +16,7 @@ import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 public class BlockCraftingBase extends BlockMachineBase {
 
 	public BlockCraftingBase(String name) {
-		super(Refs.MODID, name, new TileCraftingBase(), FTCreativeTabs.machines);
+		super(Reference.MODID, name, new TileCraftingBase(), FTCreativeTabs.machines);
 	}
 
 	/**

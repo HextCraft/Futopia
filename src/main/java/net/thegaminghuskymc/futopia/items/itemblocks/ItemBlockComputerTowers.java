@@ -1,10 +1,9 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
-import cofh.core.block.ItemBlockCore;
-import cofh.core.util.helpers.ItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.network.EnumDyeColor;
+import net.thegaminghuskymc.futopia.utils.ItemHelper;
 
 public class ItemBlockComputerTowers extends ItemBlockCore {
 

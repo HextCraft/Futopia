@@ -1,122 +1,133 @@
 package net.thegaminghuskymc.futopia.blocks.conduits;
 
+import com.google.common.collect.ImmutableList;
+import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
-import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
+
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public abstract class BlockConduitBase extends BlockBase implements ITileEntityProvider {
 
-	public static PropertyBool NORTH = PropertyBool.create("north");
-	public static PropertyBool EAST = PropertyBool.create("east");
-	public static PropertyBool SOUTH = PropertyBool.create("south");
-	public static PropertyBool WEST = PropertyBool.create("west");
-	public static PropertyBool UP = PropertyBool.create("up");
-	public static PropertyBool DOWN = PropertyBool.create("down");
+	public static final float PIPE_MIN_POS = 0.25f;
+	public static final float PIPE_MAX_POS = 0.75f;
 
-	public BlockConduitBase(String name) {
-		super(name + "_conduit", FTCreativeTabs.main);
+	public static final ImmutableList<IProperty<Boolean>> CONNECTED_PROPERTIES = ImmutableList.copyOf(
+			Stream.of(EnumFacing.VALUES)
+					.map(facing -> PropertyBool.create(facing.getName()))
+					.collect(Collectors.toList())
+	);
 
-		this.setDefaultState(blockState.getBaseState().withProperty(NORTH, false).withProperty(SOUTH, false)
-				.withProperty(EAST, false).withProperty(WEST, false).withProperty(UP, false).withProperty(DOWN, false));
+	public static final ImmutableList<AxisAlignedBB> CONNECTED_BOUNDING_BOXES = ImmutableList.copyOf(
+			Stream.of(EnumFacing.VALUES)
+					.map(facing -> {
+						Vec3i directionVec = facing.getDirectionVec();
+						return new AxisAlignedBB(
+								getMinBound(directionVec.getX()), getMinBound(directionVec.getY()), getMinBound(directionVec.getZ()),
+								getMaxBound(directionVec.getX()), getMaxBound(directionVec.getY()), getMaxBound(directionVec.getZ())
+						);
+					})
+					.collect(Collectors.toList())
+	);
+
+	private static float getMinBound(final int dir) {
+		return dir == -1 ? 0 : PIPE_MIN_POS;
 	}
 
+	private static float getMaxBound(final int dir) {
+		return dir == 1 ? 1 : PIPE_MAX_POS;
+	}
+
+	public BlockConduitBase(final Material material, final String blockName) {
+		super(blockName, FTCreativeTabs.machines);
+	}
+
+	@SuppressWarnings("deprecation")
 	@Override
-	public AxisAlignedBB getCollisionBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return getBoundingBox(state, source, pos);
-	}
-
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess world, BlockPos pos) {
-		IBlockState actualState = getActualState(state, world, pos);
-
-		float pixel = 1f / 16f;
-		float min = pixel * 5;
-		float max = 1 - min;
-
-		float x1 = min;
-		float y1 = min;
-		float z1 = min;
-		float x2 = max;
-		float y2 = max;
-		float z2 = max;
-
-		if (actualState.getValue(NORTH))
-			z1 = 0;
-		if (actualState.getValue(WEST))
-			x1 = 0;
-		if (actualState.getValue(DOWN))
-			y1 = 0;
-		if (actualState.getValue(EAST))
-			x2 = 1;
-		if (actualState.getValue(SOUTH))
-			z2 = 1;
-		if (actualState.getValue(UP))
-			y2 = 1;
-
-		return new AxisAlignedBB(x1, y1, z1, x2, y2, z2);
-	}
-
-	@Override
-	public IBlockState getActualState(IBlockState state, IBlockAccess world, BlockPos pos) {
-		return state.withProperty(NORTH, canConnectCable(state, world, pos.north(), EnumFacing.SOUTH))
-				.withProperty(EAST, canConnectCable(state, world, pos.east(), EnumFacing.WEST))
-				.withProperty(SOUTH, canConnectCable(state, world, pos.south(), EnumFacing.NORTH))
-				.withProperty(WEST, canConnectCable(state, world, pos.west(), EnumFacing.EAST))
-				.withProperty(DOWN, canConnectCable(state, world, pos.down(), EnumFacing.UP))
-				.withProperty(UP, canConnectCable(state, world, pos.up(), EnumFacing.DOWN));
-	}
-
-	@Override
-	public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World world, BlockPos pos) {
-		return getBoundingBox(state, world, pos).offset(pos);
-	}
-
-	@Override
-	public BlockStateContainer createBlockState() {
-		return new BlockStateContainer(this, NORTH, EAST, SOUTH, WEST, UP, DOWN);
-	}
-
-	@Override
-	public int getMetaFromState(IBlockState state) {
-		return 0;
-	}
-
-	@Override
-	public IBlockState getStateFromMeta(int meta) {
-		return this.getDefaultState();
-	}
-
-	@Override
-	public boolean hasTileEntity(IBlockState state) {
-		return true;
-	}
-
-	public boolean canConnectCable(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
-		return true;
-	}
-
-	// overrides light opacity if true >:|
-	@Override
-	public boolean isFullCube(IBlockState state) {
+	public boolean isOpaqueCube(final IBlockState state) {
 		return false;
 	}
 
-	// controls hidden surface removal
+	@SuppressWarnings("deprecation")
 	@Override
-	public boolean isOpaqueCube(IBlockState state) {
+	public boolean isFullCube(final IBlockState state) {
 		return false;
 	}
 
-	@Override
-	public boolean isBlockNormalCube(IBlockState state) {
-		return false;
+	/**
+	 * Is the neighbouring block a valid connection for this pipe?
+	 *
+	 * @param ownState           This pipe's state
+	 * @param neighbourState     The neighbouring block's state
+	 * @param world              The world
+	 * @param ownPos             This pipe's position
+	 * @param neighbourDirection The direction of the neighbouring block
+	 * @return Is the neighbouring block a valid connection?
+	 */
+	protected boolean isValidConnection(final IBlockState ownState, final IBlockState neighbourState, final IBlockAccess world, final BlockPos ownPos, final EnumFacing neighbourDirection) {
+		return neighbourState.getBlock() instanceof BlockConduitBase;
 	}
+
+	/**
+	 * Can this pipe connect to the neighbouring block?
+	 *
+	 * @param ownState           This pipe's state
+	 * @param worldIn            The world
+	 * @param ownPos             This pipe's position
+	 * @param neighbourDirection The direction of the neighbouring block
+	 * @return Can this pipe connect?
+	 */
+	private boolean canConnectTo(final IBlockState ownState, final IBlockAccess worldIn, final BlockPos ownPos, final EnumFacing neighbourDirection) {
+		final BlockPos neighbourPos = ownPos.offset(neighbourDirection);
+		final IBlockState neighbourState = worldIn.getBlockState(neighbourPos);
+		final Block neighbourBlock = neighbourState.getBlock();
+
+		final boolean neighbourIsValidForThis = isValidConnection(ownState, neighbourState, worldIn, ownPos, neighbourDirection);
+		final boolean thisIsValidForNeighbour = !(neighbourBlock instanceof BlockConduitBase) || ((BlockConduitBase) neighbourBlock).isValidConnection(neighbourState, ownState, worldIn, neighbourPos, neighbourDirection.getOpposite());
+
+		return neighbourIsValidForThis && thisIsValidForNeighbour;
+	}
+
+	/*@SuppressWarnings("deprecation")
+	@Override
+	public IBlockState getActualState(IBlockState state, final IBlockAccess world, final BlockPos pos) {
+		for (final EnumFacing facing : EnumFacing.VALUES) {
+			state = state.withProperty(CONNECTED_PROPERTIES.get(facing.getIndex()), canConnectTo(state, world, pos, facing));
+		}
+
+		return state;
+	}*/
+
+	public final boolean isConnected(final IBlockState state, final EnumFacing facing) {
+		return state.getValue(CONNECTED_PROPERTIES.get(facing.getIndex()));
+	}
+
+	/*@SuppressWarnings("deprecation")
+	@Override
+	public void addCollisionBoxToList(IBlockState state, final World worldIn, final BlockPos pos, final AxisAlignedBB entityBox, final List<AxisAlignedBB> collidingBoxes, @Nullable final Entity entityIn, final boolean p_185477_7_) {
+		final AxisAlignedBB bb = new AxisAlignedBB(PIPE_MIN_POS, PIPE_MIN_POS, PIPE_MIN_POS, PIPE_MAX_POS, PIPE_MAX_POS, PIPE_MAX_POS);
+		addCollisionBoxToList(pos, entityBox, collidingBoxes, bb);
+
+		if (!p_185477_7_) {
+			state = state.getActualState(worldIn, pos);
+		}
+
+		for (final EnumFacing facing : EnumFacing.VALUES) {
+			if (isConnected(state, facing)) {
+				final AxisAlignedBB axisAlignedBB = CONNECTED_BOUNDING_BOXES.get(facing.getIndex());
+				addCollisionBoxToList(pos, entityBox, collidingBoxes, axisAlignedBB);
+			}
+		}
+	}*/
 
 }

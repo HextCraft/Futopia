@@ -2,10 +2,7 @@ package net.thegaminghuskymc.futopia.init;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.thegaminghuskymc.futopia.Refs;
 
-@GameRegistry.ObjectHolder(value = Refs.MODID)
 public class FTCreativeTabs {
 
 	public static CreativeTabs main;
@@ -20,28 +17,28 @@ public class FTCreativeTabs {
 		main = new CreativeTabs("main_ft") {
 			@Override
 			public ItemStack getTabIconItem() {
-				return new ItemStack(OtherBlocks.limestone);
+				return new ItemStack(OtherBlocks.basalt);
 			}
 		};
 
 		machines = new CreativeTabs("machines_ft") {
 			@Override
 			public ItemStack getTabIconItem() {
-				return new ItemStack(FTBlocks.particleSummoner);
+				return new ItemStack(FTBlocks.alloyfurnace);
 			}
 		};
 
 		computer_parts = new CreativeTabs("computer_parts_ft") {
 			@Override
 			public ItemStack getTabIconItem() {
-				return new ItemStack(FTBlocks.monitor);
+				return new ItemStack(FTBlocks.diskDrive);
 			}
 		};
 
 		world_gen = new CreativeTabs("worldgen_ft") {
 			@Override
 			public ItemStack getTabIconItem() {
-				return new ItemStack(FTBlocks.ores);
+				return new ItemStack(OtherBlocks.marble);
 			}
 		};
 

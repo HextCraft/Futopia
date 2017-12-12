@@ -7,17 +7,17 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fluids.IFluidBlock;
 import net.minecraftforge.registries.GameData;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 
 public class FluidHelper {
 
 	public static Fluid createFluid(String name, String textureName, boolean hasFlowIcon) {
 
-		ResourceLocation still = new ResourceLocation(textureName + "-still");
-		ResourceLocation flowing = hasFlowIcon ? new ResourceLocation(textureName + "-flow") : still;
+		ResourceLocation still = new ResourceLocation(textureName + "_still");
+		ResourceLocation flowing = hasFlowIcon ? new ResourceLocation(textureName + "_flow") : still;
 
 		Fluid fluid = new Fluid(name, still, flowing);
-		fluid.setUnlocalizedName(Refs.MODID + "." + name);
+		fluid.setUnlocalizedName(Reference.MODID + "." + name);
 		FluidRegistry.registerFluid(fluid);
 
 		return fluid;

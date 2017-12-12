@@ -1,12 +1,13 @@
 package net.thegaminghuskymc.futopia.blocks.conduits;
 
+import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
 public class BlockFluidConduit extends BlockConduitBase {
 
 	public BlockFluidConduit() {
-		super("fluid");
+		super(Material.ANVIL,"fluid_conduit");
 	}
 
 	@Override

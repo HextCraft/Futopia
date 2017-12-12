@@ -1,14 +1,6 @@
 package net.thegaminghuskymc.futopia.blocks.decorativeBlocks.concrete;
 
-import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
-
-import java.util.List;
-
-import javax.annotation.Nonnull;
-
 import com.mojang.realmsclient.gui.ChatFormatting;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -28,14 +20,19 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.GameData;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockConcrete;
 import net.thegaminghuskymc.futopia.utils.Names;
-import net.thegaminghuskymc.futopia.utils.RandomThings;
+
+import javax.annotation.Nonnull;
+import java.util.List;
+
+import static net.thegaminghuskymc.futopia.utils.ItemHelper.registerWithHandlers;
 
 public class BlockConcrete extends BlockCore implements IInitializer, IModelRegister {
 
@@ -51,7 +48,7 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	public static ItemStack concreteSmallBricks;
 
 	public BlockConcrete() {
-		super(Material.ROCK, Refs.MODID);
+		super(Material.ROCK, Reference.MODID);
 
 		setUnlocalizedName("concrete");
 		setCreativeTab(FTCreativeTabs.main);
@@ -120,14 +117,13 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 
-		for (int i = 0; i < Type.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-		}
+        for (int i = 0; i < Type.values().length; i++) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+        }
 	}
 
 	@Override
-	public boolean preInit() {
+	public boolean initialize() {
 		this.setRegistryName("concrete");
 		ForgeRegistries.BLOCKS.register(this);
 
@@ -153,16 +149,13 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 		registerWithHandlers("blockConcreteRocks", concreteRocks);
 		registerWithHandlers("blockConcreteSmallBricks", concreteSmallBricks);
 
+		Futopia.proxy.addIModelRegister(this);
+
 		return true;
 	}
 
 	@Override
-	public boolean initialize() {
-		return false;
-	}
-
-	@Override
-	public boolean postInit() {
+	public boolean register() {
 		return false;
 	}
 
@@ -190,31 +183,11 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 
 		private final int metadata;
 		private final String name;
-		private final int light;
-		private final float hardness;
-		private final float resistance;
-
-		Type(int metadata, String name, int light, float hardness, float resistance) {
-
-			this.metadata = metadata;
-			this.name = name;
-			this.light = light;
-			this.hardness = hardness;
-			this.resistance = resistance;
-		}
-
-		Type(int metadata, String name, float hardness, float resistance) {
-			this(metadata, name, 0, hardness, resistance);
-		}
-
-		Type(int metadata, String name, int light) {
-
-			this(metadata, name, light, 5.0F, 6.0F);
-		}
 
 		Type(int metadata, String name) {
 
-			this(metadata, name, 0, 5.0F, 6.0F);
+			this.metadata = metadata;
+			this.name = name;
 		}
 
 		public static Type byMetadata(int metadata) {
@@ -235,20 +208,6 @@ public class BlockConcrete extends BlockCore implements IInitializer, IModelRegi
 			return this.name;
 		}
 
-		public int getLight() {
-
-			return this.light;
-		}
-
-		public float getHardness() {
-
-			return this.hardness;
-		}
-
-		public float getResistance() {
-
-			return this.resistance;
-		}
 	}
 
 }

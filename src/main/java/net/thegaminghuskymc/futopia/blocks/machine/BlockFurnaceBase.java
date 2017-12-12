@@ -14,7 +14,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.thegaminghuskymc.futopia.Futopia;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.client.gui.GuiHandler;
 import net.thegaminghuskymc.futopia.tiles.TileFurnaceBase;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
@@ -22,10 +22,8 @@ import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 public class BlockFurnaceBase extends BlockBase {
 
 	public static final PropertyBool ACTIVE = PropertyBool.create("active");
-	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING; // Yes,
-																					// I'm
-																					// stealing
-																					// it.
+	public static final PropertyEnum<EnumFacing> FACING = BlockHorizontal.FACING;
+
 	private static final EnumFacing[] VALID_FACING = { EnumFacing.NORTH, EnumFacing.EAST, EnumFacing.SOUTH,
 			EnumFacing.WEST };
 
@@ -33,7 +31,7 @@ public class BlockFurnaceBase extends BlockBase {
 	private static IBlockState state;
 
 	public BlockFurnaceBase(String name, CreativeTabs creativetab) {
-		super(Refs.MODID, name, creativetab);
+		super(Reference.MODID, name, creativetab);
 		createTileEntity(new TileFurnaceBase(), world, state);
 
 		this.setDefaultState(
@@ -41,7 +39,7 @@ public class BlockFurnaceBase extends BlockBase {
 	}
 
 	public BlockFurnaceBase(String name, CreativeTabs creativetab, TileEntity te) {
-		super(Refs.MODID, name, creativetab);
+		super(Reference.MODID, name, creativetab);
 		createTileEntity(te, world, state);
 
 		this.setDefaultState(

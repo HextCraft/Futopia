@@ -1,14 +1,14 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
 import net.minecraft.block.state.IBlockState;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 
 public class BlockWaterCooler extends BlockBase {
 
 	public BlockWaterCooler() {
-		super(Refs.MODID, "water_cooler", FTCreativeTabs.main);
+		super(Reference.MODID, "water_cooler", FTCreativeTabs.machines);
 	}
 
 	@Override

@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -18,11 +15,15 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockAsphalt;
+
+import static net.thegaminghuskymc.futopia.utils.ItemHelper.registerWithHandlers;
 
 public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegister {
 
@@ -43,7 +44,7 @@ public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegis
 	public static ItemStack asphaltSidewalkGlowing;
 
 	public BlockAsphalt() {
-		super(Material.ROCK, Refs.MODID);
+		super(Material.ROCK, Reference.MODID);
 
 		setUnlocalizedName("asphalt");
 		setCreativeTab(FTCreativeTabs.main);
@@ -85,14 +86,13 @@ public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegis
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 
-		for (int i = 0; i < Type.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-		}
+        for (int i = 0; i < Type.values().length; i++) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+        }
 	}
 
 	@Override
-	public boolean preInit() {
+	public boolean initialize() {
 		this.setRegistryName("asphalt");
 		ForgeRegistries.BLOCKS.register(this);
 
@@ -128,28 +128,32 @@ public class BlockAsphalt extends BlockCore implements IInitializer, IModelRegis
 		registerWithHandlers("blockAsphaltSidewalk", asphaltSidewalk);
 		registerWithHandlers("blockAsphaltSidewalkGlowing", asphaltSidewalkGlowing);
 
+        Futopia.proxy.addIModelRegister(this);
+
 		return true;
 	}
 
 	@Override
-	public boolean initialize() {
-		return false;
-	}
-
-	@Override
-	public boolean postInit() {
-		return false;
+	public boolean register() {
+		return true;
 	}
 
 	public enum Type implements IStringSerializable {
 
 		// @formatter:off
-		RAW(0, "raw"), MIDDLE(1, "middle"), MIDDLE_WHITE(2, "middle_white"), MIDDLE_YELLOW(3,
-				"middle_yellow"), MIDDLE_WHITE_GLOWING(4, "middle_white_glowing"), MIDDLE_YELLOW_GLOWING(5,
-						"middle_yellow_glowing"), SIDE(6, "side"), SIDE_WHITE(7, "side_white"), SIDE_YELLOW(8,
-								"side_yellow"), SIDE_WHITE_GLOWING(9, "side_white_glowing"), SIDE_YELLOW_GLOWING(10,
-										"side_yellow_glowing"), SIDEWALK(11,
-												"sidewalk"), SIDEWALK_GLOWING(12, "sidewalk_glowing");
+		RAW(0, "raw"),
+        MIDDLE(1, "middle"),
+        MIDDLE_WHITE(2, "middle_white"),
+        MIDDLE_YELLOW(3, "middle_yellow"),
+        MIDDLE_WHITE_GLOWING(4, "middle_white_glowing"),
+        MIDDLE_YELLOW_GLOWING(5, "middle_yellow_glowing"),
+        SIDE(6, "side"),
+        SIDE_WHITE(7, "side_white"),
+        SIDE_YELLOW(8, "side_yellow"),
+        SIDE_WHITE_GLOWING(9, "side_white_glowing"),
+        SIDE_YELLOW_GLOWING(10, "side_yellow_glowing"),
+        SIDEWALK(11, "sidewalk"),
+        SIDEWALK_GLOWING(12, "sidewalk_glowing");
 		// @formatter: on
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];

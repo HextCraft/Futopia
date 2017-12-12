@@ -1,6 +1,5 @@
 package net.thegaminghuskymc.futopia.init;
 
-import cofh.core.util.helpers.RecipeHelper;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -8,6 +7,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.FurnaceRecipes;
 import net.thegaminghuskymc.futopia.network.EnumMaterialType;
+import net.thegaminghuskymc.futopia.utils.RecipeHelper;
 import net.thegaminghuskymc.huskylib.utils.HLCraftingHelper;
 
 @SuppressWarnings("unused")
@@ -147,68 +147,68 @@ public class Recipies {
 	}
 
 	private static void addBlockRecipe(Block block, String material) {
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(block), new Object[] { "AAA", "AAA", "AAA", 'A', material });
+		RecipeHelper.addShapedRecipe(new ItemStack(block), "AAA", "AAA", "AAA", 'A', material);
 	}
 
 	private static void addBlockRecipe(ItemStack out, Object[] recipe) {
-		HLCraftingHelper.addShapedOreRecipe(out, recipe);
+		RecipeHelper.addShapedRecipe(out, recipe);
 	}
 
 	private static void addBlockRecipe(Block block, Item material) {
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(block), new Object[] { "AAA", "AAA", "AAA", 'A', material });
+		RecipeHelper.addShapedRecipe(new ItemStack(block), "AAA", "AAA", "AAA", 'A', material);
 	}
 
 	private static void addBlockRecipe(ItemStack material, ItemStack block) {
-		HLCraftingHelper.addShapedOreRecipe(block, new Object[] { "AAA", "AAA", "AAA", 'A', material });
+		RecipeHelper.addShapedRecipe(block, "AAA", "AAA", "AAA", 'A', material);
 	}
 
 	private static void addToolsetRecipe(Item[] toolset, String material) {
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(toolset[0]), " X ", " X ", " C ", 'X', material, 'C',
+		RecipeHelper.addShapedRecipe(new ItemStack(toolset[0]), " X ", " X ", " C ", 'X', material, 'C',
 				Items.STICK);
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(toolset[1]), "XXX", " C ", " C ", 'X', material, 'C',
+		RecipeHelper.addShapedRecipe(new ItemStack(toolset[1]), "XXX", " C ", " C ", 'X', material, 'C',
 				Items.STICK);
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(toolset[2]), " X ", " C ", " C ", 'X', material, 'C',
+		RecipeHelper.addShapedRecipe(new ItemStack(toolset[2]), " X ", " C ", " C ", 'X', material, 'C',
 				Items.STICK);
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(toolset[3]), "XX ", "XC ", " C ", 'X', material, 'C',
+		RecipeHelper.addShapedRecipe(new ItemStack(toolset[3]), "XX ", "XC ", " C ", 'X', material, 'C',
 				Items.STICK);
-		HLCraftingHelper.addShapedOreRecipe(new ItemStack(toolset[4]), "XX ", " C ", " C ", 'X', material, 'C',
+		RecipeHelper.addShapedRecipe(new ItemStack(toolset[4]), "XX ", " C ", " C ", 'X', material, 'C',
 				Items.STICK);
 	}
 
 	private static void addGearRecipe(ItemStack gear, String material) {
-		HLCraftingHelper.addShapedOreRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
+		RecipeHelper.addShapedRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
 	}
 
 	private static void addGearRecipe(ItemStack gear, ItemStack material) {
-		HLCraftingHelper.addShapedOreRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
+		RecipeHelper.addShapedRecipe(gear, " X ", "XCX", " X ", 'X', material, 'C', Items.IRON_INGOT);
 	}
 
 	private static void addPlateRecipe(ItemStack plates, String material) {
-		HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
+		RecipeHelper.addShapedRecipe(plates, "XX ", "XX ", 'X', material);
 	}
 
 	private static void addPlateRecipe(ItemStack plates, Item material) {
-		HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
+		RecipeHelper.addShapedRecipe(plates, "XX ", "XX ", 'X', material);
 	}
 
 	private static void addPlateRecipe(ItemStack plates, ItemStack material) {
-		HLCraftingHelper.addShapedOreRecipe(plates, "XX ", "XX ", 'X', material);
+		RecipeHelper.addShapedRecipe(plates, "XX ", "XX ", 'X', material);
 	}
 
 	private static void addDustRecipe(ItemStack dusts, String material) {
-		HLCraftingHelper.addShapedOreRecipe(dusts, " X ", 'X', material);
+		RecipeHelper.addShapedRecipe(dusts, " X ", 'X', material);
 	}
 
 	private static void addDustRecipe(ItemStack dusts, ItemStack material) {
-		HLCraftingHelper.addShapedOreRecipe(dusts, " X ", 'X', material);
+		RecipeHelper.addShapedRecipe(dusts, " X ", 'X', material);
 	}
 
 	private static void addNuggetRecipe(ItemStack nuggets, String material) {
-		HLCraftingHelper.addShapedOreRecipe(nuggets, " X ", 'X', material);
+		RecipeHelper.addShapedRecipe(nuggets, " X ", 'X', material);
 	}
 
 	private static void addNuggetRecipe(ItemStack nuggets, ItemStack material) {
-		HLCraftingHelper.addShapedOreRecipe(nuggets, " X ", 'X', material);
+		RecipeHelper.addShapedRecipe(nuggets, " X ", 'X', material);
 	}
 
 	private static void addHammerRecipe(ItemStack hammers, String material) {
@@ -221,12 +221,12 @@ public class Recipies {
 
 	private static void addSawRecipe(ItemStack saws, String material) {
 		Block P = Blocks.PLANKS;
-		HLCraftingHelper.addShapedOreRecipe(saws, new Object[] { "XX ", " XP", "  P", 'X', material, 'P', P });
+		HLCraftingHelper.addShapedOreRecipe(saws, "XX ", " XP", "  P", 'X', material, 'P', P);
 	}
 
 	private static void addSawRecipe(ItemStack saws, ItemStack material) {
 		Block P = Blocks.PLANKS;
-		HLCraftingHelper.addShapedOreRecipe(saws, new Object[] { "XX ", " XP", "  P", 'X', material, 'P', P });
+		HLCraftingHelper.addShapedOreRecipe(saws, "XX ", " XP", "  P", 'X', material, 'P', P);
 	}
 
 	private static void addArmorsetRecipe(Item[] armorset, String material) {

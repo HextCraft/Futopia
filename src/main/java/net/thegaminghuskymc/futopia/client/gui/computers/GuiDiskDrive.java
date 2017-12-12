@@ -4,34 +4,34 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.client.container.computers.ContainerDiskDrive;
 import net.thegaminghuskymc.huskylib.client.gui.GuiContainerBase;
 
 public class GuiDiskDrive extends GuiContainerBase {
 
-	private static ResourceLocation texture_normal = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_normal = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_red = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_red = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_blue = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_blue = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_purple = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_purple = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_pink = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_pink = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_yellow = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_yellow = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_orange = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_orange = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 	@SuppressWarnings("unused")
-	private static ResourceLocation texture_light_blue = new ResourceLocation(Refs.MODID,
+	private static ResourceLocation texture_light_blue = new ResourceLocation(Reference.MODID,
 			"textures/gui/container/disk_drive.png");
 
 	public GuiDiskDrive(InventoryPlayer playerInventory) {

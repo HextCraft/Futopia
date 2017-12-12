@@ -1,10 +1,9 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
-import cofh.core.block.ItemBlockCore;
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.utils.StringHelper;
 
 public abstract class ItemBlockTEBase extends ItemBlockCore {
@@ -50,7 +49,7 @@ public abstract class ItemBlockTEBase extends ItemBlockCore {
 	public String getItemStackDisplayName(ItemStack stack) {
 
 		return StringHelper.localize(getUnlocalizedName(stack)) + " (" + StringHelper
-				.localize("info." + Refs.MODID + ".level." + (isCreative(stack) ? "creative" : getLevel(stack))) + ")";
+				.localize("info." + Reference.MODID + ".level." + (isCreative(stack) ? "creative" : getLevel(stack))) + ")";
 	}
 
 	@Override

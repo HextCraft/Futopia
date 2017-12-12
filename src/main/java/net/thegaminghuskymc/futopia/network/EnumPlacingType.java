@@ -10,7 +10,7 @@ public enum EnumPlacingType implements IStringSerializable {
 	private int ID;
 	private String name;
 
-	private EnumPlacingType(int ID, String name) {
+	EnumPlacingType(int ID, String name) {
 		this.ID = ID;
 		this.name = name;
 	}

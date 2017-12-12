@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.huskylib.blocks.BlockSubBase;
+import net.thegaminghuskymc.huskylib.blocks.EnumBlock;
 
 public class ItemBlockBase extends ItemBlock {
 
@@ -33,9 +33,9 @@ public class ItemBlockBase extends ItemBlock {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public String getUnlocalizedName(ItemStack stack) {
-		if (this.block instanceof BlockSubBase) {
-			if (((BlockSubBase) this.block).getSubNames() != null) {
-				return this.getUnlocalizedName() + "." + ((BlockSubBase) this.block).getSubNames()[stack.getMetadata()];
+		if (this.block instanceof EnumBlock) {
+			if (((EnumBlock) this.block).getSubNames() != null) {
+				return this.getUnlocalizedName() + "." + ((EnumBlock) this.block).getSubNames()[stack.getMetadata()];
 			} else {
 				return super.getUnlocalizedName(stack);
 			}
@@ -43,24 +43,5 @@ public class ItemBlockBase extends ItemBlock {
 			return super.getUnlocalizedName(stack);
 		}
 	}
-
-	/*
-	 * @Override
-	 * 
-	 * @SideOnly(Side.CLIENT) public void addInformation(ItemStack stack,
-	 * EntityPlayer player, List<String> tooltip, boolean advanced) {
-	 * if(this.block instanceof IShiftDescription){
-	 * if(((IShiftDescription)this.block).shouldAddDescription(stack, player)){
-	 * if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) ||
-	 * Keyboard.isKeyDown(Keyboard.KEY_RSHIFT)){
-	 * ((IShiftDescription)this.block).addDescription(stack, player, tooltip); }
-	 * else{ String press = TextFormatting.GRAY +
-	 * TranslationUtils.translate(ModPrefs.MODID, "tooltip", "press"); String
-	 * shift = TextFormatting.YELLOW +
-	 * TranslationUtils.translate(ModPrefs.MODID, "tooltip", "shift"); String
-	 * info = TextFormatting.GRAY + TranslationUtils.translate(ModPrefs.MODID,
-	 * "tooltip", "info"); tooltip.add(press + " " + shift + " " + info); } } }
-	 * }
-	 */
 
 }

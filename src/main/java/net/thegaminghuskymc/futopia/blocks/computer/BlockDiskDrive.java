@@ -20,7 +20,7 @@ public class BlockDiskDrive extends BlockComputerBase {
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
 
-		if (worldIn.isRemote & !playerIn.isSneaking()) {
+		if (worldIn.isRemote && !playerIn.isSneaking()) {
 			playerIn.openGui(Futopia.INSTANCE, GuiHandler.DISK_DRIVE, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 

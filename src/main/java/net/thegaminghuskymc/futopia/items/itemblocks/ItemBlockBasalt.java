@@ -1,10 +1,9 @@
 package net.thegaminghuskymc.futopia.items.itemblocks;
 
-import cofh.core.block.ItemBlockCore;
-import cofh.core.util.helpers.ItemHelper;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.thegaminghuskymc.futopia.blocks.worldgen.BlockBasalt;
+import net.thegaminghuskymc.futopia.utils.ItemHelper;
 
 public class ItemBlockBasalt extends ItemBlockCore {
 
@@ -17,7 +16,6 @@ public class ItemBlockBasalt extends ItemBlockCore {
 
 	@Override
 	public String getUnlocalizedName(ItemStack stack) {
-
 		return "tile.basalt." + BlockBasalt.Type.byMetadata(ItemHelper.getItemDamage(stack)).getName() + ".name";
 	}
 

@@ -1,6 +1,6 @@
 package net.thegaminghuskymc.futopia.blocks.machine;
 
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.tiles.TilePlatePresser;
 import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
@@ -11,7 +11,7 @@ import net.thegaminghuskymc.huskylib.blocks.BlockMachineBase;
 public class BlockPlatePresser extends BlockMachineBase {
 
 	public BlockPlatePresser() {
-		super(Refs.MODID, "plate_presser", new TilePlatePresser(), FTCreativeTabs.machines);
+		super(Reference.MODID, "plate_presser", new TilePlatePresser(), FTCreativeTabs.machines);
 	}
 
 }

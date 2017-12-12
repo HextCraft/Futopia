@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -20,11 +17,15 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockLimestone;
+
+import static net.thegaminghuskymc.futopia.utils.ItemHelper.registerWithHandlers;
 
 public class BlockLimestone extends BlockCore implements IInitializer, IModelRegister {
 
@@ -35,14 +36,13 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
 	public static ItemStack limestoneBrick;
 	public static ItemStack limestoneFancy;
 	public static ItemStack limestoneBrickSmall;
-	public static ItemStack limestonePillar;
 
 	public BlockLimestone() {
 
-		super(Material.IRON, Refs.MODID);
+		super(Material.IRON, Reference.MODID);
 
 		setUnlocalizedName("limestone");
-		setCreativeTab(FTCreativeTabs.main);
+		setCreativeTab(FTCreativeTabs.world_gen);
 
 		setHardness(5.0F);
 		setResistance(10.0F);
@@ -95,15 +95,14 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 
-		for (int i = 0; i < Type.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-		}
+        for (int i = 0; i < Type.values().length; i++) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+        }
 	}
 
 	/* IInitializer */
 	@Override
-	public boolean preInit() {
+	public boolean initialize() {
 		setRegistryName("limestone");
 		ForgeRegistries.BLOCKS.register(this);
 
@@ -116,32 +115,30 @@ public class BlockLimestone extends BlockCore implements IInitializer, IModelReg
 		limestoneBrick = new ItemStack(this, 1, BlockLimestone.Type.BRICK.getMetadata());
 		limestoneFancy = new ItemStack(this, 1, BlockLimestone.Type.FANCY.getMetadata());
 		limestoneBrickSmall = new ItemStack(this, 1, BlockLimestone.Type.BRICK_SMALL.getMetadata());
-		limestonePillar = new ItemStack(this, 1, BlockLimestone.Type.PILLAR.getMetadata());
 
 		registerWithHandlers("blockLimestone", limestone);
 		registerWithHandlers("blockLimestonePaver", limestonePaver);
 		registerWithHandlers("blockLimestoneBrick", limestoneBrick);
 		registerWithHandlers("blockLimestoneFancy", limestoneFancy);
 		registerWithHandlers("blockLimestoneBrickSmall", limestoneBrickSmall);
-		registerWithHandlers("blockLimestonePillar", limestonePillar);
+
+		Futopia.proxy.addIModelRegister(this);
 
 		return true;
 	}
 
 	@Override
-	public boolean initialize() {
-		return false;
-	}
-
-	@Override
-	public boolean postInit() {
-		return false;
+	public boolean register() {
+		return true;
 	}
 
 	public enum Type implements IStringSerializable {
 
-		RAW(0, "raw"), PAVER(1, "paver"), BRICK(2, "brick"), FANCY(3, "fancy"), BRICK_SMALL(4, "brick_small"), PILLAR(5,
-				"pillar");
+		RAW(0, "raw"),
+		PAVER(1, "paver"),
+		BRICK(2, "brick"),
+		FANCY(3, "fancy"),
+		BRICK_SMALL(4, "brick_small");
 
 		private static final BlockLimestone.Type[] METADATA_LOOKUP = new BlockLimestone.Type[values().length];
 

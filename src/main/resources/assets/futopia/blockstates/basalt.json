@@ -8,22 +8,22 @@
 		"type": {
 			"raw": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_raw"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_raw"
 				}
 			},
 			"cobble": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_cobble"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_cobble"
 				}
 			},
 			"paver": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_pavor"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_pavor"
 				}
 			},
 			"brick": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_brick"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_brick"
 				}
 			},
 			"fancy": {
@@ -36,27 +36,38 @@
 					"east": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side",
 					"particle": "futopia:blocks/worldgen/basalt/new/basalt_fancy_side"*/
 
-					"all": "futopia:blocks/worldgen/basalt/basalt_fancy"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_fancy"
 				}
 			},
 			"cracked_lava": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_cracked_lava"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_cracked_lava"
 				}
 			},
 			"brick_cracked": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_brick_cracked"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_brick_cracked"
 				}
 			},
 			"brick_small": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_brick_small"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_brick_small"
 				}
 			},
 			"tile": {
 				"textures": {
-					"all": "futopia:blocks/worldgen/basalt/basalt_tiles"
+					"all": "futopia:blocks/worldgen/basalt/new/basalt_tiles"
+				}
+			},
+			"pillar": {
+				"textures": {
+					"down": "futopia:blocks/worldgen/basalt/new/basalt_pillar_top",
+					"up": "futopia:blocks/worldgen/basalt/new/basalt_pillar_top",
+					"north": "futopia:blocks/worldgen/basalt/new/basalt_pillar_side",
+					"south": "futopia:blocks/worldgen/basalt/new/basalt_pillar_side",
+					"west": "futopia:blocks/worldgen/basalt/new/basalt_pillar_side",
+					"east": "futopia:blocks/worldgen/basalt/new/basalt_pillar_side",
+					"particle": "futopia:blocks/worldgen/basalt/new/basalt_pillar_side"
 				}
 			}
 		}

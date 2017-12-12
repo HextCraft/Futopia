@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -18,11 +15,15 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockBasalt;
+
+import static net.thegaminghuskymc.futopia.utils.ItemHelper.registerWithHandlers;
 
 public class BlockBasalt extends BlockCore implements IInitializer, IModelRegister {
 
@@ -37,12 +38,13 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 	public static ItemStack basaltBrickCracked;
 	public static ItemStack basaltBrickSmall;
 	public static ItemStack basaltTile;
+	public static ItemStack basaltPillar;
 
 	public BlockBasalt() {
-		super(Material.ROCK, Refs.MODID);
+		super(Material.ROCK, Reference.MODID);
 
 		setUnlocalizedName("basalt");
-		setCreativeTab(FTCreativeTabs.main);
+		setCreativeTab(FTCreativeTabs.world_gen);
 
 		setSoundType(SoundType.STONE);
 		setDefaultState(getBlockState().getBaseState().withProperty(VARIANT, Type.RAW));
@@ -87,15 +89,15 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 	public void registerModels() {
 
 		for (int i = 0; i < Type.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
 		}
 
 	}
 
 	@Override
-	public boolean preInit() {
-		this.setRegistryName("basalt");
+	public boolean initialize() {
+
+		setRegistryName("basalt");
 		ForgeRegistries.BLOCKS.register(this);
 
 		ItemBlockBasalt itemBlock = new ItemBlockBasalt(this);
@@ -111,6 +113,7 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 		basaltBrickCracked = new ItemStack(this, 1, Type.BRICK_CRACKED.getMetadata());
 		basaltBrickSmall = new ItemStack(this, 1, Type.BRICK_SMALL.getMetadata());
 		basaltTile = new ItemStack(this, 1, Type.TILE.getMetadata());
+        basaltPillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
 
 		registerWithHandlers("blockBasalt", basalt);
 		registerWithHandlers("blockBasaltCobble", basaltCobble);
@@ -121,26 +124,32 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 		registerWithHandlers("blockBasaltBrickCracked", basaltBrickCracked);
 		registerWithHandlers("blockBasaltBrickSmall", basaltBrickSmall);
 		registerWithHandlers("blockBasaltTile", basaltTile);
+		registerWithHandlers("blockBasaltPillar", basaltPillar);
+
+		Futopia.proxy.addIModelRegister(this);
 
 		return true;
 	}
 
-	@Override
-	public boolean initialize() {
-		return false;
-	}
+    @Override
+    public boolean register() {
+        return true;
+    }
 
-	@Override
-	public boolean postInit() {
-		return false;
-	}
-
-	/* TYPE */
+    /* TYPE */
 	public enum Type implements IStringSerializable {
 
 		// @formatter:off
-		RAW(0, "raw"), COBBLE(1, "cobble"), PAVER(2, "paver"), BRICK(3, "brick"), FANCY(4, "fancy"), CRACKED_LAVA(5,
-				"cracked_lava"), BRICK_CRACKED(6, "brick_cracked"), BRICK_SMALL(7, "brick_small"), TILE(8, "tile");
+		RAW(0, "raw"),
+		COBBLE(1, "cobble"),
+		PAVER(2, "paver"),
+		BRICK(3, "brick"),
+		FANCY(4, "fancy"),
+		CRACKED_LAVA(5, "cracked_lava"),
+		BRICK_CRACKED(6, "brick_cracked"),
+		BRICK_SMALL(7, "brick_small"),
+		TILE(8, "tile"),
+        PILLAR(9, "pillar");
 		// @formatter: on
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];
@@ -153,31 +162,11 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 
 		private final int metadata;
 		private final String name;
-		private final int light;
-		private final float hardness;
-		private final float resistance;
-
-		Type(int metadata, String name, int light, float hardness, float resistance) {
-
-			this.metadata = metadata;
-			this.name = name;
-			this.light = light;
-			this.hardness = hardness;
-			this.resistance = resistance;
-		}
-
-		Type(int metadata, String name, float hardness, float resistance) {
-			this(metadata, name, 0, hardness, resistance);
-		}
-
-		Type(int metadata, String name, int light) {
-
-			this(metadata, name, light, 5.0F, 6.0F);
-		}
 
 		Type(int metadata, String name) {
 
-			this(metadata, name, 0, 5.0F, 6.0F);
+			this.metadata = metadata;
+			this.name = name;
 		}
 
 		public static Type byMetadata(int metadata) {
@@ -196,21 +185,6 @@ public class BlockBasalt extends BlockCore implements IInitializer, IModelRegist
 		public String getName() {
 
 			return this.name;
-		}
-
-		public int getLight() {
-
-			return this.light;
-		}
-
-		public float getHardness() {
-
-			return this.hardness;
-		}
-
-		public float getResistance() {
-
-			return this.resistance;
 		}
 	}
 

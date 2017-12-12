@@ -5,9 +5,37 @@
 		"transform": "forge:default-block"
 	},
 	"variants": {
-		"normal": {
-			"model": "futopia:electrical_furnace"
+		"active":{
+			"true":{
+				"textures": {
+					"front": "futopia:blocks/machines/electrical_furnace/electrical_furnace_front_on"
+				}
+			},
+			"false":{
+				"textures": {
+					"front": "futopia:blocks/machines/electrical_furnace/electrical_furnace_front_off"
+				}
+			}
 		},
+
+		"facing":{
+			"north": {
+				"model": "futopia:electrical_furnace"
+			},
+			"south": {
+				"model": "futopia:electrical_furnace",
+				"y": 180
+			},
+			"east": {
+				"model": "futopia:electrical_furnace",
+				"y": 90
+			},
+			"west": {
+				"model": "futopia:electrical_furnace",
+				"y": 270
+			}
+		},
+
 		"inventory": [{}]
 	}
 }

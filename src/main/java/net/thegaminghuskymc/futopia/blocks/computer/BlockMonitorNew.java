@@ -7,7 +7,7 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.NonNullList;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Reference;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.huskylib.blocks.BlockBase;
 import net.thegaminghuskymc.huskylib.blocks.EnumBlock.IEnumMeta;
@@ -17,7 +17,7 @@ public class BlockMonitorNew extends BlockBase {
 	public static final PropertyEnum<MonitorColors> COLORS = PropertyEnum.create("color", MonitorColors.class);
 	
 	public BlockMonitorNew() {
-		super(Refs.MODID, "monitor", FTCreativeTabs.computer_parts, MonitorColors.toStringArray());
+		super(Reference.MODID, "monitor", FTCreativeTabs.computer_parts, MonitorColors.toStringArray());
 		setDefaultState(this.getDefaultState().withProperty(COLORS, MonitorColors.BLACK));
 	}
 	

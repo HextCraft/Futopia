@@ -1,10 +1,5 @@
 package net.thegaminghuskymc.futopia.blocks.worldgen;
 
-import static cofh.core.util.helpers.ItemHelper.registerWithHandlers;
-
-import javax.annotation.Nonnull;
-
-import cofh.core.block.BlockCore;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
@@ -21,25 +16,30 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.thegaminghuskymc.futopia.Refs;
+import net.thegaminghuskymc.futopia.Futopia;
+import net.thegaminghuskymc.futopia.Reference;
+import net.thegaminghuskymc.futopia.blocks.BlockCore;
 import net.thegaminghuskymc.futopia.blocks.IInitializer;
 import net.thegaminghuskymc.futopia.blocks.IModelRegister;
 import net.thegaminghuskymc.futopia.init.FTCreativeTabs;
 import net.thegaminghuskymc.futopia.items.itemblocks.ItemBlockMeteor;
+
+import javax.annotation.Nonnull;
+
+import static net.thegaminghuskymc.futopia.utils.ItemHelper.registerWithHandlers;
 
 public class BlockMeteor extends BlockCore implements IInitializer, IModelRegister {
 
 	public static final PropertyEnum<Type> VARIANT = PropertyEnum.create("type", Type.class);
 	/* REFERENCES */
 	public static ItemStack meteor;
-	public static ItemStack meteorPillar;
 	public static ItemStack meteorBricks;
 
 	public BlockMeteor() {
-		super(Material.ROCK, Refs.MODID);
+		super(Material.ROCK, Reference.MODID);
 
 		setUnlocalizedName("meteor");
-		setCreativeTab(FTCreativeTabs.main);
+		setCreativeTab(FTCreativeTabs.world_gen);
 
 		setHardness(5.0F);
 		setResistance(10.0F);
@@ -97,14 +97,13 @@ public class BlockMeteor extends BlockCore implements IInitializer, IModelRegist
 	@SideOnly(Side.CLIENT)
 	public void registerModels() {
 
-		for (int i = 0; i < Type.values().length; i++) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i,
-					new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
-		}
+        for (int i = 0; i < Type.values().length; i++) {
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), i, new ModelResourceLocation(modName + ":" + name, "type=" + Type.byMetadata(i).getName()));
+        }
 	}
 
 	@Override
-	public boolean preInit() {
+	public boolean initialize() {
 		this.setRegistryName("meteor");
 		ForgeRegistries.BLOCKS.register(this);
 
@@ -113,31 +112,27 @@ public class BlockMeteor extends BlockCore implements IInitializer, IModelRegist
 		ForgeRegistries.ITEMS.register(itemBlock);
 
 		meteor = new ItemStack(this, 1, Type.NORMAL.getMetadata());
-		meteorPillar = new ItemStack(this, 1, Type.PILLAR.getMetadata());
 		meteorBricks = new ItemStack(this, 1, Type.BRICKS.getMetadata());
 
 		registerWithHandlers("blockMeteor", meteor);
-		registerWithHandlers("blockMeteorPillar", meteorPillar);
 		registerWithHandlers("blockMeteorBricks", meteorBricks);
+
+		Futopia.proxy.addIModelRegister(this);
 
 		return true;
 	}
 
 	@Override
-	public boolean initialize() {
-		return false;
-	}
-
-	@Override
-	public boolean postInit() {
-		return false;
+	public boolean register() {
+		return true;
 	}
 
 	/* TYPE */
 	public enum Type implements IStringSerializable {
 
 		// @formatter:off
-		NORMAL(0, "normal"), PILLAR(1, "pillar"), BRICKS(2, "bricks");
+		NORMAL(0, "normal"),
+		BRICKS(1, "bricks");
 
 		private static final Type[] METADATA_LOOKUP = new Type[values().length];
 

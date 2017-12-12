@@ -1,8 +1,5 @@
 package net.thegaminghuskymc.futopia.utils;
 
-import java.text.NumberFormat;
-import java.util.List;
-import java.util.Locale;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
@@ -10,6 +7,10 @@ import net.minecraft.util.text.translation.I18n;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidStack;
 import org.lwjgl.input.Keyboard;
+
+import java.text.NumberFormat;
+import java.util.List;
+import java.util.Locale;
 
 @SuppressWarnings("deprecation")
 public final class StringHelper {
@@ -57,7 +58,7 @@ public final class StringHelper {
 
 	public static String getKeyName(int key) {
 		return key >= 0 ? Keyboard.getKeyName(key)
-				: I18n.translateToLocalFormatted("key.mouseButton", new Object[] { Integer.valueOf(key + 101) });
+				: I18n.translateToLocalFormatted("key.mouseButton", Integer.valueOf(key + 101));
 	}
 
 	public static String getFluidName(FluidStack stack) {
